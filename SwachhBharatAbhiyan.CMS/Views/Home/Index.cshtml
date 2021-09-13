@@ -2,7 +2,7 @@
 
 @{
     //ViewBag.Title = "डैशबोर्ड";
-    ViewBag.Title = "Dashboard";
+    ViewBag.Title = "Garbage Collection Van";
 }
 <link href="~/Content/css/index_style.css" rel="stylesheet" />
 <!-- Page Header-->
@@ -79,9 +79,38 @@
         font-weight: 600;
     }
 </style>
+
+<style type="text/css">
+             .highlighted
+             {
+                    background-color: yellow;
+
+    }
+
+             .highlight
+             {
+                    background-color: #fff34d;
+                    -moz-border-radius: 5px; /* FF1+ */
+                    -webkit-border-radius: 5px; /* Saf3-4 */
+                    border-radius: 5px; /* Opera 10.5, IE 9, Saf5, Chrome */
+                    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* FF3.5+ */
+                    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Saf3.0+, Chrome */
+                    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Opera 10.5+, IE 9.0 */
+
+    }
+
+             .highlight
+             {
+                    padding: 1px 4px;
+                    margin: 0 -4px;
+
+    }
+
+
+</style>
 <header class="page-header">
     <div class="container-fluid">
-        <h2 class="no-margin-bottom"> Home > Dashboard </h2>
+        <h2 class="no-margin-bottom"> Dashboard </h2>
         @*<h2 class="no-margin-bottom"> डैशबोर्ड </h2>*@
     </div>
 </header>
@@ -89,6 +118,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+
 
 @*<script src="~/Content/css/datepicker/js/datepicker.js"></script>*@
 
@@ -106,7 +138,7 @@
 <input type="hidden" id="txt_fdate" class="datepicker form-control form-control-sm" type="text" />
 
 <section class="dashboard-counts no-padding-bottom">
-    <div class="container-fluid">
+    <div class="container-fluid" id="realTimeContents">
         <br />
         <div class="row w-100">
             <div class="col col-xs-12" onclick="location.href = '/Attendence/MenuIndex';" style="cursor:pointer">
@@ -458,6 +490,3 @@
 <!-- Dashboard Header Section    -->
 <script src="~/Content/Custom/HomeIndex.js"></script>
 
-<script type="text/javascript">
-        //setInterval('window.location.reload()', 60000);
-</script>
