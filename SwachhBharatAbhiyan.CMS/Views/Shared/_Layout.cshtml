@@ -19,7 +19,7 @@
 </head>
 
 
-@*umesh done something went wrong*@
+@*uumeshj*@
 <body>
     <div class="page">
         <!-- Main Navbar-->
@@ -41,11 +41,11 @@
                             <!-- Navbar Brand --><a href="/Home/Index" class="navbar-brand">
                                 <div class="brand-text brand-big">
                                     <span>
-                                        <img style="height:40px;width:50px;" src="~/Content/images/img/action_icon.svg" />
+                                        <img style="height:40px;width:50px;" src="~/Content/images/img/action_icon.svg" alt="logo" class="hover" title="Garbage Collection Van"/>
                                     </span><strong style="vertical-align:middle">Garbage Collection Van</strong>
                                     @*</span><strong> घंटा गाडी</strong>*@
                                 </div>
-                                <div class="brand-text brand-small"><strong><img style="height:40px;width:50px;" src="~/Content/images/img/action_icon.svg" /> </strong></div>
+                                <div class="brand-text brand-small"><strong><img style="height:40px;width:50px;" alt="action" src="~/Content/images/img/action_icon.svg" /> </strong></div>
                             </a>
                             <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
                         </div>
@@ -56,6 +56,10 @@
 
                     </div>
                 </div>
+                @*<div class="mode">
+                    Dark mode:
+                    <span class="change">OFF</span>
+                </div>*@
             </nav>
         </header>
         <div class="page-content d-flex align-items-stretch">
@@ -74,7 +78,7 @@
                 <ul class="list-unstyled">
                     @*<li class=""><a href="/Home/Index"> <i class="icon-home"></i> डैशबोर्ड </a></li>*@
                     <li class="">
-                        <a href="/Home/Index">
+                        <a href="/Home/Index" class="hover" title="Dashboard">
                             @*<i class="icon-home"></i>*@
                             @*<img class="" style="height:20px;width:20px;" src="~/Content/images/icons/calendar-tool-for-time-organization (1).png" />*@
                             @*<img  style="height:20px;width:20px;" src="~/Content/images/icons/calendar-tool-for-time-organization.svg" />*@
@@ -82,13 +86,13 @@
                         </a>
                     </li>
                     <li class="">
-                        <a href="/Attendence/MenuIndex">
+                        <a href="/Attendence/MenuIndex" class="hover" title="Workers Attendance / Route">
                             <i class="svg_attendance"> </i>
-                            @*उपस्थिती*@  Workers Attendance Details
+                            @*उपस्थिती*@ Workers Attendance / Route
                         </a>
                     </li>
                     <li>
-                        <a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse">
+                        <a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse" class="hover" title="Garbage Collection">
 
                             <i class="svg_gc"> </i>
                             @*कचरा संकलन*@ Garbage Collection
@@ -105,7 +109,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#exampledropdownDropdown5" aria-expanded="false" data-toggle="collapse">
+                        <a href="#exampledropdownDropdown5" aria-expanded="false" data-toggle="collapse" class="hover" title="Work Summary">
 
                             <i class="svg_summary"> </i>
                             @*कार्य सारांश*@ Work Summary
@@ -114,12 +118,12 @@
                             @*<li><a href="/Employee/MenuEmployeeSummaryIndex"> कर्मचारी कार्य सारांश</a></li>
                                 <li><a href="/GarbageCollection/MenuIdealtime"> कर्मचारी निष्क्रिय वेळ </a></li>*@
 
-                            <li><a href="/Employee/MenuEmployeeSummaryIndex"> Employee Work Summary </a></li>
-                            <li><a href="/GarbageCollection/MenuIdealtime"> Employee Idle Time </a></li>
+                            <li><a href="/Employee/MenuEmployeeSummaryIndex" class="hover" title="Employee Work Summary"> Employee Work Summary </a></li>
+                            <li><a href="/GarbageCollection/MenuIdealtime" class="hover" title="Employee Idle Time"> Employee Idle Time </a></li>
                         </ul>
                     </li>
                     <li class="" id="complaint_menu">
-                        <a href="/Complaint/MenuIndex">
+                        <a href="/Complaint/MenuIndex" class="hover" title="Cleanliness Complaints">
                             <i class="svg_swacch"> </i>
                             @*स्वच्छ तक्रार*@ <span class="satana_feedback">Cleanliness Complaints</span>
                         </a>
@@ -145,7 +149,7 @@
                         </li>*@
 
                     <li class="ctpt_reg">
-                        <a href="#exampledropdownDropdownCTPT" aria-expanded="false" data-toggle="collapse">
+                        <a href="#exampledropdownDropdownCTPT" aria-expanded="false" data-toggle="collapse"  class="hover" title="CT / PT" >
                             <i class="ctpt"> </i>
                             CT / PT
                         </a>
@@ -315,6 +319,13 @@
                             <div class="col-sm-6">
                                 <p>Appynitty &copy; 2017-2019</p>
                             </div>
+                            <div style=" position: absolute; right: 0%;margin-Right:5%">
+                               
+                                    <a href="/Footer/Help" class="mx-4 p-3">|Help|</a>
+                                  <a href="/Footer/Help" class="mx-4">|Contact Us|</a>
+                                    <a href="/Footer/Help" class="mx-4">|Feed Back|</a>
+                                
+                            </div>
                             <div class="col-sm-6 text-right">
                                 <p>@*Design by <a href="https://bootstrapious.com/admin-templates" class="external">Bootstrapious</a>*@</p>
                                 <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
@@ -330,7 +341,18 @@
     @Scripts.Render("~/Scripts/ThemeScripts")
 
     <script>
-
+        $(document).ready(function () {
+            $('.hover').tooltip();
+        });
+        $(".change").on("click", function () {
+            if ($("body").hasClass("dark")) {
+                $("body").removeClass("dark");
+                $(".change").text("OFF");
+            } else {
+                $("body").addClass("dark");
+                $(".change").text("ON");
+            }
+        });
         $(document).ready(function () {
             debugger;
             notification_count();

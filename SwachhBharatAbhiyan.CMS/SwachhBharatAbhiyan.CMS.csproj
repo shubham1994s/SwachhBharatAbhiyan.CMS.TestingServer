@@ -253,6 +253,7 @@
     <Compile Include="Controllers\DatableController.cs" />
     <Compile Include="Controllers\DumpYardController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\FooterController.cs" />
     <Compile Include="Controllers\GarbageCollectionController.cs" />
     <Compile Include="Controllers\GarbagePointController.cs" />
     <Compile Include="Controllers\GridController.cs" />
@@ -1327,6 +1328,7 @@
     <Content Include="Views\HouseMaster\SaveBundelVisitingDryWet.cshtml" />
     <Content Include="Views\HouseMaster\SaveDryWet.cshtml" />
     <Content Include="Views\HouseMaster\SaveBundelWetWaste.cshtml" />
+    <Content Include="Views\Footer\Help.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
