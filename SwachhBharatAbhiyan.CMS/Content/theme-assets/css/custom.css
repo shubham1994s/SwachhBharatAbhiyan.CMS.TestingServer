@@ -85,3 +85,38 @@
             -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
             animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
+
+nav.navbar {
+    background: #29612A
+}
+ .mode {
+            float:right;
+        }
+        .change {
+            cursor: pointer;
+            border: 1px solid #555;
+            border-radius: 40%;
+            width: 20px;
+            text-align: center;
+            padding: 5px;
+            margin-left: 8px;
+        }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }.dark nav.side-navbar{
+              background-color: #222;
+            color: #e6e6e6;
+         }
+            .dark .content-inner {
+                background-color: #222 !important;
+                color: #e6e6e6;
+            }
+            .dark .card {
+                background-color: #222 !important;
+                color: #e6e6e6;
+            }
+            .dark dark1 {
+                background-color: #222 !important;
+                color: #e6e6e6;
+            }
