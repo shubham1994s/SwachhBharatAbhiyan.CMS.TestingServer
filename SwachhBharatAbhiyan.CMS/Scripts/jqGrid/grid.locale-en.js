@@ -7,6 +7,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
 **/
+	//ffdgdgf
 $.jgrid = {
 	defaults : {
 		recordtext: "View {0} - {1} of {2}",

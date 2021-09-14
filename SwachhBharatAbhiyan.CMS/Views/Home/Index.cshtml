@@ -2,7 +2,7 @@
 
 @{
     //ViewBag.Title = "डैशबोर्ड";
-    ViewBag.Title = "Garabage Collection Van";
+    ViewBag.Title = "Garbage Collection Van";
 }
 <link href="~/Content/css/index_style.css" rel="stylesheet" />
 <!-- Page Header-->
@@ -50,29 +50,63 @@
     .p-3 {
         padding: 20px 0px 0px 0px !important;
     }
-    nav-tabs .tabid{
+
+    nav-tabs .tabid {
         color: #111;
-    background-color: #fff;
+        background-color: #fff;
     }
-    .tabid active{
-         color: #fff;
+
+    .tabid active {
+        color: #fff;
+    }
+
+    .tabid {
+        color: #999;
+        background-color: #fff;
+    }
+
+        .tabid:hover {
+            color: #fff;
+            background-color: #3ab59e;
+        }
+
+    .nav-tabs .tabid.active {
+        color: #fff;
+        background-color: #3ab59e;
+    }
+
+    b {
+        font-weight: 600;
+    }
+</style>
+
+<style type="text/css">
+             .highlighted
+             {
+                    background-color: yellow;
 
     }
-    .tabid {
-         color: #999;
-          background-color: #fff;
+
+             .highlight
+             {
+                    background-color: #fff34d;
+                    -moz-border-radius: 5px; /* FF1+ */
+                    -webkit-border-radius: 5px; /* Saf3-4 */
+                    border-radius: 5px; /* Opera 10.5, IE 9, Saf5, Chrome */
+                    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* FF3.5+ */
+                    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Saf3.0+, Chrome */
+                    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Opera 10.5+, IE 9.0 */
+
     }
-    .tabid:hover {
-          color: #fff;
-    background-color: #3ab59e;
+
+             .highlight
+             {
+                    padding: 1px 4px;
+                    margin: 0 -4px;
+
     }
-    .nav-tabs .tabid.active{
-        color: #fff;
-    background-color: #3ab59e;
-    }
-    b{
-        font-weight:600;
-    }
+
+
 </style>
 <header class="page-header">
     <div class="container-fluid">
@@ -85,7 +119,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-<script src="~/Content/css/datepicker/js/datepicker.js"></script>
+
+
+
+@*<script src="~/Content/css/datepicker/js/datepicker.js"></script>*@
 
 <input value="@Model.TotalHouseCount" type="hidden" id="tot_house_coll" />
 <input value="@Model.MixedCount" type="hidden" id="mixed_coll" />
@@ -101,7 +138,7 @@
 <input type="hidden" id="txt_fdate" class="datepicker form-control form-control-sm" type="text" />
 
 <section class="dashboard-counts no-padding-bottom">
-    <div class="container-fluid">
+    <div class="container-fluid" id="realTimeContents">
         <br />
         <div class="row w-100">
             <div class="col col-xs-12" onclick="location.href = '/Attendence/MenuIndex';" style="cursor:pointer">
@@ -175,7 +212,7 @@
                             </i>
                         </div>
                     </div>
-                    <div class="text text-center mt-3"><h4 class="satana_feedback"style="font-weight: 400!important;">Cleanliness Complaint</h4></div>
+                    <div class="text text-center mt-3"><h4 class="satana_feedback" style="font-weight: 400!important;">Cleanliness Complaint</h4></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">स्वच्छ  तक्रार</h4></div>*@
                     <div class="text text-center mt-2"><h1 style="font-weight: 400!important;color:#ffc36d">@Model.TotalComplaint</h1></div>
                 </div>
@@ -207,62 +244,62 @@
 <section class="dashboard-counts no-padding-bottom">
     <div class="container-fluid">
         @*<div class="row  has-shadow" style="padding:0px 15px;background-color:#fff;">
-            <div class="col-lg-12">
-                <div class="bar-chart-example card">
-                    <div class="card-header d-flex align-items-center">
-                        <h3 class="h4">Household Collection</h3>
+                <div class="col-lg-12">
+                    <div class="bar-chart-example card">
+                        <div class="card-header d-flex align-items-center">
+                            <h3 class="h4">Household Collection</h3>
 
-                    </div>
-                    <div class="card-body">
-                        <div style="position:relative ;height: 200px; width: 100%;">
-                            <div style="position:relative;top: 100%;z-index: 1; background-color:#fff;height:12px;width:60px;padding-top:10px">
+                        </div>
+                        <div class="card-body">
+                            <div style="position:relative ;height: 200px; width: 100%;">
+                                <div style="position:relative;top: 100%;z-index: 1; background-color:#fff;height:12px;width:60px;padding-top:10px">
 
-                            </div>
-                            <div id="chartContainer" style="height: 200px; width: 100%;position:absolute">
+                                </div>
+                                <div id="chartContainer" style="height: 200px; width: 100%;position:absolute">
+                                </div>
+
                             </div>
 
                         </div>
-
                     </div>
                 </div>
-            </div>
-        </div>*@
+            </div>*@
         @*<div class="row  has-shadow" style="padding:0px 15px;background-color:#fff;margin-top: 25px;">
-            <div class="col-lg-12">
-                <div class="bar-chart-example card">
-                    <div class="card-header d-flex align-items-center">
-                        <h3 class="h4">Target Achieved </h3>
-                    </div>
-                    <div class="card-body">
-                        <div style="position:relative ;height: 200px; width: 100%;">
-                            <div style="position:relative;top: 100%;z-index: 1; background-color:#fff;height:12px;width:60px;padding-top:10px">
+                <div class="col-lg-12">
+                    <div class="bar-chart-example card">
+                        <div class="card-header d-flex align-items-center">
+                            <h3 class="h4">Target Achieved </h3>
+                        </div>
+                        <div class="card-body">
+                            <div style="position:relative ;height: 200px; width: 100%;">
+                                <div style="position:relative;top: 100%;z-index: 1; background-color:#fff;height:12px;width:60px;padding-top:10px">
 
-                            </div>
-                            <div id="chartContainerTarget" style="height: 200px; width: 100%;position:absolute">
+                                </div>
+                                <div id="chartContainerTarget" style="height: 200px; width: 100%;position:absolute">
+                                </div>
+
                             </div>
 
                         </div>
-
                     </div>
                 </div>
-            </div>
-        </div>*@
+            </div>*@
         @*<ul class="nav nav-tabs" role="tablist" style="border-bottom: none;">
-            <li class="nav-item">
-                <a class="tabid nav-link active" data-toggle="tab" href="#housetotal">Household Collection Target</a>
-            </li>
-            <li class="nav-item" style="padding-left: 3px;">
-                <a class="tabid nav-link" data-toggle="tab" href="#houseward">Ward / Prabhag Wise Collection</a>
-            </li>
-            <li class="nav-item" style="padding-left: 3px;">
-                <a class="tabid nav-link" data-toggle="tab" href="#housearea">Area Wise Collection</a>
-            </li>
-        </ul>*@
+                <li class="nav-item">
+                    <a class="tabid nav-link active" data-toggle="tab" href="#housetotal">Household Collection Target</a>
+                </li>
+                <li class="nav-item" style="padding-left: 3px;">
+                    <a class="tabid nav-link" data-toggle="tab" href="#houseward">Ward / Prabhag Wise Collection</a>
+                </li>
+                <li class="nav-item" style="padding-left: 3px;">
+                    <a class="tabid nav-link" data-toggle="tab" href="#housearea">Area Wise Collection</a>
+                </li>
+            </ul>*@
 
         <div class="row  has-shadow" style="padding:0px 15px;background-color:#fff">
-      
+
             <div class="col-lg-12 tab-content">
-                <div  id="housetotal" class="bar-chart-example card tab-pane active">
+                <div id="housetotal" class="bar-chart-example card tab-pane active">
                     <div class="card-header d-flex align-items-center">
                         <h3 class="h4">Household Collection Target</h3>
                     </div>
@@ -316,8 +353,9 @@
                 <div class="bar-chart-example card">
                     <div class="card-header d-flex align-items-center">
                         @*<h3 class="h4" style="width:50%">वर्गीकरणाचे प्रकार</h3><span style="font-size:14px;font-weight:700;width:50%;text-align:right">एकुण घर संकलन
-: @Model.TotalHouseCount</span>*@
-                        <h3 class="h4" style="width:35%"> Segregation Types</h3><span style="font-size:14px;font-weight:700;width:65%;text-align:right">Total Household Collection
+                            : @Model.TotalHouseCount</span>*@
+                        <h3 class="h4" style="width:35%"> Segregation Types</h3><span style="font-size:14px;font-weight:700;width:65%;text-align:right">
+                            Total Household Collection
                             : @Model.TotalHouseCount
                         </span>
                     </div>
@@ -367,70 +405,83 @@
 
 <section class="dashboard-counts no-padding-bottom" style="padding:0px;">
 
-    <div class="container-fluid" >
-            <br>
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    @*<a class="tabid nav-link active" data-toggle="tab" href="#home"> उपस्थिती तपशील</a>*@
-                    <a class="tabid nav-link active" data-toggle="tab" href="#home" > Attendance Details</a>
-                </li>
-              <li class="nav-item">
-                    @*<a class="tabid nav-link" data-toggle="tab" href="#menu1" >घरांचे नकाशावरील स्थान</a>*@
-                    @*<a class="tabid nav-link" data-toggle="tab" href="#menu1" >House On map Location</a>*@
-                </li>
-            </ul>
-   
-               
-
-                <!-- Tab panes -->
-                <div class="tab-content row bg-white has-shadow" style="background-color#fff">
-                    <div id="home" class="container tab-pane active" onload="myMap()">
-                        <div  class="row bg-white" style="position:relative; height:680px;padding-top:15px;">
-                            <p id="wait" style="display:none;position:absolute;top:35%;left:50%;">
-                                <img class="rotate_img" src="~/Content/images/img/marker24.png">
-                            </p>
-
-                        
-                     
-                                <div class="col-sm-11">
-                                    @*<h3>उपस्थिती तपशील </h3>*@
-                                    <h3>Attendance Details</h3>
-                                    <input type="hidden" value="@ViewBag.lat" id="deflat" />
-                                    <input type="hidden" value="@ViewBag.lang" id="deflang" />
-                                </div>
-                                <div class="col-sm-1"><span><input type="button" style="margin-bottom:10px" class="btn btn-success btn-sm" id="refresh" value="Show" /></span></div>
-                      
+    <div class="container-fluid">
+        <br>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                @*<a class="tabid nav-link active" data-toggle="tab" href="#home"> उपस्थिती तपशील</a>*@
+                <a class="tabid nav-link active" data-toggle="tab" href="#home"> Attendance Details</a>
+            </li>
+            <li class="nav-item">
+                @*<a class="tabid nav-link" data-toggle="tab" href="#menu1" >घरांचे नकाशावरील स्थान</a>*@
+                @*<a class="tabid nav-link" data-toggle="tab" href="#menu1" >House On map Location</a>*@
+            </li>
+        </ul>
 
 
-                            <div class="col-12 bg-white has-shadow" id="googleMap" style="width:1200px; height:600px;">
-                            </div>
-                        </div>
-                   
 
-                        
+        <!-- Tab panes -->
+        <div class="tab-content row bg-white has-shadow" style="background-color:#fff">
+            <div id="home" class="container tab-pane active" onload="myMap()">
+                <div class="row bg-white" style="position:relative;;padding-top:15px;">
+                    <p id="wait" style="display:none;position:absolute;top:35%;left:50%;">
+                        <img class="rotate_img" src="~/Content/images/img/marker24.png">
+                    </p>
+
+                    <div class="col-sm-1"><span><input type="button" style="margin-bottom:10px;margin-left: 684%;" class="btn btn-success btn-sm" id="refresh" value="Show" /></span></div>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="tab-content row bg-white has-shadow" id="showmap" style="background-color:#fff">
+            <div id="home" class="container tab-pane active" onload="myMap()">
+                <div class="row bg-white" style="position:relative;;padding-top:15px;">
+                    <p id="wait" style="display: none; position: absolute; height: 680px; top: 35%; left: 50%;">
+                        <img class="rotate_img" src="~/Content/images/img/marker24.png">
+                    </p>
+
+
+
+                    <div class="col-sm-11">
+                        @*<h3>उपस्थिती तपशील </h3>*@
+                        <h3>Attendance Details</h3>
+                        <input type="hidden" value="@ViewBag.lat" id="deflat" />
+                        <input type="hidden" value="@ViewBag.lang" id="deflang" />
                     </div>
-                    
-                    <div id="menu1" class="container tab-pane fade" onload="myMap3()">
-                        <div  class="row bg-white" style="position:relative; height:680px;padding-top:15px;">
-                            <p id="waithouse" style="display:none;position:absolute;top:35%;left:50%;">
-                                <img class="rotate_img" src="~/Content/images/img/marker24.png">
-                            </p>                         
-                                <div class="col-sm-11">
-                                    @*<h3>घरांचे नकाशावरील स्थान</h3>*@
-                                    <h3>House On map Location</h3>
-                                    <input type="hidden" value="20.1001975" id="deflathouse" />
-                                    <input type="hidden" value="79.1312684" id="deflanghouse" />
-                                </div>
-                                <div class="col-sm-1"><span><input type="button" style="margin-bottom:10px" class="btn btn-success btn-sm" id="refresh2" value="Show" /></span></div>
-                           
-                            <div class="col-12 bg-white has-shadow" id="googleMapHouse" style="width:1200px; height:600px;">
-                            </div>
-                        </div>
-                     
+                    <div class="col-12 bg-white has-shadow" id="googleMap" style="width:1200px; height:600px;">
                     </div>
                 </div>
-    
+
+
+
+            </div>
+            <div id="menu1" class="container tab-pane fade" onload="myMap3()">
+                <div class="row bg-white" style="position:relative; height:680px;padding-top:15px;">
+                    <p id="waithouse" style="display:none;position:absolute;top:35%;left:50%;">
+                        <img class="rotate_img" src="~/Content/images/img/marker24.png">
+                    </p>
+                    <div class="col-sm-11">
+                        @*<h3>घरांचे नकाशावरील स्थान</h3>*@
+                        <h3>House On map Location</h3>
+                        <input type="hidden" value="20.1001975" id="deflathouse" />
+                        <input type="hidden" value="79.1312684" id="deflanghouse" />
+                    </div>
+                    <div class="col-sm-1"><span><input type="button" style="margin-bottom:10px" class="btn btn-success btn-sm" id="refresh2" value="Show" /></span></div>
+
+                    <div class="col-12 bg-white has-shadow" id="googleMapHouse" style="width:1200px; height:600px;">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </section>
 <section class="dashboard-counts no-padding-bottom"></section>
@@ -439,6 +490,3 @@
 <!-- Dashboard Header Section    -->
 <script src="~/Content/Custom/HomeIndex.js"></script>
 
-<script type="text/javascript">
-        //setInterval('window.location.reload()', 60000);
-</script>
