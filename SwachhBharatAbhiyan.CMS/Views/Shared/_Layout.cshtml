@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="/Content/images/img/sba.png" />
     <link href="~/Content/css/alertify/alertify.core.css" rel="stylesheet" />
     <link href="~/Content/css/alertify/alertify.default.css" rel="stylesheet" />
+   
 
 </head>
 
@@ -23,7 +24,7 @@
 <body>
     <div class="page">
         <!-- Main Navbar-->
-        <header class="header">
+        <header class="fa-header">
             <nav class="navbar">
                 <!-- Search Box-->
                 <div class="search-box">
@@ -707,12 +708,16 @@
         }
 
 
-      
+        $('#lightboxFrame')[0].contentWindow.print();
     </script>
 
    
 
     <script src="~/Content/theme-assets/js/icons_load.js"></script>
     @RenderSection("scripts", required: false)
+
+
+
+
 </body>
 </html>
