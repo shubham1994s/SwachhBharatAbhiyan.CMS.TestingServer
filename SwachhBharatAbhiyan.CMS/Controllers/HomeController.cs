@@ -56,7 +56,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 return Redirect("/Account/Login");
         }
 
-        public ActionResult Contact()
+        public ActionResult ContactUs()
         {
             if (SessionHandler.Current.AppId != 0)
             {
@@ -67,6 +67,39 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 return Redirect("/Account/Login");
 
         }
+        public ActionResult Help()
+        {
+            return View();
+        }
+        public ActionResult WebsitePolicies()
+        {
+            return View();
+        }
+        public ActionResult Notice_Disclosures()
+        {
+            return View();
+        }
+        public ActionResult Mechanism()
+        {
+            return View();
+        }
+        public ActionResult Responsibility_Authority()
+        {
+            return View();
+        }
+        public ActionResult Terms_Conditions()
+        {
+            return View();
+        }
+
+        public ActionResult Validation_TestingProcess()
+        {
+            return View();
+        }
+
+
+
+
 
         public ActionResult DashBoard()
         {

@@ -1047,6 +1047,7 @@
     <Content Include="Images\052120180915_1a70.jpg" />
     <Content Include="Images\35x59.png" />
     <Content Include="Images\add_image_square.png" />
+    <Content Include="Images\banner8.jpg" />
     <Content Include="Images\default.png" />
     <Content Include="Images\default1.png" />
     <Content Include="Images\default2.png" />
@@ -1145,7 +1146,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -1331,6 +1332,14 @@
     <Content Include="Views\HouseMaster\SaveDryWet.cshtml" />
     <Content Include="Views\HouseMaster\SaveBundelWetWaste.cshtml" />
     <Content Include="Views\Footer\Help.cshtml" />
+    <Content Include="Views\Footer\Contactus.cshtml" />
+    <Content Include="Views\Home\Help.cshtml" />
+    <Content Include="Views\Home\WebsitePolicies.cshtml" />
+    <Content Include="Views\Home\Notice_Disclosures.cshtml" />
+    <Content Include="Views\Home\Validation_TestingProcess.cshtml" />
+    <Content Include="Views\Home\Mechanism.cshtml" />
+    <Content Include="Views\Home\Responsibility_Authority.cshtml" />
+    <Content Include="Views\Home\Terms_Conditions.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
