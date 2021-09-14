@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="/Content/images/img/sba.png" />
     <link href="~/Content/css/alertify/alertify.core.css" rel="stylesheet" />
     <link href="~/Content/css/alertify/alertify.default.css" rel="stylesheet" />
+   
 
 </head>
 
@@ -23,7 +24,7 @@
 <body>
     <div class="page">
         <!-- Main Navbar-->
-        <header class="header">
+        <header class="fa-header">
             <nav class="navbar">
                 <!-- Search Box-->
                 <div class="search-box">
@@ -343,12 +344,12 @@
                             <div class="col-sm-6">
                                 <p>Appynitty &copy; 2017-2019</p>
                             </div>
-                            <div style=" position: absolute; right: 0%;margin-Right:5%">
-                               
-                                    <a href="/Footer/Help" class="mx-4 p-3">|Help|</a>
-                                  <a href="/Footer/Help" class="mx-4">|Contact Us|</a>
-                                    <a href="/Footer/Help" class="mx-4">|Feed Back|</a>
-                                
+                            <div style=" position: absolute; right: 0%;margin-Right:10%">
+                                <a href="">Last reviewed and updated on 14 Sep, 2021 </a>
+                                <a href="/Footer/Help" class="mx-4 p-3">|Help|</a>
+                                <a href="/Footer/Help" class="mx-4">|Contact Us|</a>
+                                <a href="/Footer/Help" class="mx-4">|Feed Back|</a>
+
                             </div>
                             <div class="col-sm-6 text-right">
                                 <p>@*Design by <a href="https://bootstrapious.com/admin-templates" class="external">Bootstrapious</a>*@</p>
@@ -700,12 +701,16 @@
         }
 
 
-      
+        $('#lightboxFrame')[0].contentWindow.print();
     </script>
 
    
 
     <script src="~/Content/theme-assets/js/icons_load.js"></script>
     @RenderSection("scripts", required: false)
+
+
+
+
 </body>
 </html>
