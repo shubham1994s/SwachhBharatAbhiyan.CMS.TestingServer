@@ -55,6 +55,7 @@ namespace SwachBharat.CMS.Dal.DataContexts
         public virtual DbSet<HouseMaster> HouseMasters { get; set; }
         public virtual DbSet<SS_1_4_ANSWER> SS_1_4_ANSWER { get; set; }
         public virtual DbSet<UserMaster> UserMasters { get; set; }
+        public virtual DbSet<TblFeedback> TblFeedbacks { get; set; }
     
         public virtual ObjectResult<GetAttendenceDetailsTotal_Result> GetAttendenceDetailsTotal(Nullable<int> userId, Nullable<int> year, Nullable<int> month)
         {

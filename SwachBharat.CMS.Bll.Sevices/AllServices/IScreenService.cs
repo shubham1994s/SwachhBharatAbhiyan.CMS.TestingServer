@@ -52,6 +52,7 @@ namespace SwachBharat.CMS.Bll.Services
         SBAAttendenceSettingsGridRow GetAttendenceEmployeeById(int teamId);
         void DeleteEmployeeDetails(int teamId);
         void SaveEmployeeDetails(EmployeeDetailsVM employee);
+        void SaveFeedDetails(FeedBackVM feed);
 
         void SaveAttendenceSettingsDetail(SBAAttendenceSettingsGridRow atten);
         ComplaintVM GetCompalint(int teamId);

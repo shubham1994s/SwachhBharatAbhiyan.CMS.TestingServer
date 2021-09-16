@@ -58,6 +58,7 @@
     <Compile Include="ChildModel\Model\DumpYardDetailsVM.cs" />
     <Compile Include="ChildModel\Model\EmployeeDetailsVM.cs" />
     <Compile Include="ChildModel\Model\EmployeeHouseCollectionType.cs" />
+    <Compile Include="ChildModel\Model\FeedBackVM.cs" />
     <Compile Include="ChildModel\Model\GarbageCollectionVM.cs" />
     <Compile Include="ChildModel\Model\GarbagePointDetailsVM.cs" />
     <Compile Include="ChildModel\Model\HouseScanifyEmployeeDetailsVM.cs" />

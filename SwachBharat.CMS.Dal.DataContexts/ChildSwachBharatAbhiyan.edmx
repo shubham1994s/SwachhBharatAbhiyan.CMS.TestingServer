@@ -288,6 +288,17 @@ warning 6002: The table/view 'LIVEDevSwachhBharatNagpur.dbo.SS_1.4_QUESTION' doe
           <Property Name="INSERT_ID" Type="int" />
           <Property Name="INSERT_DATE" Type="datetime" />
         </EntityType>
+        <EntityType Name="TblFeedback">
+          <Key>
+            <PropertyRef Name="Feedbackid" />
+          </Key>
+          <Property Name="Feedbackid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="ContactNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="1000" />
+          <Property Name="FeedBack" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="TeritoryMaster">
           <Key>
             <PropertyRef Name="Id" />
@@ -518,6 +529,7 @@ warning 6002: The table/view 'LIVEDevSwachhBharatNagpur.dbo.Vw_MsgNotification' 
           <EntitySet Name="QrEmployeeMaster" EntityType="Self.QrEmployeeMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SS_1_4_ANSWER" EntityType="Self.SS_1_4_ANSWER" Schema="dbo" Table="SS_1.4_ANSWER" store:Type="Tables" />
           <EntitySet Name="SS_1_7_ANSWER" EntityType="Self.SS_1_7_ANSWER" Schema="dbo" Table="SS_1.7_ANSWER" store:Type="Tables" />
+          <EntitySet Name="TblFeedback" EntityType="Self.TblFeedback" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TeritoryMaster" EntityType="Self.TeritoryMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserMaster" EntityType="Self.UserMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VehicleType" EntityType="Self.VehicleType" Schema="dbo" store:Type="Tables" />
@@ -690,6 +702,7 @@ warning 6002: The table/view 'LIVEDevSwachhBharatNagpur.dbo.Vw_MsgNotification' 
             <End Role="SS_1_4_ANSWER1" EntitySet="SS_1_4_ANSWER" />
           </AssociationSet>
           <EntitySet Name="UserMasters" EntityType="DevSwachhBharatNagpurModel.UserMaster" />
+          <EntitySet Name="TblFeedbacks" EntityType="DevSwachhBharatNagpurModel.TblFeedback" />
          
         </EntityContainer>
         <ComplexType Name="CurrentAllUserLocation_Result">
@@ -1507,6 +1520,17 @@ warning 6002: The table/view 'LIVEDevSwachhBharatNagpur.dbo.Vw_MsgNotification' 
           <Property Name="isActive" Type="Boolean" />
           <Property Name="gcTarget" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="TblFeedback">
+          <Key>
+            <PropertyRef Name="Feedbackid" />
+          </Key>
+          <Property Name="Feedbackid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FeedBack" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2290,6 +2314,18 @@ warning 6002: The table/view 'LIVEDevSwachhBharatNagpur.dbo.Vw_MsgNotification' 
                 <ScalarProperty Name="userNameMar" ColumnName="userNameMar" />
                 <ScalarProperty Name="userName" ColumnName="userName" />
                 <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblFeedbacks">
+            <EntityTypeMapping TypeName="DevSwachhBharatNagpurModel.TblFeedback">
+              <MappingFragment StoreEntitySet="TblFeedback">
+                <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Feedbackid" ColumnName="Feedbackid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

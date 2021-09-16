@@ -660,7 +660,23 @@ namespace SwachBharat.CMS.Bll.Services
             }
         }
 
-     
+
+        public void SaveFeedDetails(FeedBackVM feed)
+        {
+            try
+            {
+                using (var db = new DevChildSwachhBharatNagpurEntities(AppID))
+                {             
+                        var type = FillFeedBackDataModel(feed);
+                        db.TblFeedbacks.Add(type);
+                        db.SaveChanges();              
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public void SaveAttendenceSettingsDetail(SBAAttendenceSettingsGridRow data)
         {
 
@@ -1766,6 +1782,18 @@ namespace SwachBharat.CMS.Bll.Services
             model.bloodGroup = data.bloodGroup;
             model.isActive = data.isActive;
             model.gcTarget = data.gcTarget;
+            return model;
+        }
+
+        private TblFeedback FillFeedBackDataModel(FeedBackVM data)
+        {
+            TblFeedback model = new TblFeedback();
+           // model.userId = data.userId;
+            model.Name = data.Name;
+            model.Address = data.Address;
+            model.ContactNo = data.ContactNo;
+            model.Email = data.Email;
+            model.FeedBack = data.FeedBack;
             return model;
         }
 

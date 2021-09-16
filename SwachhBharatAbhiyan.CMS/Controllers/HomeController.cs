@@ -142,5 +142,91 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+
+        public ActionResult FeedBack(FeedBackVM feed)
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                
+                return View(feed);
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
+        public ActionResult MenuFeedBack(FeedBackVM feed)
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                return View(feed);
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+     
+       
+        [HttpPost]
+        public ActionResult MenuFeedBackPreview(FeedBackVM Feed)
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                TempData["Name"] = Feed.Name;
+                TempData["Address"] = Feed.Address;
+                TempData["ContactNo"] = Feed.ContactNo;
+                TempData["Email"] = Feed.Email;
+                TempData["FeedBack"] = Feed.FeedBack;
+                TempData.Keep("Name");
+                TempData.Keep("Address");
+                TempData.Keep("ContactNo");
+                TempData.Keep("Email");
+                TempData.Keep("FeedBack");
+                return View(Feed);
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+        [HttpPost]
+        public ActionResult AddFeedBack(FeedBackVM feed)
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                feed.Name = TempData["Name"].ToString();
+                feed.Address = TempData["Address"].ToString();
+                feed.ContactNo = TempData["ContactNo"].ToString();
+                feed.Email = TempData["Email"].ToString();
+                feed.FeedBack = TempData["FeedBack"].ToString();
+                childRepository.SaveFeedback(feed);              
+                return Redirect("MenuFeedBack");
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
+
+        public ActionResult ScreenReader()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+
+                return View();
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
+
+        public ActionResult MenuScreenReader()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+
+                return View();
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+
     }
+
+
 }

@@ -1062,6 +1062,7 @@
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="Scripts\jquery.ebcaptcha.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -1331,6 +1332,12 @@
     <Content Include="Views\HouseMaster\SaveDryWet.cshtml" />
     <Content Include="Views\HouseMaster\SaveBundelWetWaste.cshtml" />
     <Content Include="Views\Footer\Help.cshtml" />
+    <Content Include="Views\Home\FeedBack.cshtml" />
+    <Content Include="Views\Home\MenuFeedback.cshtml" />
+    <Content Include="Views\Home\MenuFeedBackPreview.cshtml" />
+    <Content Include="Views\Home\ScreenRecoder.cshtml" />
+    <Content Include="Views\Home\ScreenReader.cshtml" />
+    <Content Include="Views\Home\MenuScreenReader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

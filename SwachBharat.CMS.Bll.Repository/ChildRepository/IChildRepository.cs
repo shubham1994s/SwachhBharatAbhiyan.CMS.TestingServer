@@ -59,6 +59,8 @@ namespace SwachBharat.CMS.Bll.Repository.ChildRepository
         void DeleteEmployee(int teamId);
         void SaveEmployee(EmployeeDetailsVM employee);
 
+        void SaveFeedback(FeedBackVM feed);
+
         void SaveAttendenceSettingsDetail(SBAAttendenceSettingsGridRow atten);
 
         ComplaintVM GetComplaint(int teamId);

@@ -181,8 +181,12 @@ namespace SwachBharat.CMS.Bll.Repository.ChildRepository
         {
             screenService.SaveEmployeeDetails(employee);
         }
-
-      public  void SaveAttendenceSettingsDetail(SBAAttendenceSettingsGridRow atten)
+        public void SaveFeedback(FeedBackVM feed)
+        {
+            screenService.SaveFeedDetails(feed);
+        }
+     
+        public  void SaveAttendenceSettingsDetail(SBAAttendenceSettingsGridRow atten)
         {
             screenService.SaveAttendenceSettingsDetail(atten);
         }
