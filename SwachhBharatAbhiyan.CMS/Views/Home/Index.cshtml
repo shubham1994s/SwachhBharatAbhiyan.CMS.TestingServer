@@ -61,8 +61,8 @@
     }
 
     .tabid {
-        color: #999;
-        background-color: #fff;
+        color: #000;
+        background-color: #6be6c7;
     }
 
         .tabid:hover {
@@ -80,7 +80,7 @@
     }
 </style>
 
-<style type="text/css">
+@*<style type="text/css">
              .highlighted
              {
                     background-color: yellow;
@@ -107,7 +107,165 @@
     }
 
 
-</style>
+
+
+    form {
+        position: relative;
+        margin: 20px auto;
+        width: 300px;
+    }
+
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.8);
+    }
+
+    .submit__generated {
+        display: inline-block;
+    }
+
+        .submit__generated span {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            vertical-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        .submit__generated.valid:after, .submit__generated.unvalid:after {
+            font-family: FontAwesome;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+        .submit__generated.valid:after {
+            content: "";
+            color: #2ecc71;
+        }
+
+        .submit__generated.valid .submit__input {
+            border: 1px solid #2ecc71;
+            color: #2ecc71 !important;
+        }
+
+        .submit__generated.unvalid:after {
+            content: "";
+            color: #e74c3c;
+        }
+
+        .submit__generated.unvalid .submit__input {
+            border: 1px solid #e74c3c;
+            color: #e74c3c;
+        }
+
+        .submit__generated .submit__input {
+            position: relative;
+            outline: 0;
+            height: 35px;
+            width: 35px;
+            border-radius: 4px;
+            border: 1px solid #42A0DD;
+            color: #42A0DD;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            top: -2px;
+        }
+
+    i.fa-refresh {
+        margin: 4px 0 0px 5px;
+        padding: 5px;
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transform-origin: center center;
+        transition: transform 0.2s ease-out, color 0.2s ease-out;
+    }
+
+        i.fa-refresh:hover {
+            color: rgba(0, 0, 0, 0.4);
+            transform: rotate(180deg);
+        }
+
+    span.submit__error,
+    span.submit__error--empty {
+        color: #e74c3c;
+        position: absolute;
+        margin-top: 0px;
+        margin-left: 100px;
+    }
+
+    .submit {
+        display: block;
+        margin: 50px 0;
+        padding: 7px 15px;
+        font-weight: bold;
+        font-size: 16px;
+        color: #fff;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        outline: none;
+        border: 0;
+        background-color: #42A0DD;
+        background-clip: padding-box;
+        border-radius: 3px;
+        box-shadow: 0 4px 0 #2C81BA;
+        opacity: 1;
+        transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    }
+
+        .submit:hover {
+            background-color: #3498db;
+        }
+
+        .submit:active, .submit.enter-press, .submit.overlay {
+            margin: 55px 0 46px 0;
+            box-shadow: none;
+        }
+
+    .submit__overlay {
+        height: 50px;
+        width: 110px;
+        background-color: rgba(255, 255, 255, 0.8);
+        position: absolute;
+        margin-top: -90px;
+        margin-left: -5px;
+    }
+
+    .low-opa {
+        opacity: 0.4;
+    }
+
+    .fadeOut {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    .fadeIn {
+        opacity: 1 !important;
+        transform: translateY(0px) !important;
+    }
+
+    .form-fields,
+    .form-success {
+        transition: all 0.2s ease-out;
+    }
+
+    .form-success {
+        opacity: 0;
+        transform: translateY(-10px);
+        margin-top: 20px;
+    }
+</style>*@
 <header class="page-header">
     <div class="container-fluid">
         <h2 class="no-margin-bottom"> Dashboard </h2>
@@ -136,6 +294,24 @@
 <input value="@Model.WetWeightCount" type="hidden" id="wet_count" />
 
 <input type="hidden" id="txt_fdate" class="datepicker form-control form-control-sm" type="text" />
+@*<form>
+    <label class="submit__control">
+        <h3>Are you human?</h3>
+        <div class="submit__generated">
+
+        </div>
+        <i class="fa fa-refresh"></i>
+        <span class="submit__error hide">Incorrect value</span>
+        <span class="submit__error--empty hide">Required field cannot be left blank</span>
+    </label>
+
+    <input class="submit overlay"
+           type="submit"
+           value="Submit" />
+    <div class="submit__overlay"></div>
+</form>*@
+
+
 
 <section class="dashboard-counts no-padding-bottom">
     <div class="container-fluid" id="realTimeContents">
@@ -154,7 +330,7 @@
                     </div>
                     <div class="text text-center mt-3"><h4 style="font-weight: 400!important;"> Workers Attendance </h4></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">उपस्थिती</h4></div>*@
-                    <div class="text text-center mt-2"><h1 style="font-weight: 400!important;color:#fe9436">@Model.TodayAttandence / @Model.TotalAttandence</h1></div>
+                    <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #833E02">@Model.TodayAttandence / @Model.TotalAttandence</h1></div>
                 </div>
             </div>
             <div class="col col-xs-12" onclick="location.href = '/GarbageCollection/MenuHouseGarbageIndex';" style="cursor:pointer">
@@ -168,7 +344,7 @@
                     </div>
                     <div class="text text-center mt-3"><h4 style="font-weight: 400!important;"> Household Collection</h4></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">घर संकलन</h4></div>*@
-                    <div class="text text-center mt-2"><h1 style="font-weight: 400!important;color:#ff7676">@Model.HouseCollection</h1></div>
+                    <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #B30000">@Model.HouseCollection</h1></div>
                 </div>
             </div>
             <div class="col" onclick="location.href = '/GarbageCollection/MenuPointGarbageIndex';" style="cursor:pointer">
@@ -184,7 +360,7 @@
                     <div class="text text-center mt-3"><h4 style="font-weight: 400!important;">GV Point Collection</h4></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">पॉईंट संकलन</h4></div>*@
 
-                    <div class="text text-center mt-2"><h1 style="font-weight: 400!important;color:#54e69d">@Model.PointCollection</h1></div>
+                    <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #0E5D36">@Model.PointCollection</h1></div>
                 </div>
             </div>
             <div class="col col-xs-12" onclick="location.href = '/GarbageCollection/MenuDumpYardIndex';" style="cursor:pointer">
@@ -199,7 +375,7 @@
                     </div>
                     <div class="text text-center mt-3"><h4 style="font-weight: 400!important;"> Dump Yard Trips</h4></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">डंप यार्ड</h4></div>*@
-                    <div class="text text-center mt-2"><h1 style="font-weight: 400!important;color:#54c4d8">@Model.DumpYardCount</h1></div>
+                    <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #175B69">@Model.DumpYardCount</h1></div>
                 </div>
             </div>
             <div class="col col-xs-12 custom_col_hide" onclick="location.href = '/Complaint/MenuIndex';" style="cursor:pointer">
@@ -214,7 +390,7 @@
                     </div>
                     <div class="text text-center mt-3"><h4 class="satana_feedback" style="font-weight: 400!important;">Cleanliness Complaint</h4></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">स्वच्छ  तक्रार</h4></div>*@
-                    <div class="text text-center mt-2"><h1 style="font-weight: 400!important;color:#ffc36d">@Model.TotalComplaint</h1></div>
+                    <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #804A00">@Model.TotalComplaint</h1></div>
                 </div>
             </div>
         </div>
@@ -411,7 +587,7 @@
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 @*<a class="tabid nav-link active" data-toggle="tab" href="#home"> उपस्थिती तपशील</a>*@
-                <a class="tabid nav-link active" data-toggle="tab" href="#home"> Attendance Details</a>
+                <a class="nav-link tabid" data-toggle="tab" href="#home" > Attendance Details</a>
             </li>
             <li class="nav-item">
                 @*<a class="tabid nav-link" data-toggle="tab" href="#menu1" >घरांचे नकाशावरील स्थान</a>*@
@@ -426,14 +602,14 @@
             <div id="home" class="container tab-pane active" onload="myMap()">
                 <div class="row bg-white" style="position:relative;;padding-top:15px;">
                     <p id="wait" style="display:none;position:absolute;top:35%;left:50%;">
-                        <img class="rotate_img" src="~/Content/images/img/marker24.png">
+                        <img class="rotate_img" src="~/Content/images/img/marker24.png"alt="marker">
                     </p>
                    
                     <div class="col-sm-4">
                         <span>Click on show button for view map</span>
                         <span>
-                            <input type="button" style="margin-bottom:10px;margin-left: 50%;" class="btn btn-success btn-sm"
-                                   id="refresh" value="Show" />
+                            <input type="button" style="margin-bottom:10px;margin-left: 50%;" class="btn btn-sm tabid"
+                                   id="refresh" value="Show"  />
                         </span>
                     </div>
 
@@ -450,7 +626,7 @@
             <div id="home" class="container tab-pane active" onload="myMap()">
                 <div class="row bg-white" style="position:relative;;padding-top:15px;">
                     <p id="wait" style="display: none; position: absolute; height: 680px; top: 35%; left: 50%;">
-                        <img class="rotate_img" src="~/Content/images/img/marker24.png">
+                        <img class="rotate_img" src="~/Content/images/img/marker24.png" alt="marker">
                     </p>
 
 
@@ -471,7 +647,7 @@
             <div id="menu1" class="container tab-pane fade" onload="myMap3()">
                 <div class="row bg-white" style="position:relative; height:680px;padding-top:15px;">
                     <p id="waithouse" style="display:none;position:absolute;top:35%;left:50%;">
-                        <img class="rotate_img" src="~/Content/images/img/marker24.png">
+                        <img class="rotate_img" src="~/Content/images/img/marker24.png" alt="marker">
                     </p>
                     <div class="col-sm-11">
                         @*<h3>घरांचे नकाशावरील स्थान</h3>*@
@@ -495,4 +671,149 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6eobSmi6nEV2h0TkRolQ5x6JjShuaHEs&callback=myMap3" type="text/javascript"></script>
 <!-- Dashboard Header Section    -->
 <script src="~/Content/Custom/HomeIndex.js"></script>
+@*<script>
+    var a, b, c,
+        submitContent,
+        captcha,
+        locked,
+        validSubmit = false,
+        timeoutHandle;
 
+    // Generating a simple sum (a + b) to make with a result (c)
+    function generateCaptcha() {
+        a = Math.ceil(Math.random() * 10);
+        b = Math.ceil(Math.random() * 10);
+        c = a + b;
+        submitContent = '<span>' + a + '</span> + <span>' + b + '</span>' +
+            ' = <input class="submit__input" type="text" maxlength="2" size="2" required />';
+        $('.submit__generated').html(submitContent);
+
+        init();
+    }
+
+
+    // Check the value 'c' and the input value.
+    function checkCaptcha() {
+        if (captcha === c) {
+            // Pop the green valid icon
+            $('.submit__generated')
+                .removeClass('unvalid')
+                .addClass('valid');
+            $('.submit').removeClass('overlay');
+            $('.submit__overlay').fadeOut('fast');
+
+            $('.submit__error').addClass('hide');
+            $('.submit__error--empty').addClass('hide');
+            validSubmit = true;
+        }
+        else {
+            if (captcha === '') {
+                $('.submit__error').addClass('hide');
+                $('.submit__error--empty').removeClass('hide');
+            }
+            else {
+                $('.submit__error').removeClass('hide');
+                $('.submit__error--empty').addClass('hide');
+            }
+            // Pop the red unvalid icon
+            $('.submit__generated')
+                .removeClass('valid')
+                .addClass('unvalid');
+            $('.submit').addClass('overlay');
+            $('.submit__overlay').fadeIn('fast');
+            validSubmit = false;
+        }
+        return validSubmit;
+    }
+
+    function unlock() { locked = false; }
+
+
+    // Refresh button click - Reset the captcha
+    $('.submit__control i.fa-refresh').on('click', function () {
+        if (!locked) {
+            locked = true;
+            setTimeout(unlock, 500);
+            generateCaptcha();
+            setTimeout(checkCaptcha, 0);
+        }
+    });
+
+
+    // init the action handlers - mostly useful when 'c' is refreshed
+    function init() {
+        $('form').on('submit', function (e) {
+            e.preventDefault();
+            if ($('.submit__generated').hasClass('valid')) {
+                // var formValues = [];
+                captcha = $('.submit__input').val();
+                if (captcha !== '') {
+                    captcha = Number(captcha);
+                }
+
+                checkCaptcha();
+
+                if (validSubmit === true) {
+                    validSubmit = false;
+                    // Temporary direct 'success' simulation
+                    submitted();
+                }
+            }
+            else {
+                return false;
+            }
+        });
+
+
+        // Captcha input result handler
+        $('.submit__input').on('propertychange change keyup input paste', function () {
+            // Prevent the execution on the first number of the string if it's a 'multiple number string'
+            // (i.e: execution on the '1' of '12')
+            window.clearTimeout(timeoutHandle);
+            timeoutHandle = window.setTimeout(function () {
+                captcha = $('.submit__input').val();
+                if (captcha !== '') {
+                    captcha = Number(captcha);
+                }
+                checkCaptcha();
+            }, 150);
+        });
+
+
+        // Add the ':active' state CSS when 'enter' is pressed
+        $('body')
+            .on('keydown', function (e) {
+                if (e.which === 13) {
+                    if ($('.submit-form').hasClass('overlay')) {
+                        checkCaptcha();
+                    } else {
+                        $('.submit-form').addClass('enter-press');
+                    }
+                }
+            })
+            .on('keyup', function (e) {
+                if (e.which === 13) {
+                    $('.submit-form').removeClass('enter-press');
+                }
+            });
+
+
+        // Refresh button click - Reset the captcha
+        $('.submit-control i.fa-refresh').on('click', function () {
+            if (!locked) {
+                locked = true;
+                setTimeout(unlock, 500);
+                generateCaptcha();
+                setTimeout(checkCaptcha, 0);
+            }
+        });
+
+
+        // Submit white overlay click
+        $('.submit-form-overlay').on('click', function () {
+            checkCaptcha();
+        });
+    }
+
+    generateCaptcha();
+</script>*@
