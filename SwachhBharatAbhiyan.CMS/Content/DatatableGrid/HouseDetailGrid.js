@@ -96,6 +96,7 @@ function SaveQRCode(Id) {
 };
 
 function Search() {
+    debugger;
     var value = ",,," + $("#s").val();//txt_fdate + "," + txt_tdate + "," + UserId + "," + Client + "," + NesEvent + "," + Product + "," + catProduct + "," + 1;
     // alert(value );
     oTable = $('#demoGrid').DataTable();

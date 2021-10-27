@@ -1056,6 +1056,7 @@
     <Content Include="Images\marker24.png" />
     <Content Include="Images\QRcode.png" />
     <Content Include="Images\sataya.png" />
+    <Content Include="Images\vcss.gif" />
     <Content Include="ReportViewerWebForm.aspx" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jqGrid\recapchajs.js" />

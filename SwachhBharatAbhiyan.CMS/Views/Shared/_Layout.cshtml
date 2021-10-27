@@ -56,30 +56,36 @@
             <img src="~/Images/35x59.png" class="navbar-brand" style="width: 35px; height: 59px; margin-left:15px" alt="satya" />
 
             @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>*@
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto py-1" style="color:white">
-                    <li class="hover" title="Skip to main content"> <a href="/home/index/#main">Skip to main content</a></li>
-                    <li class="nav-item mx-2 hover" title="Increase font size">
-                        <button role="button" id="increasetext" onclick="inc()" style="background: transparent; border: 1px solid white; color: black;">
-                            <span style="color:white">A+</span>
-                        </button>
-                    </li>
+            <span class="navbar-toggler-icon"></span>
+        </button>*@
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto py-1" style="color: white;">
+                <li class="hover mx-2" title="Skip to main content"> <a href="/home/index/#main">Skip to main content</a></li>
 
-                    <li class="nav-item mx-2 hover" title="Resize font size">
-                        <button role="button" id="resettext" onclick="reset()" style="background: transparent; border: 1px solid white; color: black;">
-                            <span style="color:white">A</span>
-                        </button>
-                    </li>
-                    <li class="nav-item mx-2 mr-5 hover" title="Decrease font size">
-                        <button role="button" id="decreasetext" onclick="dec()" style="background: transparent; border: 1px solid white; color: black;">
-                            <span style="color:white">A-</span>
-                        </button>
-                    </li>
 
-                </ul>
-            </div>
+                <li class="nav-item mx-2 hover" title="Increase font size">
+                    <button role="button" id="increasetext" onclick="inc()" style="background: transparent; border: 1px solid white; color: black;">
+                        <span style="color:white">A+</span>
+                    </button>
+                </li>
+
+                <li class="nav-item mx-2 hover" title="Resize font size">
+                    <button role="button" id="resettext" onclick="reset()" style="background: transparent; border: 1px solid white; color: black;">
+                        <span style="color:white">A</span>
+                    </button>
+                </li>
+                <li class="nav-item mx-2  hover" title="Decrease font size">
+                    <button role="button" id="decreasetext" onclick="dec()" style="background: transparent; border: 1px solid white; color: black;">
+                        <span style="color:white">A-</span>
+                    </button>
+                </li>
+                <li class="nav-item mx-2 mr-5 hover"><a href="/Home/ScreenReader" title="Screen Reader Access"> Screen Reader Access </a></li>
+            </ul>
+
+
+
+        </div>
+            
         </nav>
         <nav class="navbar">
 
@@ -171,10 +177,7 @@
                                     <i> </i>
                                     @*उपस्थिती*@ Attendance > Workers Attendance Details
                                 </a>
-                            </li>
-
-                            <li><a href="/Attendence/MenuIndex" class="hover" title="Attendance > Workers Attendance Details  > Household Collection">Attendance > Workers Attendance Details</a></li>
-                           
+                         
                         </ul>
                     </li>
                  
@@ -289,7 +292,7 @@
                             <li><a href="/Employee/MenuIndex" class="hover" title="Registration Forms > Employee Registration">Registration Forms > Employee Registration  </a></li>
                             <li class="ctpt_reg"><a href="/Sauchalay/SauchalayRegistrationMenuIndex" class="hover" title="Registration Forms > CT / PT Registration ">Registration Forms > CT / PT Registration  </a></li>
                         </ul>
-                    <li>
+                    
 
                     <li id="report_menu">
                         <a href="#exampledropdownDropdown4" aria-expanded="false" data-toggle="collapse" class="hover" title="Reports">
@@ -324,7 +327,7 @@
                             <li><a href="/Report/Daywise" class="hover" title="Day-wise Collection Summary">Day-wise Collection Summary </a></li>
                             <li><a href="/Report/EmployeeCollectionAverage" class="hover" title="Employee Collection Average">Employee Collection Average</a></li>
                         </ul>
-                    <li>
+                    
                     <li>
                         <a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse" class="hover" title="Master Forms">
                             <i class="svg_master"> </i>
@@ -403,17 +406,7 @@
 
                 </ul>
                 @*<span class="heading">Extras</span>*@
-                <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-
-                    <div id="menu" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#" >Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#" >Something else here</a>
-                    </div>
-                </div>
+              
             </nav>
             <div class="content-inner">
 
@@ -434,7 +427,8 @@
 
                         <a href="/Home/Mechanism" class="mx-2">Mechanism</a>|
                         <a href="/Home/Responsibility_Authority" class="mx-2">Responsibility and Authority </a>|
-                        <a href="/Home/Terms_Conditions" class="mx-2">Terms & Conditions</a>
+                        <a href="/Home/Terms_Conditions" class="mx-2">Terms & Conditions</a>|
+                        <a href="/Home/FeedBack" class="mx-2">FeedBack</a>
                     </div>
                     <div class="container-fluid">
 
@@ -442,8 +436,12 @@
                             <div class="col-sm-6">
                                 <p class="my-2">Copyright © 2017-2022.<br /> This is the official website of Garbage Collection Van All Rights Reserved.</p>
                             </div>
-
-
+                            <div class="col-sm-6">
+                                <a href="https://jigsaw.w3.org/css-validator/" style="color: #fff; padding: 5px; margin-left:3%;color:blue;text-align:right;position:relative;right:-70%" target="blank"><img src="~/Images/vcss.gif" height="45px" alt="link" /></a>
+                            </div>
+                            <div style="position absolute;right 0%;margin-left: 35%;margin-top: -1%;">
+                                <a href="">Last reviewed and updated on 14 Sep, 2021 </a>
+                            </div>
                         </div>
                     </div>
                 </footer>
@@ -531,6 +529,18 @@
             //if ($("#asdf").text() == "bhadravati@appynitty.com!") {
             //    $("#onmap").css("display", "none")
             //}satana_feedback
+
+
+            //$(document).on('click', '.searchButtonClickText_h', function (event) {
+
+            //    $(".highlighted").removeClass("highlighted").removeClass("match");
+            //    if (!searchAndHighlight($('.textSearchvalue_h').val())) {
+            //        alert("No results found");
+            //    }
+
+
+            //});
+
             if ($("#asdf").text() == "namratas@appynitty.com!") {
                 $("#complaint_menu").css("display", "block");
                 $("#citizen_app").css("display", "none");
