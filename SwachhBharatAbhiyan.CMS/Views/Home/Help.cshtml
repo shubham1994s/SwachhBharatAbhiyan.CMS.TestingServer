@@ -4,11 +4,39 @@
 <head>
     @{
         //ViewBag.Title = "उपस्थिती तपशील";
-        ViewBag.Title = "Home/Help";
+        ViewBag.Title = "Home / Help";
     }
 </head>
+<style>
+    ol {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+        ol li {
+            font-weight: bold;
+        }
+
+    li > p {
+        font-weight: normal;
+    }
+
+    p {
+        text-align: justify;
+    }
+</style>
 <body>
-    <div style="margin-top:3%;margin-left:4%;margin-bottom:6%"  class="table-responsive">
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="bcumh" href="/Home/Index">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Help</li>
+            </ol>
+        </nav>
+    </div>
+    <div style="margin-top:3%;margin-left:4%;margin-bottom:10%" class="table-responsive">
+     
+
         <h2 style="margin-bottom:2%">
             Accessibility Help
         </h2>
@@ -56,7 +84,7 @@
                     </td>
                 </tr>
                 <tr>
-                   
+
                     <td>Excel files</td>
                     <td>
                         <ul>

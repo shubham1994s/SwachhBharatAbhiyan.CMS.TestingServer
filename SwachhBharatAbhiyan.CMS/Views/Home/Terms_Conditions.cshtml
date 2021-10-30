@@ -1,13 +1,19 @@
 ﻿
 @{
-    ViewBag.Title = "Home > Terms & Conditions";
+    ViewBag.Title = "Home / Terms & Conditions";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container ml-3 py-4 pb-5 mb-5" style="overflow:scroll;height:100vh">
-    <h2 class="mb-3"><a href="/Home/Index">Home</a> > Terms & Conditions</h2>
+    @*<h2 class="mb-3"><a href="/Home/Index">Home</a> > Terms & Conditions</h2>*@
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="bcumh" href="/Home/Index">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Terms & Conditions</li>
+        </ol>
+    </nav>
 
-    <p>These terms of use describe your rights and responsibilities as a user of BIG V TELECOM PRIVATE LIMITED. To have a BIG V TELECOM PRIVATE LIMITED website account, you must accept these terms of use.</p>
+    <p style="padding-top:15px;">These terms of use describe your rights and responsibilities as a user of BIG V TELECOM PRIVATE LIMITED. To have a BIG V TELECOM PRIVATE LIMITED website account, you must accept these terms of use.</p>
     <p>
         BIG V TELECOM PRIVATE LIMITED, reserves the right to make changes & delegate the powers to change to BIG V TELECOM PRIVATE LIMITED website and these terms of use at any time. If those changes affect your rights or responsibilities, you will be notified through BIG V TELECOM PRIVATE LIMITED.
     </p>
@@ -23,7 +29,7 @@
         <li>
             Though all efforts have been made to ensure the accuracy and currency of the content on BIG V TELECOM PRIVATE LIMITED website, the same should not be construed as a statement of law or used for any legal purposes.
         </li>
-       
+
     </ul>
-  
+
 </div>

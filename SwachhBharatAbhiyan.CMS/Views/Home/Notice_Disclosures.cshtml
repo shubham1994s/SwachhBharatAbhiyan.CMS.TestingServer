@@ -1,12 +1,26 @@
 ﻿
 @{
-    ViewBag.Title = "Home > Notice and Disclosures";
+    ViewBag.Title = "Home / Notice and Disclosures";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container ml-3 py-4" style="overflow:scroll;height:100vh">
-    <h2 class="mb-3"><a href="/Home/Index">Home</a> > Notice and Disclosures</h2>
+<style>
+   
 
+    p {
+        padding-top:15px;
+        padding-bottom:15px;
+        text-align: justify;
+    }
+</style>
+<div class="container ml-3 py-4" style="overflow:scroll;height:100vh">
+    @*<h2 class="mb-3"><a href="/Home/Index">Home</a> > Notice and Disclosures</h2>*@
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="bcumh" href="/Home/Index">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Notice and Disclosures</li>
+        </ol>
+    </nav>
     <p>
 
         BIG V TELECOM PRIVATE LIMITED will not sell, trade, nor disclose the personally identifiable information of its website users to any unauthorized third parties.

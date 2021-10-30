@@ -1,20 +1,26 @@
 ﻿
 @{
-    ViewBag.Title = "Home > Responsibility and Authority";
+    ViewBag.Title = "Home / Responsibility and Authority";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-
 <div class="container ml-3 py-4 pb-5 mb-5" style="overflow:scroll;height:100vh">
-    <h2 class="mb-3"><a href="/Home/Index">Home</a> > Responsibility and Authority (website management team):</h2>
-
-    <p>Web Information Manager (clause10.1.1)</p>
-    <p>Appointed by the Department, whose role shall be to ensure that there is a
-    proper flow of content to the site and that content quality and user satisfaction 
-    issues are taken care of. To achieve this, he has to coordinate with the various groups within the department.
-    The Web Information Manager should undertake the
-    following activities with regards to the website being maintained by him.</p>
+    @*<h2 class="mb-3"><a href="/Home/Index">Home</a> > Responsibility and Authority (website management team):</h2>*@
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="bcumh" href="/Home/Index">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Responsibility and Authority</li>
+        </ol>
+    </nav>
+    <p style="padding-top:15px;">Web Information Manager (clause10.1.1)</p>
+    <p>
+        Appointed by the Department, whose role shall be to ensure that there is a
+        proper flow of content to the site and that content quality and user satisfaction
+        issues are taken care of. To achieve this, he has to coordinate with the various groups within the department.
+        The Web Information Manager should undertake the
+        following activities with regards to the website being maintained by him.
+    </p>
     <ul>
         <li>
             Formulation of policies concerning management of content on the web through its entire life cycle viz. Provision, Moderation Approval and Archival. Ensuring that all content on the website is always authentic, up-to-date and obsolete information or services removed.

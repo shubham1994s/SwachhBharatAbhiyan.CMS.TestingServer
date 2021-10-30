@@ -3,12 +3,18 @@
 
 @{
     //ViewBag.Title = "कर्मचारी तपशील";
-    ViewBag.Title = "Home > Sceeen Reader Access";
+    ViewBag.Title = "Home / Sceeen Reader Access";
 }
 
 <header class="page-header">
     <div class="container-fluid">
-        <h2 class="no-margin-bottom">Home > Sceeen Reader Access</h2>
+        @*<h2 class="no-margin-bottom">Home > Sceeen Reader Access</h2>*@
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="bcumh" href="/Home/Index">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> Sceeen Reader Access</li>
+            </ol>
+        </nav>
     </div>
 </header>
 
