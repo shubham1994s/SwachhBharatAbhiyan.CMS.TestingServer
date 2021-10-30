@@ -186,11 +186,13 @@
 
                         <!-- Toggle Button--><span id="toggle-btn" class="menu-btn active"><span></span><span></span><span></span></span>
                         @*<input name="text-12" id="text-12" value="" type="text" class="textSearchvalue_h" /> <a href="#" class="searchButtonClickText_h"><label for="text-12">Search</label></a>*@
-                       <label for="search" class="hidden">Search</label>
-                        <input type="text" id="search">
-                       
-                        @*<input type="button" id="button" onclick="doSearch(document.getElementById('search').value, 'yellow')" value="search">*@
-                        <button role="button" id="button" onclick="doSearch(document.getElementById('search').value, 'yellow')">search</button>
+                        <label for="search" class="hidden">Search</label>
+
+                        @*<input name="query" id="query" type="text" size="30" maxlength="30">
+                        <input name="searchit" type="button" value="Search" onClick="highlightSearch()">*@
+                        <input type="text" id="search" onkeyup="doSearchonchage(document.getElementById('search').value, 'transparent')">
+                        <input type="button" id="button" onclick="doSearch(document.getElementById('search').value, 'yellow')" value="search">
+                        <!--<button role="button" id="button" onclick="doSearch(document.getElementById('search').value, 'yellow')">search</button>-->
                         @*<input type="button" id="button" onclick="searchtext(document.getElementById('search').value)" value="search">*@
                     </div>
 
@@ -488,7 +490,7 @@
                 @*<span class="heading">Extras</span>*@
               
             </nav>
-            <div class="content-inner" id="contentbody">
+            <div class="content-inner" id="searchtext">
 
                 @RenderBody()
 
@@ -623,42 +625,47 @@
             $('.hover').tooltip();
         });
 
-        var timesClicked = 0;
+
+        function highlightSearch() {
+            debugger;
+            var text = document.getElementById("query").value;
+            var query = new RegExp("(\\b" + text + "\\b)", "gim");
+            var e = document.getElementById("searchtext").innerHTML;
+            var enew = e.replace(/(<span>|<\/span>)/igm, "");
+            document.getElementById("searchtext").innerHTML = enew;
+            var newe = enew.replace(query, "<span>$1</span>");
+            document.getElementById("searchtext").innerHTML = newe;
+
+        }
+        
         function doSearch(text, backgroundColor) {
-            timesClicked++;
-            if (timesClicked > 1) {
+          
                 if (window.find && window.getSelection) {
                     debugger;
                     document.designMode = "on";
                     var sel = window.getSelection();
                     sel.collapse(document.body, 0);
-
+                    //var enew = e.replace(/(<span>|<\/span>)/igm, "");
+                   // document.getElementById("searchtext").innerHTML = enew;
                     while (window.find(text)) {
                         debugger;
-                        document.execCommand("HiliteColor", false, "transparent");
+                        document.execCommand("HiliteColor", false, backgroundColor);
                         sel.collapseToEnd();
                     }
+                   
                     document.designMode = "off";
                 }
-            }
-            else {
-            if (window.find && window.getSelection) {
-                debugger;
-                document.designMode = "on";
-                var sel = window.getSelection();
-                sel.collapse(document.body, 0);
-                var previous = null;
-                while (window.find(text)) {
-                    debugger;
-                    document.execCommand("HiliteColor", false, backgroundColor);
-                    sel.collapseToEnd();             
-   
-                }           
-                document.designMode = "off";
+        }
+        var timesClicked = 0;
+        function doSearchonchage(text, backgroundColor) {
+            timesClicked++;
+            if (text == "") {
+                location.reload();
             }
 
-            }
         }
+           
+        
 
         //function searchtext(text) {
         //    debugger;
