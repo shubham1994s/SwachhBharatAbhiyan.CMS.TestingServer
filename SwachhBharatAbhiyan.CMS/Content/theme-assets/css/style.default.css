@@ -363,7 +363,7 @@ input {
 * ==========================================================
 */
 nav.side-navbar {
-  background: #f3fdf8;
+ /* background: #f3fdf8;*/
   min-width: 250px;
   max-width: 250px;
   color: #686a76;
@@ -875,12 +875,15 @@ nav.navbar .dropdown-menu h3 {
   nav.navbar .navbar-brand .brand-small {
     display: block !important;
   }
-  nav.navbar .brand-big {
+/*  nav.navbar .brand-big {
     display: none;
-  }
-  nav.navbar .brand-small {
-    display: block;
-  }
+  }*/
+    #GarName {
+        display: none;
+    }
+    nav.navbar .brand-small {
+        display: block;
+    }
   nav.navbar .menu-btn {
     margin-right: 20px;
     font-size: 1.2em;

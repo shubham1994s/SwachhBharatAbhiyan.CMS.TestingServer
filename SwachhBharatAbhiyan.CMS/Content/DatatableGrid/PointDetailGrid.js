@@ -33,7 +33,7 @@
               { "data": "NameMar", "name": "NameMar", "autoWidth": false },
                {
                    "data": "QrCode", "name": "QrCode", "render": function (data, type, full, meta) {
-                       return "<img src=\"" + data + "\" height=\"50\"/>";
+                       return "<img src=\"" + data + "\" height=\"50\"/ class=\" hover\" title=\"Barcode\"/>";
                    }
                }, 
               { "render": function (data, type, full, meta) { return '<input  class="btn btn-link" type="button" onclick="DownloadQRCode(' + full["Id"] + ')" value="Download" />'; } },

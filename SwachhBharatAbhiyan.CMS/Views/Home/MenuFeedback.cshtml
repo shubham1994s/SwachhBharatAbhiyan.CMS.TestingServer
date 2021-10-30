@@ -195,7 +195,7 @@
                 @*@Html.Label("नाव / Name")*@
                 @Html.Label("Name")
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                @Html.TextBoxFor(model => model.Name, new { @id = "txtName", @class = "form-control", style = "font-family:Arial, FontAwesome", onkeyup = "ValidateName();", required = "required" })
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                 <span class="text-danger" id="err_name"></span>
                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -212,8 +212,9 @@
                 @*@Html.Label("पत्ता / Address")*@
                 @Html.Label("Address")
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextAreaFor(model => model.Address, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                @Html.TextAreaFor(model => model.Address, new {@id="address" , @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
                 @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                <span></span>
                 <span class="text-danger" id="err_address"></span>
                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 <span class="help-block with-errors"></span>
@@ -224,7 +225,7 @@
                 @*@Html.Label("मोबाइल / Mobile")*@
                 @Html.Label("Contact No")
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(model => model.ContactNo, new { @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10", required = "required" })
+                @Html.TextBoxFor(model => model.ContactNo, new { @id = "txtContact", @class = "form-control", style = "font-family:Arial, FontAwesome", minlength = "10", maxlength = "10", onkeyup = "ValidateContact();" , required = "required" })
                 @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
                 <span class="text-danger" id="err_mobile"></span>
                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -240,8 +241,9 @@
                 @*@Html.Label("लॉगिन आई डी / Login ID")*@
                 @Html.Label("Email")
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(model => model.Email, new { @class = "form-control",@type = "Email", style = "font-family:Arial, FontAwesome", required = "required" })
+                @Html.TextBoxFor(model => model.Email, new {@id = "txtEmail", @class = "form-control", style = "font-family:Arial, FontAwesome", onkeyup = "ValidateEmail();" , required = "required" })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                <span class="text-danger" id="err_email"></span>
                 <span class="text-danger" id="err_login"></span>
                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 <span class="help-block with-errors"></span>
@@ -252,8 +254,9 @@
                 @*@Html.Label("पासवर्ड / Password")*@
                 @Html.Label("Feedback")
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.TextAreaFor(model => model.FeedBack, new { @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
+                @Html.TextAreaFor(model => model.FeedBack, new {@id="feedback" , @class = "form-control", style = "font-family:Arial, FontAwesome", required = "required" })
                 @Html.ValidationMessageFor(model => model.FeedBack, "", new { @class = "text-danger" })
+                <span class="text-danger" id="err_feedback"></span>
                 <span class="text-danger" id="err_pw"></span>
                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 <span class="help-block with-errors"></span>
@@ -457,4 +460,67 @@
     }
 
     generateCaptcha();
+</script>
+<script type="text/javascript">
+     function ValidateName() {
+        var name = document.getElementById("txtName").value;
+        var lblError = document.getElementById("err_name");
+        lblError.innerHTML = "";
+        var expr = /^[a-zA-Z ]{3,30}$/;
+         if (!expr.test(name)) {
+            lblError.innerHTML = "Invalid Name";
+        }
+
+    }
+
+    function ValidateContact() {
+        var contact = document.getElementById("txtContact").value;
+        var lblError = document.getElementById("err_mobile");
+        lblError.innerHTML = "";
+        var expr = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        var nexpr = /^[0-9]+$/;
+        if (!expr.test(contact)) {
+            lblError.innerHTML = "Invalid Contact Number";
+        }
+        if (!nexpr.test(contact)) {
+            lblError.innerHTML = "Only Number Are Allowed";
+        }
+    }
+
+    function ValidateEmail() {
+        debugger;
+        var email = document.getElementById("txtEmail").value;
+        var lblError = document.getElementById("err_email");
+        lblError.innerHTML = "";
+        var expr =  /^([\w-\.]+)(\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+)([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        if (!expr.test(email)) {
+            lblError.innerHTML = "Invalid Email Address";
+        }
+
+    }
+
+
+    var minLength = 10;
+
+    $("#address").on("keydown keyup change", function () {
+        var value = $(this).val();
+        var lblError = document.getElementById("err_address");
+        if (value.length < minLength) {
+            lblError.innerHTML = "Invalid Address (Mininum 10 Characters Required)";
+        }
+        else {
+            lblError.innerHTML = "";
+        }
+    });
+
+    $("#feedback").on("keydown keyup change", function () {
+        var value = $(this).val();
+        var lblError = document.getElementById("err_feedback");
+        if (value.length < minLength) {
+            lblError.innerHTML = "Invalid Fddeback (Mininum 10 Characters Required)";
+        }
+        else {
+            lblError.innerHTML = "";
+        }
+    });
 </script>

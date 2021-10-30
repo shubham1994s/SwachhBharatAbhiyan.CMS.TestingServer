@@ -422,6 +422,7 @@
     <Content Include="Content\css\jquery-ui.css" />
     <Content Include="Content\css\Login.css" />
     <Content Include="Content\css\material-login.css" />
+    <Content Include="Content\css\print.css" />
     <Content Include="Content\css\prityy_photo\css\lightbox.css" />
     <Content Include="Content\css\prityy_photo\css\lightbox.min.css" />
     <Content Include="Content\css\prityy_photo\images\close.png" />
@@ -441,6 +442,7 @@
     <Content Include="Content\css\Timing css\jquery.timepicker.min.js" />
     <Content Include="Content\css\ui.jqgrid-bootstarp.css" />
     <Content Include="Content\css\ui.jqgrid.css" />
+    <Content Include="Content\Custom\CustomTheme.js" />
     <Content Include="Content\Custom\custom_scroll.js" />
     <Content Include="Content\Custom\fontawesome\css\font-awesome.min.css" />
     <Content Include="Content\Custom\fontawesome\fonts\fontawesome-webfont.svg" />
