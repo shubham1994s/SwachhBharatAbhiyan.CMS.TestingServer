@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace SwachhBharatAbhiyan.CMS.Controllers
 {
@@ -27,6 +28,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 Redirect("/Account/Login");
         }
         // GET: Attendence
+
         public ActionResult Index()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -36,6 +38,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+        [Route("Attendence/WorkersAttendanceDetails")]
         public ActionResult MenuIndex()
         {
             if (SessionHandler.Current.AppId != 0)

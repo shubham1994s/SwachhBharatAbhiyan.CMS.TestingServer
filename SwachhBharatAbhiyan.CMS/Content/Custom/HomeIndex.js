@@ -1,77 +1,80 @@
 ﻿
 $(document).ready(function () {
     debugger;
-    var timesClicked = 0;
-    function searchAndHighlight(searchTerm, selector) {
-        debugger;
-          timesClicked++;
-        if (timesClicked > 1) {
-            //run second function
-            if (searchTerm) {
-                var selector = selector || "#realTimeContents"; //use body as selector if none provided
-                var searchTermRegEx = new RegExp(searchTerm, "ig");
-                var matches = $(selector).text().match(searchTermRegEx);
+    //var timesClicked = 0;
+    //function searchAndHighlight(searchTerm, selector) {
+    //  debugger;
+    //      timesClicked++;
+    //    if (timesClicked > 1) {
+           
 
-                var i = 0;
+    //        if (searchTerm) {
+    //            var selector = selector || "#realTimeContents"; //use body as selector if none provided
+    //            var searchTermRegEx = new RegExp(searchTerm, "ig");
+    //            var matches = $(selector).text().match(searchTermRegEx);
+    //            if (matches != null && matches.length > 0) {
+    //                $('.highlighted').removeClass('highlighted'); //Remove old search highlights
 
+    //                //Remove the previous matches
+    //                $span = $('#realTimeContents span');
+    //                $span.replaceWith($span.html());
 
-                if (i >= $('.match').length) i = 0;
+    //                if (searchTerm === "&") {
+    //                    searchTerm = "&amp;";
+    //                    searchTermRegEx = new RegExp(searchTerm, "ig");
+    //                }
+    //                $(selector).html($(selector).html().replace(searchTermRegEx, "<span class='match'>" + searchTerm + "</span>"));
+    //                $('.match:first').addClass('highlighted');
 
-                $('.match').removeClass('highlighted');
-                $('.match').eq(i).addClass('highlighted');
-                $('.ui-mobile-viewport').animate({
-                    scrollTop: $('.match').eq(i).offset().top
-                }, 300);
-                i++;
+    //                if ($('.highlighted:first').length) { //if match found, scroll to where the first one appears
+    //                    $(window).scrollTop($('.highlighted:first').position().top);
+    //                }
+    //                return true;
+    //            }
+    //        }
+    //    }
 
-                if ($('.highlighted:first').length) { //if match found, scroll to where the first one appears
-                    $(window).scrollTop($('.highlighted:first').position().top);
-                }
-                return true;
-            }
-        }
+    //    else {
+    //        if (searchTerm) {
+    //            var selector = selector || "#realTimeContents"; //use body as selector if none provided
+    //            var searchTermRegEx = new RegExp(searchTerm, "ig");
+    //            var matches = $(selector).text().match(searchTermRegEx);
+    //            if (matches != null && matches.length > 0) {
+    //                $('.highlighted').removeClass('highlighted'); //Remove old search highlights
 
-        else {
-            if (searchTerm) {
-                var selector = selector || "#realTimeContents"; //use body as selector if none provided
-                var searchTermRegEx = new RegExp(searchTerm, "ig");
-                var matches = $(selector).text().match(searchTermRegEx);
-                if (matches != null && matches.length > 0) {
-                    $('.highlighted').removeClass('highlighted'); //Remove old search highlights
+    //                //Remove the previous matches
+    //                $span = $('#realTimeContents span');
+    //                $span.replaceWith($span.html());
 
-                    //Remove the previous matches
-                    $span = $('#realTimeContents span');
-                    $span.replaceWith($span.html());
+    //                if (searchTerm === "&") {
+    //                    searchTerm = "&amp;";
+    //                    searchTermRegEx = new RegExp(searchTerm, "ig");
+    //                }
+    //                $(selector).html($(selector).html().replace(searchTermRegEx, "<span class='match'>" + searchTerm + "</span>"));
+    //                $('.match:first').addClass('highlighted');
 
-                    if (searchTerm === "&") {
-                        searchTerm = "&amp;";
-                        searchTermRegEx = new RegExp(searchTerm, "ig");
-                    }
-                    $(selector).html($(selector).html().replace(searchTermRegEx, "<span class='match'>" + searchTerm + "</span>"));
-                    $('.match:first').addClass('highlighted');
-
-                    if ($('.highlighted:first').length) { //if match found, scroll to where the first one appears
-                        $(window).scrollTop($('.highlighted:first').position().top);
-                    }
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+    //                if ($('.highlighted:first').length) { //if match found, scroll to where the first one appears
+    //                    $(window).scrollTop($('.highlighted:first').position().top);
+    //                }
+    //                return true;
+    //            }
+    //        }
+    //    }
+    //    return false;
+    //}
 
 
    
 
-     $(document).on('click', '.searchButtonClickText_h', function (event) {
+    // $(document).on('click', '.searchButtonClickText_h', function (event) {
 
-        $(".highlighted").removeClass("highlighted").removeClass("match");
-        if (!searchAndHighlight($('.textSearchvalue_h').val())) {
-            alert("No results found");
-        }
+    //    $(".highlighted").removeClass("highlighted").removeClass("match");
+    //    if (!searchAndHighlight($('.textSearchvalue_h').val())) {
+    //        alert("No results found");
+    //    }
 
 
-    });
+    //});
 
 
     

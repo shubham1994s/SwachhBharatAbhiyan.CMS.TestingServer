@@ -28,7 +28,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 Redirect("/Account/Login");
         }
-
+        [Route("RegistrationForms/Indexemp")]
         public ActionResult Index()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -38,7 +38,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
-
+        [Route("RegistrationForms/EmployeeRegistration")]
+      
         public ActionResult MenuIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -104,7 +105,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 return Redirect("/Account/Login");
         }
 
-
+        [Route("WorkSummary/EmployeeSummaryIndex")]
         public ActionResult EmployeeSummaryIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -115,6 +116,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+
+        [Route("WorkSummary/EmployeeWorkSummary")]
         public ActionResult MenuEmployeeSummaryIndex()
         {
             if (SessionHandler.Current.AppId != 0)

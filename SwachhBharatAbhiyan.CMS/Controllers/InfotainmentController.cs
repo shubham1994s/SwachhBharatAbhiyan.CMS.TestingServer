@@ -38,7 +38,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
         }
 
         //GET: Infotainment
-       public ActionResult Index()
+        [Route("Infotainment/Index")]
+        public ActionResult Index()
         {
             if (SessionHandler.Current.AppId != 0)
             {
@@ -47,7 +48,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
-
+        [Route("Infotainment/CleanlinessGame")]
         public ActionResult MenuIndex()
         {
             return View();

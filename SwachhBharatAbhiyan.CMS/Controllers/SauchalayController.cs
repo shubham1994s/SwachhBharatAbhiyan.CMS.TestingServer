@@ -27,7 +27,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 Redirect("/Account/Login");
         }
-
+        [Route("CT/PT/SauchalayIndex")]
         public ActionResult SauchalayIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -37,7 +37,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
-
+        [Route("CT/PT/CTPTDetails")]
         public ActionResult SauchalayMenuIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -47,7 +47,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
-
+        [Route("RegistrationForms/CT/SauchalayRegistrationIndex")]
         public ActionResult SauchalayRegistrationIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -58,6 +58,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 return Redirect("/Account/Login");
         }
 
+        [Route("RegistrationForms/CT/PTRegistration")]
         public ActionResult SauchalayRegistrationMenuIndex()
         {
             if (SessionHandler.Current.AppId != 0)
