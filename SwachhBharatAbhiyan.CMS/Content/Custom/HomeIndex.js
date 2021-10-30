@@ -1,6 +1,6 @@
 ﻿
 $(document).ready(function () {
-    debugger;
+   // debugger;
     //var timesClicked = 0;
     //function searchAndHighlight(searchTerm, selector) {
     //  debugger;
