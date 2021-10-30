@@ -611,9 +611,25 @@
             $('.hover').tooltip();
         });
 
-
+        var timesClicked = 0;
         function doSearch(text, backgroundColor) {
-           
+            timesClicked++;
+            if (timesClicked > 1) {
+                if (window.find && window.getSelection) {
+                    debugger;
+                    document.designMode = "on";
+                    var sel = window.getSelection();
+                    sel.collapse(document.body, 0);
+
+                    while (window.find(text)) {
+                        debugger;
+                        document.execCommand("HiliteColor", false, "transparent");
+                        sel.collapseToEnd();
+                    }
+                    document.designMode = "off";
+                }
+            }
+            else {
             if (window.find && window.getSelection) {
                 debugger;
                 document.designMode = "on";
@@ -623,19 +639,13 @@
                 while (window.find(text)) {
                     debugger;
                     document.execCommand("HiliteColor", false, backgroundColor);
-                    sel.collapseToEnd();
-
-                }
-                while (window.find(text="")) {
-                    debugger;
-                    document.execCommand("HiliteColor", false,"transparent");
-                    sel.collapseToEnd();
-
-                }
+                    sel.collapseToEnd();             
+   
+                }           
                 document.designMode = "off";
             }
 
-            
+            }
         }
 
         //function searchtext(text) {
