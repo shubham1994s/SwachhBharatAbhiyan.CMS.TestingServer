@@ -7,7 +7,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
     <meta charset="utf-8">
@@ -21,26 +21,26 @@
     @Styles.Render("~/Content/ThemeCss")
     @Scripts.Render("~/Scripts/IndexScript")
     <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        document.onkeydown = function (e) {
-            if (e.ctrlKey &&
-                (e.keyCode === 67 ||
-                    e.keyCode === 86 ||
-                    e.keyCode === 85 ||
-                    e.keyCode === 117)) {
-                return false;
-            } else {
-                return true;
-            }
-        };
-        $(document).keypress("u", function (e) {
-            if (e.ctrlKey) {
-                return false;
-            }
-            else {
-                return true;
-            }
-        });
+        //document.addEventListener('contextmenu', event => event.preventDefault());
+        //document.onkeydown = function (e) {
+        //    if (e.ctrlKey &&
+        //        (e.keyCode === 67 ||
+        //            e.keyCode === 86 ||
+        //            e.keyCode === 85 ||
+        //            e.keyCode === 117)) {
+        //        return false;
+        //    } else {
+        //        return true;
+        //    }
+        //};
+        //$(document).keypress("u", function (e) {
+        //    if (e.ctrlKey) {
+        //        return false;
+        //    }
+        //    else {
+        //        return true;
+        //    }
+        //});
     </script>
 
     @*<link rel="stylesheet" href="css/custom.css">*@
@@ -50,11 +50,11 @@
     </script>
     <style>
         .error-msg {
-            color: red
+            color: red;
         }
 
         .success-msg {
-            color: green
+            color: green;
         }
     </style>
 
@@ -67,29 +67,30 @@
                 <div class="row">
                     <!-- Logo & Information Panel-->
                     <div class="col-lg-6">
-                        <center>
-                            <div class="info  align-items-center">
+                        @*<center>*@
+                        <div class="info  align-items-center">
 
-                                <div class="content">
-                                    <div class="logo">
-                                        <img style="height:auto;width:auto;max-width:200px;" src="~/Content/images/img/app_icon_cms.png" />
-                                    </div>
-                                </div>
-                                @*<br>*@
-                                <div class="content">
-                                    <div class="logo">
-                                        <h1>Admin Login </h1>
-                                    </div>
-                                    <p style="margin:0px">Garbage Collection Van, Swachh Bharat Mission </p>
+                            <div class="content">
+                                <div class="logo" style="justify-content: center;text-align: center;">
+                                    <img style="height:auto;width:auto;max-width:200px;" src="~/Content/images/img/app_icon_cms.png" alt="sba" />
                                 </div>
                             </div>
-                        </center>
+                            @*<br>*@
+                            <div class="content">
+                                <div class="logo" style="text-align: center;">
+                                    <h1>Admin Login </h1>
+                                </div>
+                                <p style="margin:0px;justify-content: center;text-align: center;">Garbage Collection Van, Swachh Bharat Mission </p>
+                            </div>
+                        </div>
+                        @*</center>*@
 
                     </div>
                     <!-- Form Panel    -->
                     <div class="col-lg-6 bg-white">
 
-                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", }))
+                        @*@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", }))*@
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
                         {
                             @Html.AntiForgeryToken()
                             <div class="form d-flex align-items-center" id="test-form">
@@ -117,13 +118,13 @@
                                     <div class="field-wrapper">
                                         <div id="google_recaptcha"></div>
                                         <input id="txtcaptcha" type="text" style="display:none" required />
-                                        <div id="message-wrap" style="color:red;">
+                                        <div style="color:red;">
                                             <span></span>
                                         </div>
 
                                     </div>
                                     <div class="form-group">
-                                        <input class="btn btn-primary" align="center" style="margin:5px;width:90%;padding: 10px 36px;font-weight:600;border-radius:4px 4px 4px 4px;position: absolute;left: 20px;" type="submit" id="login1" value="Login" onclick="btn()">
+                                        <input class="btn btn-primary" style="margin:5px;width:90%;padding: 10px 36px;font-weight:600;border-radius:4px 4px 4px 4px;position: absolute;left: 20px;" type="submit" id="login1" value="Login" onclick="btn()">
                                         @*<button type="submit" id="login1">btn</button>*@
                                     </div>
                                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
@@ -145,45 +146,46 @@
         </div>
     </div>
     @Scripts.Render("~/Scripts/ThemeScripts")
+
+
+    @*<script src="~/Content/theme-assets/js/front.js"></script>*@
+
+    <script>
+        if (parent.frames.length > 0) {
+            parent.location.href = self.document.location;
+        }
+    </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            //$('#login-username').focus();
+            //alert("aa");
+            var materialInputs = $('input.input-material');
+            // activate labels for prefilled values
+            materialInputs.filter(function () { return $(this).val() !== ""; }).siblings('.label-material').addClass('active');
+        });
+
+        // move label on focus
+        var materialInputs = $('input.input-material');
+        materialInputs.on('focus', function () {
+            $(this).siblings('.label-material').addClass('active');
+        });
+
+        // remove/keep label on blur
+        materialInputs.on('blur', function () {
+            $(this).siblings('.label-material').removeClass('active');
+
+            if ($(this).val() !== '') {
+                $(this).siblings('.label-material').addClass('active');
+            } else {
+                $(this).siblings('.label-material').removeClass('active');
+            }
+        });
+
+
+    </script>
+
 </body>
 </html>
-
-<script src="~/Content/theme-assets/js/front.js"></script>
-
-<script type="text/javascript">
-    if (parent.frames.length > 0) {
-        parent.location.href = self.document.location;
-    }
-</script>
-
-
-
-<script>
-    $(document).ready(function () {
-        //$('#login-username').focus();
-        //alert("aa");
-        var materialInputs = $('input.input-material');
-        // activate labels for prefilled values
-        materialInputs.filter(function () { return $(this).val() !== ""; }).siblings('.label-material').addClass('active');
-    });
-
-    // move label on focus
-    var materialInputs = $('input.input-material');
-    materialInputs.on('focus', function () {
-        $(this).siblings('.label-material').addClass('active');
-    });
-
-    // remove/keep label on blur
-    materialInputs.on('blur', function () {
-        $(this).siblings('.label-material').removeClass('active');
-
-        if ($(this).val() !== '') {
-            $(this).siblings('.label-material').addClass('active');
-        } else {
-            $(this).siblings('.label-material').removeClass('active');
-        }
-    });
-
-
-</script>
-

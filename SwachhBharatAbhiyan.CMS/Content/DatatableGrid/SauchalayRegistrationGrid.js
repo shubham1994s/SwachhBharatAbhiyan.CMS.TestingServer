@@ -32,7 +32,7 @@
                      }
                      else {
 
-                         return "<img alt='Photo Not Found' onclick='noImageNotification()' src='/Images/default_not_upload.png' style='height:35px;width:35px;cursor:pointer;'></img>";
+                         return "<img alt='Photo Not Found' onclick='noImageNotification()' src='/Images/default_not_upload.png' style='height:35px;width:35px;cursor:pointer;' class=\" hover\" title=\"CTPT Image\"/></img>";
                      }
                  },
          },
@@ -49,7 +49,7 @@
                   }
                   else {
 
-                      return "<img alt='Photo Not Found' onclick='noImageNotification()' src='/Images/default_not_upload.png' style='height:35px;width:35px;cursor:pointer;'></img>";
+                      return "<img alt='Photo Not Found' onclick='noImageNotification()' src='/Images/default_not_upload.png' style='height:35px;width:35px;cursor:pointer;' class=\" hover\" title=\"CTPT Barcode\"/></img>";
                   }
               },
           }
