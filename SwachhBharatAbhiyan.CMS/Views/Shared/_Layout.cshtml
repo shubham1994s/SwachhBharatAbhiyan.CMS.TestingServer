@@ -126,22 +126,27 @@
 
 
                     <li class="nav-item mx-2 hover" title="Increase font size">
-                        <button role="button" id="increasetext" onclick="inc()" style="background: transparent; border: 1px solid white; color: black;">
+                        <button  id="increasetext" onclick="inc()" style="background: transparent; border: 1px solid white; color: black;">
                             <span style="color:white">A+</span>
                         </button>
                     </li>
 
                     <li class="nav-item mx-2 hover" title="Resize font size">
-                        <button role="button" id="resettext" onclick="reset()" style="background: transparent; border: 1px solid white; color: black;">
+                        <button  id="resettext" onclick="reset()" style="background: transparent; border: 1px solid white; color: black;">
                             <span style="color:white">A</span>
                         </button>
                     </li>
                     <li class="nav-item mx-2 mr-5 hover" title="Decrease font size">
-                        <button role="button" id="decreasetext" onclick="dec()" style="background: transparent; border: 1px solid white; color: black;">
+                        <button  id="decreasetext" onclick="dec()" style="background: transparent; border: 1px solid white; color: black;">
                             <span style="color:white">A-</span>
                         </button>
                     </li>
-
+                    <li class="nav-item mx-2 mr-5 hover">
+                        <div class="switch">
+                            <input id="switcher" class="switcher" type="checkbox" onchange="changeit()">
+                            <label for="switcher"></label>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
