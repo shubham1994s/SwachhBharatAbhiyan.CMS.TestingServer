@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Home > Website Policies";
+    ViewBag.Title = "Home / Website Policies";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,7 +14,13 @@
     }
 </style>
 <div class="container ml-3 pb-5" style="overflow:scroll;height:100vh">
-    <h2 class="mt-3 mb-4"><a href="/Home/Index">Home</a> > Website Policies</h2>
+    @*<h2 class="mt-3 mb-4"><a href="/Home/Index">Home</a> > Website Policies</h2>*@
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="bcumh" href="/Home/Index">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Website Policies</li>
+        </ol>
+    </nav>
     <ol>
         <li>
             <h4>	Hyper linking Policy Links to external websites/portals:</h4>
@@ -77,7 +83,7 @@
                 <br />All news/ tenders/ notices /announcements /press releases are archived after the given expiry date.  The expiry date is entered by the web manager while entering the details with due approval from the respective department.
                 <br />The Website of BIG V TELECOM PRIVATE LIMITED presents a single department where most content is contributed by a single set of sources. We here by adopt a 2-tiered structure to implement CMAP requiring minimum 2 officials to execute the CMAP roles, viz.
                 <br /> Any item from Archives will be taken off only after the approval of web information manager or concern authority (written communication through email). Such items, though not visible in archive, remain in the CMS database and can be accessed from Database if required.
-              
+
 
 
             </p>

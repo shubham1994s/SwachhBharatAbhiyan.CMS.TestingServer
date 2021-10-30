@@ -1,19 +1,24 @@
 ﻿
 @{
-    ViewBag.Title = "Home > Mechanism";
+    ViewBag.Title = "Home / Mechanism";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container ml-3 py-4 pb-5 mb-5" style="overflow:scroll;height:100vh">
-    <h2 class="mb-3"><a href="/Home/Index">Home</a> > Mechanism</h2>
-
+    @*<h2 class="mb-3"><a href="/Home/Index">Home</a> > Mechanism</h2>*@
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="bcumh" href="/Home/Index">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Mechanism</li>
+        </ol>
+    </nav>
     <ol>
         <li>
             <h4>		Tender/Notices/ News / Advertisements Publishing and Archive Mechanism</h4>
             <p>
                 This section has the list of all current notices issued by BIG V TELECOM PRIVATE LIMITED.
                 Clicking on the title will take the visitor the detailed information of the respective notice.
-                All these notices are uploaded regularly by the web manager.  However, these notices are published on the website only after the 
+                All these notices are uploaded regularly by the web manager.  However, these notices are published on the website only after the
                 approval of the authorized administrator of the concerned department in BIG V TELECOM PRIVATE LIMITED.
 
             </p>
@@ -38,23 +43,23 @@
             </p>
         </li>
         <li>
-          <h4>	Mechanism for collection of Feedback</h4>
-          <p>
-              Various site visitors will be able to post their feedback/complaint through feedback page of website. 
-              The feedback/complaints are being intimated to the department’s email Id and also an email is being
-              sent to the sender of the feedback for the confirmation of the receipt of the feedback.
+            <h4>	Mechanism for collection of Feedback</h4>
+            <p>
+                Various site visitors will be able to post their feedback/complaint through feedback page of website.
+                The feedback/complaints are being intimated to the department’s email Id and also an email is being
+                sent to the sender of the feedback for the confirmation of the receipt of the feedback.
 
-          </p>
-          <p>
-              There is a mechanism in place where the Website Administrator has provision 
-              to review the feedbacks and can give reply for complaints,
-              comments and request made by the visitors to their email ID.
-          </p>
-          <p>
-              The feedback email is sent to the respective department for responding and closure by website administrator. 
-              Administrator requests for the status of 
-              the feedback from the concerned department and mark the status accordingly with him.
-          </p>
+            </p>
+            <p>
+                There is a mechanism in place where the Website Administrator has provision
+                to review the feedbacks and can give reply for complaints,
+                comments and request made by the visitors to their email ID.
+            </p>
+            <p>
+                The feedback email is sent to the respective department for responding and closure by website administrator.
+                Administrator requests for the status of
+                the feedback from the concerned department and mark the status accordingly with him.
+            </p>
         </li>
         <li>
             <h4>	Virus Scan Mechanism</h4>
@@ -72,7 +77,7 @@
                 The above arrangements prevent the loss of information/data and software on BIG V TELECOM PRIVATE LIMITED - owned computers and website to minimize the cost of computing maintenance and network downtime by virus outbreaks.
             </p>
         </li>
-       
-       
+
+
     </ol>
 </div>

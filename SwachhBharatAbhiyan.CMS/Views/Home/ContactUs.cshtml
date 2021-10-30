@@ -5,15 +5,20 @@
 <head>
     @{
         //ViewBag.Title = "उपस्थिती तपशील";
-        ViewBag.Title = "Home > Contact us";
+        ViewBag.Title = "Home / Contact us";
     }
 </head>
 <div style="margin-top:3%;margin-left:4%">
-    <h2 style="margin-bottom:2%"><a href="/Home/Index">Home</a> > Contacting Us</h2>
-
+    @*<h2 style="margin-bottom:2%"><a href="/Home/Index">Home</a> > Contacting Us</h2>*@
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="bcumh" href="/Home/Index">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contact us</li>
+        </ol>
+    </nav>
     <h6>
         If you have any questions regarding the BIG V TELECOM PRIVATE LIMITED Website Security Policy,
-       <br /> please contact the
+        <br /> please contact the
         BIG V TELECOM PRIVATE LIMITED
         using the information below:
     </h6>

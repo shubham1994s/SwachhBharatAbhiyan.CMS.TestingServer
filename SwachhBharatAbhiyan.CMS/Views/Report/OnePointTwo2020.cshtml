@@ -1,7 +1,7 @@
 ﻿
 @{
     //ViewBag.Title = " घनकचरा संकलन (टक्केवारीनुसार)";
-    ViewBag.Title = "T20-1.2";
+    ViewBag.Title = "OnePointTwo2020";
 }
 
 @Styles.Render("~/Content/IndexCSS")
@@ -16,7 +16,15 @@
     </header>*@
 <body>
     <br />
-
+    <div class="container-fluid">
+        @*<h2 class="no-margin-bottom">Master Forms > Area Details</h2>*@
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="bcumh" href="/SS20-20/CitizenAp/SSLeague2020">SS2020</a></li>
+                <li class="breadcrumb-item active" aria-current="page">OnePointTwo2020</li>
+            </ol>
+        </nav>
+    </div>
     <div class="container">
         <div class="row">
 
@@ -50,7 +58,7 @@
                 @*<img id="loader1" src="~/Images/add_image_square.png" width="36" height="36" alt="loading gif" />*@
                 <p id="loader1">Generating Report<span> .</span><span> .</span><span> .</span></p>
                 @if (ViewBag.IframeUrl != null)
-            {
+                {
                     @*<iframe name="iframemc" id="iframemc" frameborder="0" style="width:11.37465in;height:600px; background-color: white; float:none; margin-left:5px; overflow:hidden" ></iframe>*@
                     <iframe name="iframemc" id="iframemc" scrolling="yes" frameborder="0" style="background-color: white; float:none;  overflow:hidden" width="1150" height="820"></iframe>
                 }
