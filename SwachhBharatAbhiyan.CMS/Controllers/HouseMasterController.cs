@@ -42,7 +42,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 Redirect("/Account/Login");
 
         }
-
+        [Route("RegistrationForms/Indexhouse")]
         public ActionResult Index()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -52,6 +52,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+        [Route("RegistrationForms/HouseRegistration")]
         public ActionResult MenuIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -61,6 +62,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+
+        [Route("Report/HouseholdCollectionReport(Pattern-wise)")]
         public ActionResult ReportIndex()
         {
 

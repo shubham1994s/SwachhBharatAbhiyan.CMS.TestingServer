@@ -239,6 +239,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
         #endregion
 
         #region Vehicle Type
+        [Route("MasterForms/VehicleIndex")]
         [HttpGet]
         public ActionResult VehicleIndex()
         {
@@ -249,6 +250,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+        [Route("MasterForms/VehicleTypeDetails")]
         public ActionResult MenuVehicleIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -333,6 +335,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
 
         #region Area
         [HttpGet]
+        [Route("MasterForms/AreaIndex")]
         public ActionResult AreaIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -342,6 +345,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+      
+        [Route("MasterForms/AreaDetails")]
         public ActionResult MenuAreaIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -437,6 +442,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
 
         #region Ward Number
         [HttpGet]
+
+        [Route("MasterForms/Ward/WardIndex")]
         public ActionResult WardIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -446,6 +453,10 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+
+       
+
+        [Route("MasterForms/Ward/PrabhagDetails")]
         public ActionResult MenuWardIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -526,7 +537,9 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
         #endregion
 
         #region Zone
+
         [HttpGet]
+        [Route("MasterForms/ZoneIndex")]
         public ActionResult ZoneIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -536,6 +549,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+
+        [Route("MasterForms/ZoneDetails")]
         public ActionResult MenuZoneIndex()
         {
             if (SessionHandler.Current.AppId != 0)

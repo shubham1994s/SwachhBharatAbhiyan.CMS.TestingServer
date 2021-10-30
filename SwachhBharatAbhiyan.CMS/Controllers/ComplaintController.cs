@@ -28,11 +28,12 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 Redirect("/Account/Login");
         }
+        [Route("Complaint/Index")]
         public ActionResult Index()
         {
             return View();
         }
-
+        [Route("Complaint/CleanlinessComplaints")]
         public ActionResult MenuIndex()
         {
             ViewBag.UlbName = SessionHandler.Current.AppName;

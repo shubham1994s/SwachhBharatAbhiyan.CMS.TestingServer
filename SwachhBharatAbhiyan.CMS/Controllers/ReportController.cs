@@ -33,8 +33,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             AppDetailsVM obj = mainRepository.GetApplicationDetails(SessionHandler.Current.AppId);
             return Json(obj, JsonRequestBehavior.AllowGet);
         }
-
-
+        [Route("Report/GarbageCollection(Employee-wise)")]
+      
         public ActionResult SingleEmployeeCollection()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -68,6 +68,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 return Redirect("/Account/Login");
         }
 
+      
+        [Route("Report/GarbageCollection(Percentage-Wise)")]
 
         public ActionResult GarbageCollectionPercentage()
         {
@@ -86,7 +88,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 return Redirect("/Account/Login");
         }
 
-
+       
+        [Route("Report/EmployeeWiseCollection(Chart-Pattern)")]
         public ActionResult EmployeeCollectionCount()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -102,8 +105,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
-
-
+        [Route("Report/GarbageCollection(Date-wise)")]
+      
         public ActionResult EmployeeCollectionSummary()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -120,7 +123,9 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+       
 
+             [Route("Report/GarbageCollection(Ward-Wise)")]
         public ActionResult AreawiseGarbageCollection()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -136,6 +141,9 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+       
+        [Route("Report/GarbageCollection(EntireCity)")]
+       
         public ActionResult CitywiseGarbageReport()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -151,6 +159,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+        [Route("Report/GarbagePattern(Area-wise)")]
+     
         public ActionResult AreawiseGarbageTypeCollection()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -166,6 +176,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+
+        [Route("Report/GarbageCollectionDashboard")]
         public ActionResult Dashboard1()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -182,6 +194,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 return Redirect("/Account/Login");
         }
 
+        [Route("Report/DumpyardDetails")]
+        
         public ActionResult DumpYardSummary()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -197,9 +211,9 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
-       
-      
 
+        
+       [Route("Report/GarbageCollectionSummary(House-wise)")]
         public ActionResult Housewise()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -215,6 +229,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+        [Route("Report/Day-wiseCollectionSummary")]
+        
         public ActionResult Daywise()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -289,6 +305,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
 
         #endregion
         #region EmpCollectionAverage
+        [Route("Report/EmployeeCollectionAverage")]
+       
         public ActionResult EmployeeCollectionAverage()
         {
             if (SessionHandler.Current.AppId != 0)

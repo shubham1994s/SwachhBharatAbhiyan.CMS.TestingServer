@@ -29,6 +29,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
 
 
         // GET: Location
+        [Route("Location(OnMap)/LocationDetails")]
+      
         public ActionResult MenuIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -39,6 +41,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+
+        [Route("Location(OnMap)/OnMapLocation")]
         public ActionResult MenuMapIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -60,6 +64,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+        [Route("Location(OnMap)/ShowGrid")]
         public ActionResult ShowGrid()// default or index Method
         {
             if (SessionHandler.Current.AppId != 0)
@@ -69,7 +74,9 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
-         
+
+        [Route("Location(OnMap)/AllUserLocation")]
+       
         public ActionResult AllUserLocation()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -208,7 +215,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
-
+        [Route("Location(OnMap)/HouseonMap")]
         public ActionResult AllHouseLocation()
         {
             if (SessionHandler.Current.AppId != 0)

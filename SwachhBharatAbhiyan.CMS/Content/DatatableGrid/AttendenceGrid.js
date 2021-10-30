@@ -1,5 +1,7 @@
 ﻿$(document).ready(function () {
-   // debugger;
+  debugger;
+
+
     var UserId = $('#selectnumber').val();
     $.ajax({
         type: "post",

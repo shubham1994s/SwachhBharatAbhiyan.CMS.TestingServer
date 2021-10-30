@@ -27,11 +27,14 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 Redirect("/Account/Login");
         }
         // GET: League
+        [Route("SS20-20/CitizenAp/Index")]
         public ActionResult Index()
         {
             return View();
         }
+       
 
+        [Route("SS20-20/CitizenAp/SSLeague2020")]
         public ActionResult MenuIndex()
         {
             return View();

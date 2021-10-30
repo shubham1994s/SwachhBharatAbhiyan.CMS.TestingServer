@@ -81,34 +81,24 @@
 </style>
 
 <style type="text/css">
-             .highlighted
-             {
-                    background-color: yellow;
-
+    .highlighted {
+        background-color: yellow;
     }
 
-             .highlight
-             {
-                    background-color: #fff34d;
-                    -moz-border-radius: 5px; /* FF1+ */
-                    -webkit-border-radius: 5px; /* Saf3-4 */
-                    border-radius: 5px; /* Opera 10.5, IE 9, Saf5, Chrome */
-                    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* FF3.5+ */
-                    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Saf3.0+, Chrome */
-                    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Opera 10.5+, IE 9.0 */
-
+    .highlight {
+        background-color: #fff34d;
+        -moz-border-radius: 5px; /* FF1+ */
+        -webkit-border-radius: 5px; /* Saf3-4 */
+        border-radius: 5px; /* Opera 10.5, IE 9, Saf5, Chrome */
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* FF3.5+ */
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Saf3.0+, Chrome */
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Opera 10.5+, IE 9.0 */
     }
 
-             .highlight
-             {
-                    padding: 1px 4px;
-                    margin: 0 -4px;
-
+    .highlight {
+        padding: 1px 4px;
+        margin: 0 -4px;
     }
-
-
-
-
 </style>
 <header class="page-header">
     <div class="container-fluid">
@@ -120,7 +110,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
 
 
 
@@ -139,29 +128,29 @@
 
 <input type="hidden" id="txt_fdate" class="datepicker form-control form-control-sm" type="text" />
 @*<form>
-    <label class="submit__control">
-        <h3>Are you human?</h3>
-        <div class="submit__generated">
+        <label class="submit__control">
+            <h3>Are you human?</h3>
+            <div class="submit__generated">
 
-        </div>
-        <i class="fa fa-refresh"></i>
-        <span class="submit__error hide">Incorrect value</span>
-        <span class="submit__error--empty hide">Required field cannot be left blank</span>
-    </label>
+            </div>
+            <i class="fa fa-refresh"></i>
+            <span class="submit__error hide">Incorrect value</span>
+            <span class="submit__error--empty hide">Required field cannot be left blank</span>
+        </label>
 
-    <input class="submit overlay"
-           type="submit"
-           value="Submit" />
-    <div class="submit__overlay"></div>
-</form>*@
+        <input class="submit overlay"
+               type="submit"
+               value="Submit" />
+        <div class="submit__overlay"></div>
+    </form>*@
 
 
 
 <section class="dashboard-counts no-padding-bottom">
-    <div class="container-fluid" id="realTimeContents">
+    <div class="container-fluid">
         <br />
         <div class="row w-100">
-            <div class="col col-xs-12" onclick="location.href = '/Attendence/MenuIndex';" style="cursor:pointer">
+            <div class="col col-xs-12" onclick="location.href = '/Attendence/WorkersAttendanceDetails';" style="cursor:pointer">
 
                 <div class="card border-info mx-sm-1 p-3" style="margin-bottom: 0px;">
                     <div class="card border-info shadow text-info p-3 my-card">
@@ -177,7 +166,7 @@
                     <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #833E02">@Model.TodayAttandence / @Model.TotalAttandence</h1></div>
                 </div>
             </div>
-            <div class="col col-xs-12" onclick="location.href = '/GarbageCollection/MenuHouseGarbageIndex';" style="cursor:pointer">
+            <div class="col col-xs-12" onclick="location.href = '/GarbageCollection/HouseholdCollection';" style="cursor:pointer">
                 <div class="card border-info mx-sm-1 p-3" style="margin-bottom: 0px;">
                     <div class="card border-info shadow text-info p-3 my-card">
                         <div class="icon bg-violet" style="background-color:#ff7676!important ">
@@ -191,7 +180,7 @@
                     <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #B30000">@Model.HouseCollection</h1></div>
                 </div>
             </div>
-            <div class="col" onclick="location.href = '/GarbageCollection/MenuPointGarbageIndex';" style="cursor:pointer">
+            <div class="col" onclick="location.href = '/GarbageCollection/GarbagePointCollection';" style="cursor:pointer">
                 <div class="card border-info mx-sm-1  p-3" style="margin-bottom: 0px;">
                     <div class="card border-info shadow text-info p-3 my-card">
                         <div class="icon bg-violet" style="background-color:#54e69d  !important ">
@@ -207,7 +196,7 @@
                     <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #0E5D36">@Model.PointCollection</h1></div>
                 </div>
             </div>
-            <div class="col col-xs-12" onclick="location.href = '/GarbageCollection/MenuDumpYardIndex';" style="cursor:pointer">
+            <div class="col col-xs-12" onclick="location.href = '/GarbageCollection/DumpYardTrips';" style="cursor:pointer">
                 <div class="card border-info mx-sm-1 p-3" style="margin-bottom: 0px;">
                     <div class="card border-info shadow text-info p-3 my-card">
                         <div class="icon bg-violet" style="background-color:#54c4d8!important ">
@@ -222,7 +211,7 @@
                     <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #175B69">@Model.DumpYardCount</h1></div>
                 </div>
             </div>
-            <div class="col col-xs-12 custom_col_hide" onclick="location.href = '/Complaint/MenuIndex';" style="cursor:pointer">
+            <div class="col col-xs-12 custom_col_hide" onclick="location.href = '/Complaint/CleanlinessComplaints';" style="cursor:pointer">
                 <div class="card border-info mx-sm-1 p-3" style="margin-bottom: 0px;">
                     <div class="card border-info shadow text-info p-3 my-card">
                         <div class="icon bg-violet" style="background-color:#ffc36d   !important ">
@@ -431,7 +420,7 @@
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 @*<a class="tabid nav-link active" data-toggle="tab" href="#home"> उपस्थिती तपशील</a>*@
-                <a class="nav-link tabid" data-toggle="tab" href="#home" > Attendance Details</a>
+                <a class="nav-link tabid" data-toggle="tab" href="#home"> Attendance Details</a>
             </li>
             <li class="nav-item">
                 @*<a class="tabid nav-link" data-toggle="tab" href="#menu1" >घरांचे नकाशावरील स्थान</a>*@
@@ -446,14 +435,14 @@
             <div id="home" class="container tab-pane active" onload="myMap()">
                 <div class="row bg-white" style="position:relative;;padding-top:15px;">
                     <p id="wait" style="display:none;position:absolute;top:35%;left:50%;">
-                        <img class="rotate_img" src="~/Content/images/img/marker24.png"alt="marker">
+                        <img class="rotate_img" src="~/Content/images/img/marker24.png" alt="marker">
                     </p>
-                   
+
                     <div class="col-sm-4">
                         <span>Click on show button for view map</span>
                         <span>
                             <input type="button" style="margin-bottom:10px;margin-left: 50%;" class="btn btn-sm tabid"
-                                   id="refresh" value="Show"  />
+                                   id="refresh" value="Show" />
                         </span>
                     </div>
 
@@ -464,7 +453,7 @@
 
 
         </div>
-     
+
 
         <div class="tab-content row bg-white has-shadow" id="showmap" style="background-color:#fff;">
             <div id="home" class="container tab-pane active" onload="myMap()">
@@ -511,139 +500,72 @@
     </div>
 </section>
 <section class="dashboard-counts no-padding-bottom"></section>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6eobSmi6nEV2h0TkRolQ5x6JjShuaHEs&callback=myMap" type="text/javascript"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6eobSmi6nEV2h0TkRolQ5x6JjShuaHEs&callback=myMap3" type="text/javascript"></script>
-<!-- Dashboard Header Section    -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBn5cRS1OJ9s5BPjZ4G0L_5OobNRbdvCqU&callback=myMap" type="text/javascript"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBn5cRS1OJ9s5BPjZ4G0L_5OobNRbdvCqU&callback=myMap3" type="text/javascript"></script>
+
 <script src="~/Content/Custom/HomeIndex.js"></script>
+
+<!-- Dashboard Header Section    -->
 @*<script>
-    var a, b, c,
-        submitContent,
-        captcha,
-        locked,
-        validSubmit = false,
-        timeoutHandle;
+        var a, b, c,
+            submitContent,
+            captcha,
+            locked,
+            validSubmit = false,
+            timeoutHandle;
 
-    // Generating a simple sum (a + b) to make with a result (c)
-    function generateCaptcha() {
-        a = Math.ceil(Math.random() * 10);
-        b = Math.ceil(Math.random() * 10);
-        c = a + b;
-        submitContent = '<span>' + a + '</span> + <span>' + b + '</span>' +
-            ' = <input class="submit__input" type="text" maxlength="2" size="2" required />';
-        $('.submit__generated').html(submitContent);
+        // Generating a simple sum (a + b) to make with a result (c)
+        function generateCaptcha() {
+            a = Math.ceil(Math.random() * 10);
+            b = Math.ceil(Math.random() * 10);
+            c = a + b;
+            submitContent = '<span>' + a + '</span> + <span>' + b + '</span>' +
+                ' = <input class="submit__input" type="text" maxlength="2" size="2" required />';
+            $('.submit__generated').html(submitContent);
 
-        init();
-    }
-
-
-    // Check the value 'c' and the input value.
-    function checkCaptcha() {
-        if (captcha === c) {
-            // Pop the green valid icon
-            $('.submit__generated')
-                .removeClass('unvalid')
-                .addClass('valid');
-            $('.submit').removeClass('overlay');
-            $('.submit__overlay').fadeOut('fast');
-
-            $('.submit__error').addClass('hide');
-            $('.submit__error--empty').addClass('hide');
-            validSubmit = true;
+            init();
         }
-        else {
-            if (captcha === '') {
+
+
+        // Check the value 'c' and the input value.
+        function checkCaptcha() {
+            if (captcha === c) {
+                // Pop the green valid icon
+                $('.submit__generated')
+                    .removeClass('unvalid')
+                    .addClass('valid');
+                $('.submit').removeClass('overlay');
+                $('.submit__overlay').fadeOut('fast');
+
                 $('.submit__error').addClass('hide');
-                $('.submit__error--empty').removeClass('hide');
-            }
-            else {
-                $('.submit__error').removeClass('hide');
                 $('.submit__error--empty').addClass('hide');
-            }
-            // Pop the red unvalid icon
-            $('.submit__generated')
-                .removeClass('valid')
-                .addClass('unvalid');
-            $('.submit').addClass('overlay');
-            $('.submit__overlay').fadeIn('fast');
-            validSubmit = false;
-        }
-        return validSubmit;
-    }
-
-    function unlock() { locked = false; }
-
-
-    // Refresh button click - Reset the captcha
-    $('.submit__control i.fa-refresh').on('click', function () {
-        if (!locked) {
-            locked = true;
-            setTimeout(unlock, 500);
-            generateCaptcha();
-            setTimeout(checkCaptcha, 0);
-        }
-    });
-
-
-    // init the action handlers - mostly useful when 'c' is refreshed
-    function init() {
-        $('form').on('submit', function (e) {
-            e.preventDefault();
-            if ($('.submit__generated').hasClass('valid')) {
-                // var formValues = [];
-                captcha = $('.submit__input').val();
-                if (captcha !== '') {
-                    captcha = Number(captcha);
-                }
-
-                checkCaptcha();
-
-                if (validSubmit === true) {
-                    validSubmit = false;
-                    // Temporary direct 'success' simulation
-                    submitted();
-                }
+                validSubmit = true;
             }
             else {
-                return false;
+                if (captcha === '') {
+                    $('.submit__error').addClass('hide');
+                    $('.submit__error--empty').removeClass('hide');
+                }
+                else {
+                    $('.submit__error').removeClass('hide');
+                    $('.submit__error--empty').addClass('hide');
+                }
+                // Pop the red unvalid icon
+                $('.submit__generated')
+                    .removeClass('valid')
+                    .addClass('unvalid');
+                $('.submit').addClass('overlay');
+                $('.submit__overlay').fadeIn('fast');
+                validSubmit = false;
             }
-        });
+            return validSubmit;
+        }
 
-
-        // Captcha input result handler
-        $('.submit__input').on('propertychange change keyup input paste', function () {
-            // Prevent the execution on the first number of the string if it's a 'multiple number string'
-            // (i.e: execution on the '1' of '12')
-            window.clearTimeout(timeoutHandle);
-            timeoutHandle = window.setTimeout(function () {
-                captcha = $('.submit__input').val();
-                if (captcha !== '') {
-                    captcha = Number(captcha);
-                }
-                checkCaptcha();
-            }, 150);
-        });
-
-
-        // Add the ':active' state CSS when 'enter' is pressed
-        $('body')
-            .on('keydown', function (e) {
-                if (e.which === 13) {
-                    if ($('.submit-form').hasClass('overlay')) {
-                        checkCaptcha();
-                    } else {
-                        $('.submit-form').addClass('enter-press');
-                    }
-                }
-            })
-            .on('keyup', function (e) {
-                if (e.which === 13) {
-                    $('.submit-form').removeClass('enter-press');
-                }
-            });
+        function unlock() { locked = false; }
 
 
         // Refresh button click - Reset the captcha
-        $('.submit-control i.fa-refresh').on('click', function () {
+        $('.submit__control i.fa-refresh').on('click', function () {
             if (!locked) {
                 locked = true;
                 setTimeout(unlock, 500);
@@ -653,11 +575,80 @@
         });
 
 
-        // Submit white overlay click
-        $('.submit-form-overlay').on('click', function () {
-            checkCaptcha();
-        });
-    }
+        // init the action handlers - mostly useful when 'c' is refreshed
+        function init() {
+            $('form').on('submit', function (e) {
+                e.preventDefault();
+                if ($('.submit__generated').hasClass('valid')) {
+                    // var formValues = [];
+                    captcha = $('.submit__input').val();
+                    if (captcha !== '') {
+                        captcha = Number(captcha);
+                    }
 
-    generateCaptcha();
-</script>*@
+                    checkCaptcha();
+
+                    if (validSubmit === true) {
+                        validSubmit = false;
+                        // Temporary direct 'success' simulation
+                        submitted();
+                    }
+                }
+                else {
+                    return false;
+                }
+            });
+
+
+            // Captcha input result handler
+            $('.submit__input').on('propertychange change keyup input paste', function () {
+                // Prevent the execution on the first number of the string if it's a 'multiple number string'
+                // (i.e: execution on the '1' of '12')
+                window.clearTimeout(timeoutHandle);
+                timeoutHandle = window.setTimeout(function () {
+                    captcha = $('.submit__input').val();
+                    if (captcha !== '') {
+                        captcha = Number(captcha);
+                    }
+                    checkCaptcha();
+                }, 150);
+            });
+
+
+            // Add the ':active' state CSS when 'enter' is pressed
+            $('body')
+                .on('keydown', function (e) {
+                    if (e.which === 13) {
+                        if ($('.submit-form').hasClass('overlay')) {
+                            checkCaptcha();
+                        } else {
+                            $('.submit-form').addClass('enter-press');
+                        }
+                    }
+                })
+                .on('keyup', function (e) {
+                    if (e.which === 13) {
+                        $('.submit-form').removeClass('enter-press');
+                    }
+                });
+
+
+            // Refresh button click - Reset the captcha
+            $('.submit-control i.fa-refresh').on('click', function () {
+                if (!locked) {
+                    locked = true;
+                    setTimeout(unlock, 500);
+                    generateCaptcha();
+                    setTimeout(checkCaptcha, 0);
+                }
+            });
+
+
+            // Submit white overlay click
+            $('.submit-form-overlay').on('click', function () {
+                checkCaptcha();
+            });
+        }
+
+        generateCaptcha();
+    </script>*@

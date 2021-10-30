@@ -39,6 +39,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 Redirect("/Account/Login");
         }
+        [Route("RegistrationForms/DumpYardIndex")]
         public ActionResult Index()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -48,7 +49,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
-
+        [Route("RegistrationForms/DumpYardRegistration")]
+       
         public ActionResult MenuIndex()
         {
             if (SessionHandler.Current.AppId != 0)

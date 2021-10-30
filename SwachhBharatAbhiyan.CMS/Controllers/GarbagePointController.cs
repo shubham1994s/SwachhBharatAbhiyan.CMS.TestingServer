@@ -32,6 +32,9 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 Redirect("/Account/Login");
         }
+
+        [Route("RegistrationForms/GarbagePointRegistration")]
+      
         public ActionResult MenuIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -41,6 +44,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+
+        [Route("RegistrationForms/Indexgp")]
         public ActionResult Index()
         {
             if (SessionHandler.Current.AppId != 0)

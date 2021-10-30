@@ -38,6 +38,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+
+        [Route("GarbageCollection/HouseholdCollection")]
         public ActionResult MenuHouseGarbageIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -57,6 +59,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+        [Route("GarbageCollection/GarbagePointCollection")]
+      
         public ActionResult MenuPointGarbageIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -79,6 +83,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+        [Route("GarbageCollection/DumpYardTrips")]
+      
         public ActionResult MenuDumpYardIndex()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -107,6 +113,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+
+        [Route("WorkSummary/EmployeeIdleTime")]
         public ActionResult MenuIdealtime()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -117,6 +125,7 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+        [Route("WorkSummary/Idealtime")] 
         public ActionResult Idealtime()
         {
             if (SessionHandler.Current.AppId != 0)

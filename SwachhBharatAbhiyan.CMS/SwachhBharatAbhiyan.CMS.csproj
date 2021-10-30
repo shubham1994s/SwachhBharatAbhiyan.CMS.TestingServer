@@ -1055,10 +1055,14 @@
     <Content Include="Images\default2.png" />
     <Content Include="Images\defaults_not_avaliable.png" />
     <Content Include="Images\default_not_upload.png" />
+    <Content Include="Images\excel_icon.jpg" />
     <Content Include="Images\marker24.png" />
+    <Content Include="Images\pdf.jpg" />
+    <Content Include="Images\powerpoint_logo.gif" />
     <Content Include="Images\QRcode.png" />
     <Content Include="Images\sataya.png" />
     <Content Include="Images\vcss.gif" />
+    <Content Include="Images\word_icon.gif" />
     <Content Include="ReportViewerWebForm.aspx" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jqGrid\recapchajs.js" />

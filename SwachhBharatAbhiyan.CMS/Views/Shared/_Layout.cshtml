@@ -17,7 +17,8 @@
     <link href="~/Content/css/alertify/alertify.core.css" rel="stylesheet" />
     <link href="~/Content/css/alertify/alertify.default.css" rel="stylesheet" />
     @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">*@
-   
+
+
 
     <style>
 
@@ -105,6 +106,7 @@
 
     </style>
 
+   
 </head>
 
 
@@ -175,7 +177,10 @@
                         </a>
 
                         <!-- Toggle Button--><span id="toggle-btn" class="menu-btn active"><span></span><span></span><span></span></span>
-                        <input name="text-12" id="text-12" value="" type="text" class="textSearchvalue_h" /> <a href="#" class="searchButtonClickText_h"><label for="text-12">Search</label></a>
+                        @*<input name="text-12" id="text-12" value="" type="text" class="textSearchvalue_h" /> <a href="#" class="searchButtonClickText_h"><label for="text-12">Search</label></a>*@
+                        <input type="text" id="search">
+                        <input type="button" id="button" onclick="doSearch(document.getElementById('search').value, 'yellow')" value="search">
+                        @*<input type="button" id="button" onclick="searchtext(document.getElementById('search').value)" value="search">*@
                     </div>
 
 
@@ -236,14 +241,11 @@
                         <ul id="exampledropdownDropdown11" class="collapse list-unstyled design-submenu">
 
                             <li>
-                                <a href="/Attendence/MenuIndex" class="hover" title="Attendance > Workers Attendance Details">
+                                <a href="/Attendence/WorkersAttendanceDetails" class="hover" title="Attendance > Workers Attendance Details">
                                     <i> </i>
                                     @*उपस्थिती*@ Attendance > Workers Attendance Details
                                 </a>
-                            </li>
-
-                            <li><a href="/Attendence/MenuIndex" class="hover" title="Attendance > Workers Attendance Details  > Household Collection">Attendance > Workers Attendance Details</a></li>
-                           
+                         
                         </ul>
                     </li>
 
@@ -259,9 +261,9 @@
                                 <li><a href="/GarbageCollection/MenuPointGarbageIndex">कचरा पॉईंट संकलन </a></li>
                                 <li><a href="/GarbageCollection/MenuDumpYardIndex">डंप यार्ड तपशील</a></li>*@
 
-                            <li><a href="/GarbageCollection/MenuHouseGarbageIndex" class="hover" title="GarbageCollection  > Household Collection">GarbageCollection  > Household Collection</a></li>
-                            <li><a href="/GarbageCollection/MenuPointGarbageIndex" class="hover" title="GarbageCollection > Garbage Point Collection">GarbageCollection > Garbage Point Collection</a></li>
-                            <li><a href="/GarbageCollection/MenuDumpYardIndex" class="hover" title="GarbageCollection > Dump Yard Trips">GarbageCollection > Dump Yard Trips </a></li>
+                            <li><a href="/GarbageCollection/HouseholdCollection" class="hover" title="GarbageCollection  > Household Collection">GarbageCollection  > Household Collection</a></li>
+                            <li><a href="/GarbageCollection/GarbagePointCollection" class="hover" title="GarbageCollection > Garbage Point Collection">GarbageCollection > Garbage Point Collection</a></li>
+                            <li><a href="/GarbageCollection/DumpYardTrips" class="hover" title="GarbageCollection > Dump Yard Trips">GarbageCollection > Dump Yard Trips </a></li>
 
                         </ul>
                     </li>
@@ -275,8 +277,8 @@
                             @*<li><a href="/Employee/MenuEmployeeSummaryIndex"> कर्मचारी कार्य सारांश</a></li>
                                 <li><a href="/GarbageCollection/MenuIdealtime"> कर्मचारी निष्क्रिय वेळ </a></li>*@
 
-                            <li><a href="/Employee/MenuEmployeeSummaryIndex" class="hover" title="Work Summary > Employee Work Summary">Work Summary > Employee Work Summary </a></li>
-                            <li><a href="/GarbageCollection/MenuIdealtime" class="hover" title="Work Summary > Employee Idle Time">Work Summary > Employee Idle Time </a></li>
+                            <li><a href="/WorkSummary/EmployeeWorkSummary" class="hover" title="Work Summary > Employee Work Summary">Work Summary > Employee Work Summary </a></li>
+                            <li><a href="/WorkSummary/EmployeeIdleTime" class="hover" title="Work Summary > Employee Idle Time">Work Summary > Employee Idle Time </a></li>
                         </ul>
                     </li>
                     <li>
@@ -287,7 +289,7 @@
                         </a>
                         <ul id="exampledropdownDropdown12" class="collapse list-unstyled ">
                             <li class="" id="complaint_menu">
-                                <a href="/Complaint/MenuIndex" class="hover" title="Complaint > Cleanliness Complaints">
+                                <a href="/Complaint/CleanlinessComplaints" class="hover" title="Complaint > Cleanliness Complaints">
                                     <i> </i>
                                     @*स्वच्छ तक्रार*@ <span class="satana_feedback">Complaint > Cleanliness Complaints</span>
                                 </a>
@@ -319,7 +321,7 @@
                             CT / PT
                         </a>
                         <ul id="exampledropdownDropdownCTPT" class="collapse list-unstyled ">
-                            <li><a href="/Sauchalay/SauchalayMenuIndex" class="hover" title="CT / PT > CTPT Details">CT / PT > CTPT Details</a></li>
+                            <li><a href="/CT/PT/CTPTDetails" class="hover" title="CT / PT > CTPT Details">CT / PT > CTPT Details</a></li>
                             <li id="ctpt_onmap" style="display:none;"><a href="/Sauchalay/MenuCtptMap">CTPT On Map </a></li>
                         </ul>
                     </li>
@@ -335,9 +337,9 @@
                                 <li><a href="/Location/MenuMapIndex">नकाशावरील स्थान</a></li>*@
                             @*<li><a href="/Location/MenuHouseMapIndex">नकाशावरील घर स्थान</a></li>*@
 
-                            <li><a href="/Location/MenuIndex" class="hover" title="Location (On Map) > Location Details">Location (On Map) > Location Details</a></li>
-                            <li><a href="/Location/MenuMapIndex" class="hover" title="Location (On Map) > On Map Location">Location (On Map) > On Map Location</a></li>
-                            <li id="onmap"><a href="/Location/AllHouseLocation" target="new" class="hover" title="Location (On Map) > House on Map">Location (On Map) > House on Map</a></li>
+                            <li><a href="/Location(OnMap)/LocationDetails" class="hover" title="Location (On Map) > Location Details">Location (On Map) > Location Details</a></li>
+                            <li><a href="/Location(OnMap)/OnMapLocation" class="hover" title="Location (On Map) > On Map Location">Location (On Map) > On Map Location</a></li>
+                            <li id="onmap"><a href="/Location(OnMap)/HouseonMap" target="new" class="hover" title="Location (On Map) > House on Map">Location (On Map) > House on Map</a></li>
                             @*<li id="onmap"><a href="/Location/MenuHouseMapIndex">House on Map</a></li>*@
                         </ul>
                     </li>
@@ -352,13 +354,13 @@
                                 <li><a href="/DumpYard/MenuIndex">डंप यार्ड नोंदणी</a></li>
                                 <li><a href="/Employee/MenuIndex"> कर्मचारी नोंदणी</a></li>*@
 
-                            <li><a href="/HouseMaster/MenuIndex" class="hover" title="Registration Forms > House Registration">Registration Forms > House Registration </a></li>
-                            <li><a href="/GarbagePoint/MenuIndex" class="hover" title="Registration Forms > Garbage Point Registration">Registration Forms > Garbage Point Registration </a></li>
-                            <li><a href="/DumpYard/MenuIndex" class="hover" title="Registration Forms > Dump Yard Registration ">Registration Forms > Dump Yard Registration </a></li>
-                            <li><a href="/Employee/MenuIndex" class="hover" title="Registration Forms > Employee Registration">Registration Forms > Employee Registration  </a></li>
-                            <li class="ctpt_reg"><a href="/Sauchalay/SauchalayRegistrationMenuIndex" class="hover" title="Registration Forms > CT / PT Registration ">Registration Forms > CT / PT Registration  </a></li>
+                            <li><a href="/RegistrationForms/HouseRegistration" class="hover" title="Registration Forms > House Registration">Registration Forms > House Registration </a></li>
+                            <li><a href="/RegistrationForms/GarbagePointRegistration" class="hover" title="Registration Forms > Garbage Point Registration">Registration Forms > Garbage Point Registration </a></li>
+                            <li><a href="/RegistrationForms/DumpYardRegistration" class="hover" title="Registration Forms > Dump Yard Registration ">Registration Forms > Dump Yard Registration </a></li>
+                            <li><a href="/RegistrationForms/EmployeeRegistration" class="hover" title="Registration Forms > Employee Registration">Registration Forms > Employee Registration  </a></li>
+                            <li class="ctpt_reg"><a href="/RegistrationForms/CT/PTRegistration" class="hover" title="Registration Forms > CT / PT Registration ">Registration Forms > CT / PT Registration  </a></li>
                         </ul>
-                    <li>
+                    
 
                     <li id="report_menu">
                         <a href="#exampledropdownDropdown4" aria-expanded="false" data-toggle="collapse" class="hover" title="Reports">
@@ -379,20 +381,21 @@
                                 <li><a href="/Report/Housewise">घरनिहाय तपशील</a></li>
                                 <li><a href="/Report/Daywise">दिवासनुसार तपशील</a></li>*@
 
-                            <li><a href="/HouseMaster/ReportIndex" class="hover" title="Household Collection Report (Pattern-wise)">Household Collection Report (Pattern-wise)</a></li>
-                            <li><a href="/Report/SingleEmployeeCollection" class="hover" title="Garbage Collection (Employee-wise)">Garbage Collection (Employee-wise)</a></li>
-                            <li><a href="/Report/GarbageCollectionPercentage" class="hover" title="Garbage Collection (Percentage-Wise)"> Garbage Collection (Percentage-Wise)</a></li>
-                            <li><a href="/Report/EmployeeCollectionCount" class="hover" title="Employee Wise Collection (Chart-Pattern) "> Employee Wise Collection (Chart-Pattern) </a></li>
-                            <li><a href="/Report/EmployeeCollectionSummary" class="hover" title="Garbage Collection (Date-wise) "> Garbage Collection (Date-wise) </a></li>
-                            <li><a href="/Report/AreawiseGarbageCollection" class="hover" title="Garbage Collection (Ward-Wise)"> Garbage Collection (Ward-Wise)</a></li>
-                            <li><a href="/Report/CitywiseGarbageReport" class="hover" title="Garbage Collection (Entire City)">Garbage Collection (Entire City)</a></li>
-                            <li><a href="/Report/AreawiseGarbageTypeCollection" class="hover" title="Garbage Pattern (Area-wise)<">Garbage Pattern (Area-wise)</a></li>
-                            <li><a href="/Report/Dashboard1" class="hover" title="Garbage Collection Dashboard">Garbage Collection Dashboard</a></li>
-                            <li><a href="/Report/DumpYardSummary" class="hover" title="Dumpyard Details">Dumpyard Details</a></li>
-                            <li><a href="/Report/Housewise" class="hover" title="Garbage Collection Summary (House-wise)">Garbage Collection Summary (House-wise)</a></li>
-                            <li><a href="/Report/Daywise" class="hover" title="Day-wise Collection Summary">Day-wise Collection Summary </a></li>
+                            <li><a href="/Report/HouseholdCollectionReport(Pattern-wise)" class="hover" title="Household Collection Report (Pattern-wise)">Household Collection Report (Pattern-wise)</a></li>
+                            <li><a href="/Report/GarbageCollection(Employee-wise)" class="hover" title="Garbage Collection (Employee-wise)">Garbage Collection (Employee-wise)</a></li>
+                            <li><a href="/Report/GarbageCollection(Percentage-Wise)" )" class="hover" title="Garbage Collection (Percentage-Wise)"> Garbage Collection (Percentage-Wise)</a></li>
+                            <li><a href="/Report/EmployeeWiseCollection(Chart-Pattern)" class="hover" title="Employee Wise Collection (Chart-Pattern) "> Employee Wise Collection (Chart-Pattern) </a></li>
+                            <li><a href="/Report/GarbageCollection(Date-wise)" class="hover" title="Garbage Collection (Date-wise) "> Garbage Collection (Date-wise) </a></li>
+                            <li><a href="/Report/GarbageCollection(Ward-Wise)" class="hover" title="Garbage Collection (Ward-Wise)"> Garbage Collection (Ward-Wise)</a></li>
+                            <li><a href="/Report/GarbageCollection(EntireCity)" class="hover" title="Garbage Collection (Entire City)">Garbage Collection (Entire City)</a></li>
+                            <li><a href="/Report/GarbagePattern(Area-wise)" class="hover" title="Garbage Pattern (Area-wise)<">Garbage Pattern (Area-wise)</a></li>
+                            <li><a href="/Report/GarbageCollectionDashboard" class="hover" title="Garbage Collection Dashboard">Garbage Collection Dashboard</a></li>
+                            <li><a href="/Report/DumpyardDetails" class="hover" title="Dumpyard Details">Dumpyard Details</a></li>
+                            <li><a href="/Report/GarbageCollectionSummary(House-wise)" class="hover" title="Garbage Collection Summary (House-wise)">Garbage Collection Summary (House-wise)</a></li>
+                            <li><a href="/Report/Day-wiseCollectionSummary" class="hover" title="Day-wise Collection Summary">Day-wise Collection Summary </a></li>
                             <li><a href="/Report/EmployeeCollectionAverage" class="hover" title="Employee Collection Average">Employee Collection Average</a></li>
                         </ul>
+                    
                     <li>
                         <a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse" class="hover" title="Master Forms">
                             <i class="svg_master"> </i>
@@ -408,8 +411,8 @@
                                 <li><a href="/MainMaster/MenuVehicleIndex">वाहनाचे प्रकार तपशील</a></li>*@
 
                             @*<li><a href="/MainMaster/MenuStateIndex">State Details</a></li>
-                                <li><a href="/MainMaster/MenuDistrictIndex">District Details</a></li>
-                                <li><a href="/MainMaster/MenuTalukaIndex">Taluka Details</a></li>*@
+                    <li><a href="/MainMaster/MenuDistrictIndex">District Details</a></li>
+                    <li><a href="/MainMaster/MenuTalukaIndex">Taluka Details</a></li>*@
                             <li><a href="/MainMaster/MenuZoneIndex" class="hover" title="Master Forms > Zone Details">Master Forms > Zone Details</a></li>
                             <li><a href="/MainMaster/MenuWardIndex" class="hover" title="Master Forms > Ward / Prabhag Details">Master Forms > Ward / Prabhag Details</a></li>
                             <li><a href="/MainMaster/MenuAreaIndex" class="hover" title="Master Forms > Area Details">Master Forms > Area Details</a></li>
@@ -428,10 +431,10 @@
                             <li><a href="/Report/OnePointThree2020" class="hover" title="1.3">1.3</a></li>
 
                             @*<li><a href="/Report/Onepoint4Index?ReportName=1.4">1.4</a></li>
-                                <li><a href="/Report/Onepoint5Index?ReportName=1.5">1.5</a></li>
-                                <li><a href="/Report/Onepoint6Index?ReportName=1.6">1.6</a></li>
-                                <li><a href="/Report/Onepoint7Index?ReportName=1.7">1.7</a></li>
-                                <li><a href="/Report/Onepoint8Index?ReportName=1.8">1.8</a></li>*@
+                    <li><a href="/Report/Onepoint5Index?ReportName=1.5">1.5</a></li>
+                    <li><a href="/Report/Onepoint6Index?ReportName=1.6">1.6</a></li>
+                    <li><a href="/Report/Onepoint7Index?ReportName=1.7">1.7</a></li>
+                    <li><a href="/Report/Onepoint8Index?ReportName=1.8">1.8</a></li>*@
                             <li id="citizen_app"><a href="/League/MenuIndex" class="hover" title="SS 20-20  > Citizen App">SS 20-20  > Citizen App</a></li>
                             <li><a id="yocc_fb" href="" target="new" class="hover" title="SS 20-20  > YOCC-Feedback"> SS 20-20  > YOCC-Feedback</a></li>
                             <li><a id="yocc_dnd" href="" target="new" class="hover" title="SS 20-20 > YOCC-DND">SS 20-20 > YOCC-DND</a></li>
@@ -445,7 +448,7 @@
                             Infotainment
                         </a>
                         <ul id="exampledropdownDropdown10" class="collapse list-unstyled ">
-                            <li><a href="/Infotainment/MenuIndex" class="hover" title="Infotainment > User Game Details">Infotainment > User Game Details</a></li>
+                            <li><a href="/Infotainment/CleanlinessGame" class="hover" title="Infotainment > User Game Details">Infotainment > CleanlinessGame</a></li>
                         </ul>
                     </li>
                     @*<li class="" id="waste_mgmt">
@@ -471,19 +474,9 @@
 
                 </ul>
                 @*<span class="heading">Extras</span>*@
-                <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-
-                    <div id="menu" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#" >Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#" >Something else here</a>
-                    </div>
-                </div>
+              
             </nav>
-            <div class="content-inner">
+            <div class="content-inner" id="contentbody">
 
                 @RenderBody()
 
@@ -493,13 +486,11 @@
                     </div>
                     <div style="background: #575b66;font-size:12px" class="py-2">
                         <a href="/Home/WebsitePolicies" class="mx-2">Website Policies</a>|
-
-                        <a href="/Home/Notice_Disclosures" class="mx-2">	Notice and Disclosures</a>|
+                        <a href="/Home/Notice_Disclosures" class="mx-2">Notice and Disclosures</a>|
                         <a href="/Home/ContactUs" class="mx-2">Contact Us</a>|
                         <a href="/Home/About" class="mx-2">About Us</a>|
                         <a href="/Home/Help" class="mx-2">Help</a>|
                         <a href="/Home/Validation_TestingProcess" class="mx-2">Validation & Testing Process</a>|
-
                         <a href="/Home/Mechanism" class="mx-2">Mechanism</a>|
                         <a href="/Home/Responsibility_Authority" class="mx-2">Responsibility and Authority </a>|
                         <a href="/Home/Terms_Conditions" class="mx-2">Terms & Conditions</a>|
@@ -526,6 +517,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+   
     <script>
         $('#exampleInputEmail1').focus();
 
@@ -542,8 +534,120 @@
 
 
         $(document).ready(function () {
+
+            //var timesClicked = 0;
+            //function searchAndHighlight(searchTerm, selector) {
+            //    debugger;
+            //    timesClicked++;
+            //    if (timesClicked > 1) {
+            //        //run second function
+            //        if (searchTerm) {
+            //            var selector = selector || "#realTimeContents"; //use body as selector if none provided
+            //            var searchTermRegEx = new RegExp(searchTerm, "ig");
+            //            var matches = $(selector).text().match(searchTermRegEx);
+
+            //            var i = 0;
+
+
+            //            if (i >= $('.match').length) i = 0;
+
+            //            $('.match').removeClass('highlighted');
+            //            $('.match').eq(i).addClass('highlighted');
+            //            $('.ui-mobile-viewport').animate({
+            //                scrollTop: $('.match').eq(i).offset().top
+            //            }, 300);
+            //            i++;
+
+            //            if ($('.highlighted:first').length) { //if match found, scroll to where the first one appears
+            //                $(window).scrollTop($('.highlighted:first').position().top);
+            //            }
+            //            return true;
+            //        }
+            //    }
+
+            //    else {
+            //        if (searchTerm) {
+            //            var selector = selector || "#realTimeContents"; //use body as selector if none provided
+            //            var searchTermRegEx = new RegExp(searchTerm, "ig");
+            //            var matches = $(selector).text().match(searchTermRegEx);
+            //            if (matches != null && matches.length > 0) {
+            //                $('.highlighted').removeClass('highlighted'); //Remove old search highlights
+
+            //                //Remove the previous matches
+            //                $span = $('#realTimeContents span');
+            //                $span.replaceWith($span.html());
+
+            //                if (searchTerm === "&") {
+            //                    searchTerm = "&amp;";
+            //                    searchTermRegEx = new RegExp(searchTerm, "ig");
+            //                }
+            //                $(selector).html($(selector).html().replace(searchTermRegEx, "<span class='match'>" + searchTerm + "</span>"));
+            //                $('.match:first').addClass('highlighted');
+
+            //                if ($('.highlighted:first').length) { //if match found, scroll to where the first one appears
+            //                    $(window).scrollTop($('.highlighted:first').position().top);
+            //                }
+            //                return true;
+            //            }
+            //        }
+            //    }
+            //    return false;
+            //}
+
+
+
+
+            //$(document).on('click', '.searchButtonClickText_h', function (event) {
+
+            //    $(".highlighted").removeClass("highlighted").removeClass("match");
+            //    if (!searchAndHighlight($('.textSearchvalue_h').val())) {
+            //        alert("No results found");
+            //    }
+
+
+            //});
+
+
             $('.hover').tooltip();
         });
+
+
+        function doSearch(text, backgroundColor) {
+           
+            if (window.find && window.getSelection) {
+                debugger;
+                document.designMode = "on";
+                var sel = window.getSelection();
+                sel.collapse(document.body, 0);
+                var previous = null;
+                while (window.find(text)) {
+                    debugger;
+                    document.execCommand("HiliteColor", false, backgroundColor);
+                    sel.collapseToEnd();
+
+                }
+                while (window.find(text="")) {
+                    debugger;
+                    document.execCommand("HiliteColor", false,"transparent");
+                    sel.collapseToEnd();
+
+                }
+                document.designMode = "off";
+            }
+
+            
+        }
+
+        //function searchtext(text) {
+        //    debugger;
+        //    var inputText = document.getElementById("contentbody");
+        //    var innerHTML = inputText.innerHTML;
+        //    var index = innerHTML.indexOf(text);
+        //    if (index >= 0) {
+        //        innerHTML = innerHTML.substring(0, index) + "<span class='highlight'>" + innerHTML.substring(index, index + text.length) + "</span>" + innerHTML.substring(index + text.length);
+        //        inputText.innerHTML = innerHTML;
+        //    }
+        //}
         ////$(".change").on("click", function () {
         ////    if ($("body,.page-header,container").hasClass("dark")) {
         ////        $("body,.page-header,container").removeClass("dark");
