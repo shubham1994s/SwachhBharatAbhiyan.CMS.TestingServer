@@ -136,24 +136,14 @@
                             <span style="color:white">A</span>
                         </button>
                     </li>
-                    <li class="nav-item mx-2  hover" title="Decrease font size">
+                    <li class="nav-item mx-2 mr-5 hover" title="Decrease font size">
                         <button role="button" id="decreasetext" onclick="dec()" style="background: transparent; border: 1px solid white; color: black;">
                             <span style="color:white">A-</span>
                         </button>
                     </li>
-                    <li class="nav-item mx-2 mr-5 hover"><a href="/Home/ScreenReader" title="Screen Reader Access"> Screen Reader Access </a></li>
-                    <li class="nav-item mx-2 mr-5 hover"><div class="switch">
-                        <input id="switcher" class="switcher" type="checkbox" onchange="changeit()">
-                        <label for="switcher"></label>
-                    </div></li>
-                    @*<li class="nav-item mx-2 mr-5 hover"> <input type="radio" name="theme" onclick="changeBodyBg('defalut');"/>
-                    <input type="radio" name="theme"  onclick="changeBodyBg('black');"/></li>*@
+
                 </ul>
-
-
-
             </div>
-
         </nav>
         <nav class="navbar">
 
@@ -245,7 +235,10 @@
                                     <i> </i>
                                     @*उपस्थिती*@ Attendance > Workers Attendance Details
                                 </a>
+                            </li>
 
+                            <li><a href="/Attendence/MenuIndex" class="hover" title="Attendance > Workers Attendance Details  > Household Collection">Attendance > Workers Attendance Details</a></li>
+                           
                         </ul>
                     </li>
 
@@ -360,7 +353,7 @@
                             <li><a href="/Employee/MenuIndex" class="hover" title="Registration Forms > Employee Registration">Registration Forms > Employee Registration  </a></li>
                             <li class="ctpt_reg"><a href="/Sauchalay/SauchalayRegistrationMenuIndex" class="hover" title="Registration Forms > CT / PT Registration ">Registration Forms > CT / PT Registration  </a></li>
                         </ul>
-
+                    <li>
 
                     <li id="report_menu">
                         <a href="#exampledropdownDropdown4" aria-expanded="false" data-toggle="collapse" class="hover" title="Reports">
@@ -395,7 +388,6 @@
                             <li><a href="/Report/Daywise" class="hover" title="Day-wise Collection Summary">Day-wise Collection Summary </a></li>
                             <li><a href="/Report/EmployeeCollectionAverage" class="hover" title="Employee Collection Average">Employee Collection Average</a></li>
                         </ul>
-
                     <li>
                         <a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse" class="hover" title="Master Forms">
                             <i class="svg_master"> </i>
@@ -474,7 +466,17 @@
 
                 </ul>
                 @*<span class="heading">Extras</span>*@
+                <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
 
+                    <div id="menu" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#" >Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#" >Something else here</a>
+                    </div>
+                </div>
             </nav>
             <div class="content-inner">
 
@@ -504,12 +506,8 @@
                             <div class="col-sm-6">
                                 <p class="my-2">Copyright © 2017-2022.<br /> This is the official website of Garbage Collection Van All Rights Reserved.</p>
                             </div>
-                            <div class="col-sm-6">
-                                <a href="https://jigsaw.w3.org/css-validator/" style="color: #fff; padding: 5px; margin-left:3%;color:blue;text-align:right;position:relative;right:-70%" target="blank"><img class="hover"src="~/Images/vcss.gif" height="45px" alt="link" title="W3C CSS"/></a>
-                            </div>
-                            <div style="position absolute;right 0%;margin-left: 35%;margin-top: -1%;">
-                                <a href="">Last reviewed and updated on 14 Sep, 2021 </a>
-                            </div>
+
+
                         </div>
                     </div>
                 </footer>
