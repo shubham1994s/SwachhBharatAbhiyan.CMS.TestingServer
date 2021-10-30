@@ -120,7 +120,14 @@
     <link href="~/Content/css/index_style.css" rel="stylesheet" />
 
     <div class="container">
-        <h4>@ViewBag.AppName</h4>  <h3 style="text-align : center; font-weight : bold">Location(On Map) > House on Map</h3>
+        <h4>@ViewBag.AppName</h4>
+        @*<h3 style="text-align : center; font-weight : bold">Location(On Map) > House on Map</h3>*@
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="bcumh" href="/Location(OnMap)/LocationDetails">Location(On Map)</a></li>
+                <li class="breadcrumb-item active" aria-current="page">House on Map</li>
+            </ol>
+        </nav>
         <div class="row" style="display:flex">
 
             <div class="col" style="width:20%;padding-right: 5px;">
@@ -186,17 +193,17 @@
         <div class="row form" style="text-align:center;display:inline-flex">
             <label class="check-container">
                 All House
-                <input type="radio" checked="checked"  value="0" name="radio">
+                <input type="radio" checked="checked" value="0" name="radio">
                 <span class="checkmark"></span>
             </label>
             <label class="check-container">
                 All with Scanned House
-                <input type="radio"  value="1" name="radio">
+                <input type="radio" value="1" name="radio">
                 <span class="checkmark"></span>
             </label>
             <label class="check-container">
                 Only Scanned House
-                <input type="radio"  value="2" name="radio">
+                <input type="radio" value="2" name="radio">
                 <span class="checkmark"></span>
             </label>
 
@@ -246,7 +253,7 @@
             <div class="col-sm-1">
                 <div class="controls">
                     @*<input data-background-color="filter-button-box-color" style="margin-top:25px;" class="btn btn-sm btn-success filter-button-style" type="button" value="Search" id="filter" onclick="Search()" />
-                        <button id="drop" style="margin-top:25px" class="btn btn-sm btn-success filter-button-style" onclick="userroute()">User Wise Route</button>*@
+                    <button id="drop" style="margin-top:25px" class="btn btn-sm btn-success filter-button-style" onclick="userroute()">User Wise Route</button>*@
                     <a id="filter" onclick="Search()" style="margin-top: 5px; color: #333333; background-color: #92DDCE;" class="btn btn-sm btn-success filter-button-style" alt="Search Filter">Search</a>
                     @*<a id="drop" style="margin-top:25px" class="btn btn-sm btn-success filter-button-style" onclick="userroute()">Route</a>*@
                     @*<a id="drop" style="margin-top:25px" class="btn btn-sm btn-success filter-button-style" href="~/Location/ShowGrid">Back</a>*@
