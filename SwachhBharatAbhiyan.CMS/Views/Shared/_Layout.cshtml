@@ -452,8 +452,8 @@
         <li><a href="/Report/Onepoint7Index?ReportName=1.7">1.7</a></li>
         <li><a href="/Report/Onepoint8Index?ReportName=1.8">1.8</a></li>*@
                             <li id="citizen_app"><a href="/SS20-20/CitizenAp/SSLeague2020" class="hover" title="Citizen App">Citizen App</a></li>
-                            <li><a id="yocc_fb" href="http://way2voice.in/Home/GhantagadiDashboardLogin?ClientID=608&UserId=bhadravatinp" target="new" class="hover" title="YOCC-Feedback">YOCC-Feedback</a></li>
-                            <li><a id="yocc_dnd" href="http://way2voice.in/Home/GhantagadiDashboardLogin?ClientID=609&UserId=bhadravatidnd" target="new" class="hover" title="YOCC-DND">YOCC-DND</a></li>
+                            <li><a id="yocc_fb" href="http://way2voice.in/Home/GhantagadiDashboardLogin?ClientID=608&UserId=bhadravatinp" onclick="myconfirm()" target="new" class="hover" title="YOCC-Feedback">YOCC-Feedback</a></li>
+                            <li><a id="yocc_dnd" href="http://way2voice.in/Home/GhantagadiDashboardLogin?ClientID=609&UserId=bhadravatidnd" onclick="myconfirm()" target="new" class="hover" title="YOCC-DND">YOCC-DND</a></li>
 
 
                         </ul>
@@ -499,7 +499,7 @@
 
                 <footer class="main-footer" style="padding:0px">
                     <div style="background:#fff">
-                        <a href="https://www.india.gov.in/link-us" style="color: #fff; padding: 5px; margin-left:3%;color:blue;text-align:right;position:relative;right:-70%" target="blank"><img src="~/Images/banner8.jpg" style="height:45px;" class="hover" alt="Indian Goverment" title="Indian Goverment"/></a>
+                        <a href="https://www.india.gov.in/link-us" style="color: #fff; padding: 5px; margin-left:3%;color:blue;text-align:right;position:relative;right:-70%" onclick="myconfirm()" target="_blank" data-entity-type="file" data-entity-uuid="94cd47ac-a5f6-4912-a138-8916064c222f"><img src="~/Images/banner8.jpg" style="height:45px;" class="hover" alt="Indian Goverment" title="Indian Goverment"/></a>
                     </div>
                     <div style="background: #575b66;font-size:12px" class="py-2">
                         <a href="/Home/WebsitePolicies" class="mx-2">Website Policies</a>|
@@ -521,7 +521,7 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <a href="https://jigsaw.w3.org/css-validator/" style="color: #fff; padding: 5px; margin-left:3%;color:blue;text-align:right;position:relative;right:-70%" target="blank"><img src="~/Images/vcss.gif" height="45px" alt="link" title="w3ccss" /></a>
+                                <a href="https://jigsaw.w3.org/css-validator/" style="color: #fff; padding: 5px; margin-left:3%;color:blue;text-align:right;position:relative;right:-70%" target="blank"><img src="~/Images/vcss.gif" height="45px" onclick="myconfirmng()" alt="link" title="w3ccss" /></a>
                             </div>
                             <div style="position absolute;right 0%;margin-left: 35%;margin-top: -1%;">
                                 <a href="">Last reviewed and updated on 14 Sep, 2021 </a>
@@ -633,7 +633,25 @@
             $('.hover').tooltip();
         });
 
+        function myconfirm() {
+         //   confirm("This link shall take you to a page/website outside this website. For any query regarding contents of linked page/website,Please Contact webmaster of the concerned website.ही लिंक तुम्हाला या वेबसाइटबाहेरील पेज/वेबसाइटवर घेऊन जाईल. लिंक केलेल्या पेज/वेबसाइटच्या मजकुराच्या कोणत्याही प्रश्नासाठी, कृपया संबंधित वेबसाइटच्या वेबमास्टरशी संपर्क साधा");
+            var r = confirm("This link shall take you to a page/website outside this website. For any query regarding contents of linked page/website,Please Contact webmaster of the concerned website.ही लिंक तुम्हाला या वेबसाइटबाहेरील पेज/वेबसाइटवर घेऊन जाईल. लिंक केलेल्या पेज/वेबसाइटच्या मजकुराच्या कोणत्याही प्रश्नासाठी, कृपया संबंधित वेबसाइटच्या वेबमास्टरशी संपर्क साधा.");
+            if (r == true) {
+              
+            } else {
+                location.reload();
+            }
+        }
 
+        function myconfirmng() {
+            //   confirm("This link shall take you to a page/website outside this website. For any query regarding contents of linked page/website,Please Contact webmaster of the concerned website.ही लिंक तुम्हाला या वेबसाइटबाहेरील पेज/वेबसाइटवर घेऊन जाईल. लिंक केलेल्या पेज/वेबसाइटच्या मजकुराच्या कोणत्याही प्रश्नासाठी, कृपया संबंधित वेबसाइटच्या वेबमास्टरशी संपर्क साधा");
+            var r = confirm("You are redirect to the non government website! तुम्ही गैर-सरकारी वेबसाइटवर पुनर्निर्देशित आहात| ");
+            if (r == true) {
+
+            } else {
+                location.reload();
+            }
+        }
         function highlightSearch() {
             debugger;
             var text = document.getElementById("query").value;

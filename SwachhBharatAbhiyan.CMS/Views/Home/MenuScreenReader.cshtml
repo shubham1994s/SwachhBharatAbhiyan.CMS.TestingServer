@@ -23,46 +23,62 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
-        </style >
-        </head >
-        <body >
-            <table>
-                <tr>
-                    <th> Screen Reader</th>
-                    <th> Website</th>
-                    <th> Free / Commercial</th>
-                </tr>
+    </style>
+    
+    
+</head>
+<body>
+    <table>
+        <tr>
+            <th> Screen Reader</th>
+            <th> Website</th>
+            <th> Free / Commercial</th>
+        </tr>
+
+        <tr>
+            <td> Non Visual Desktop Access (NVDA)</td>
+            <td> <a href="https://www.nvaccess.org/" onclick="myconfirm()" target="_blank">www.nvda-project.org/</a></td>
+            <td> Free</td>
+        </tr>
+        <tr>
+            <td> System Access To Go</td>
+            <td><a href="https://satogo.com/en/" target="_blank"> www.satogo.com/</a></td>
+            <td> Free</td>
+        </tr>
+
+
+        <tr>
+            <td> Hal</td>
+            <td><a href="https://yourdolphin.com/en-gb/products/individuals/families/alternative-format" target="_blank">  www.yourdolphin.com/products?id=3</a></td>
+            <td> Commercial</td>
+        </tr>
+
+
+        <tr>
+            <td> JAWS</td>
+            <td><a href="https://support.freedomscientific.com/Downloads/JAWS" target="_blank">  www.freedomscientific.com/Downloads/JAWS</a></td>
+            <td> Commercial</td>
+        </tr>
+        <tr>
+            <td>Supernova</td>
+            <td><a href="https://yourdolphin.com/en-gb/products/individuals/supernova-magnifier-screen-reader" target="_blank">  www.yourdolphin.com/product?id=4/</a></td>
+            <td> Commercial</td>
+        </tr>
+
+    </table>
+    <script>
+       
+        function myconfirm() {
+            debugger;
+            //   confirm("This link shall take you to a page/website outside this website. For any query regarding contents of linked page/website,Please Contact webmaster of the concerned website.ही लिंक तुम्हाला या वेबसाइटबाहेरील पेज/वेबसाइटवर घेऊन जाईल. लिंक केलेल्या पेज/वेबसाइटच्या मजकुराच्या कोणत्याही प्रश्नासाठी, कृपया संबंधित वेबसाइटच्या वेबमास्टरशी संपर्क साधा");
+            var r = confirm("This link shall take you to a page/website outside this website. For any query regarding contents of linked page/website,Please Contact webmaster of the concerned website.ही लिंक तुम्हाला या वेबसाइटबाहेरील पेज/वेबसाइटवर घेऊन जाईल. लिंक केलेल्या पेज/वेबसाइटच्या मजकुराच्या कोणत्याही प्रश्नासाठी, कृपया संबंधित वेबसाइटच्या वेबमास्टरशी संपर्क साधा.");
+            if (r == true) {
                
-                <tr>
-                    <td> Non Visual Desktop Access (NVDA)</td>
-                    <td> <a href="https://www.nvaccess.org/" target="_blank">www.nvda-project.org/</a></td>
-                    <td> Free</td>
-                </tr>
-                <tr>
-                    <td> System Access To Go</td>
-                    <td><a href="https://satogo.com/en/" target="_blank"> www.satogo.com/</a></td>
-                    <td> Free</td>
-                </tr>
-              
-              
-                <tr>
-                    <td> Hal</td>
-                    <td><a href="https://yourdolphin.com/en-gb/products/individuals/families/alternative-format" target="_blank">  www.yourdolphin.com/products?id=3</a></td>
-                    <td> Commercial</td>
-                </tr>
+            } else {
+                location.reload();
+            }
+        }
 
-
-                <tr>
-                    <td> JAWS</td>
-                    <td><a href="https://support.freedomscientific.com/Downloads/JAWS" target="_blank">  www.freedomscientific.com/Downloads/JAWS</a></td>
-                    <td> Commercial</td>
-                </tr>
-                <tr>
-                    <td>Supernova</td>
-                    <td><a href="https://yourdolphin.com/en-gb/products/individuals/supernova-magnifier-screen-reader" target="_blank">  www.yourdolphin.com/product?id=4/</a></td>
-                    <td> Commercial</td>
-                </tr>
-                
-            </table>
-        </body >
+    </script>
+</body>
         </html >
