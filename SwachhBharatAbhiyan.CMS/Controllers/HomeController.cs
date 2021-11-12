@@ -57,6 +57,26 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 return Redirect("/Account/Login");
         }
 
+        public ActionResult Organisationstructure()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                ViewBag.Message = "Your ORGANISATION description page.";
+                return View();
+            }
+            else
+                return Redirect("/Account/Login");
+        }
+        public ActionResult Who()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+                ViewBag.Message = "Your Who's Who Page.";
+                return View();
+            }
+            else
+                return Redirect("/Account/Login");
+        }
         public ActionResult ContactUs()
         {
             if (SessionHandler.Current.AppId != 0)

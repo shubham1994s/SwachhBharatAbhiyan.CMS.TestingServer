@@ -163,7 +163,7 @@
                     </div>
                     <div class="text text-center mt-3"><h4 style="font-weight: 400!important;"> Workers Attendance </h4></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">उपस्थिती</h4></div>*@
-                    <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #833E02">@Model.TodayAttandence / @Model.TotalAttandence</h1></div>
+                    <div class="text text-center mt-2"><h1 class="wa" style="font-weight: 400 !important; color: #833E02">@Model.TodayAttandence / @Model.TotalAttandence</h1></div>
                 </div>
             </div>
             <div class="col col-xs-12" onclick="location.href = '/GarbageCollection/HouseholdCollection';" style="cursor:pointer">
@@ -177,7 +177,7 @@
                     </div>
                     <div class="text text-center mt-3"><h4 style="font-weight: 400!important;"> Household Collection</h4></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">घर संकलन</h4></div>*@
-                    <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #B30000">@Model.HouseCollection</h1></div>
+                    <div class="text text-center mt-2"><h1 class="HC" style="font-weight: 400 !important; color: #B30000">@Model.HouseCollection</h1></div>
                 </div>
             </div>
             <div class="col" onclick="location.href = '/GarbageCollection/GarbagePointCollection';" style="cursor:pointer">
@@ -193,7 +193,7 @@
                     <div class="text text-center mt-3"><h4 style="font-weight: 400!important;">GV Point Collection</h4></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">पॉईंट संकलन</h4></div>*@
 
-                    <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #0E5D36">@Model.PointCollection</h1></div>
+                    <div class="text text-center mt-2"><h1 class="GVPC" style="font-weight: 400 !important; color: #0E5D36">@Model.PointCollection</h1></div>
                 </div>
             </div>
             <div class="col col-xs-12" onclick="location.href = '/GarbageCollection/DumpYardTrips';" style="cursor:pointer">
@@ -208,7 +208,7 @@
                     </div>
                     <div class="text text-center mt-3"><h4 style="font-weight: 400!important;"> Dump Yard Trips</h4></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">डंप यार्ड</h4></div>*@
-                    <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #175B69">@Model.DumpYardCount</h1></div>
+                    <div class="text text-center mt-2"><h1 class="DYC" style="font-weight: 400 !important; color: #175B69">@Model.DumpYardCount</h1></div>
                 </div>
             </div>
             <div class="col col-xs-12 custom_col_hide" onclick="location.href = '/Complaint/CleanlinessComplaints';" style="cursor:pointer">
@@ -223,7 +223,7 @@
                     </div>
                     <div class="text text-center mt-3"><h4 class="satana_feedback" style="font-weight: 400!important;">Cleanliness Complaint</h4></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">स्वच्छ  तक्रार</h4></div>*@
-                    <div class="text text-center mt-2"><h1 style="font-weight: 400 !important; color: #804A00">@Model.TotalComplaint</h1></div>
+                    <div class="text text-center mt-2"><h1 class="CC" style="font-weight: 400 !important; color: #804A00">@Model.TotalComplaint</h1></div>
                 </div>
             </div>
         </div>

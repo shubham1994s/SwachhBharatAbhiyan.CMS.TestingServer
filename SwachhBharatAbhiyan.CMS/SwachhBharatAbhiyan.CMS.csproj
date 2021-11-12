@@ -1354,6 +1354,8 @@
     <Content Include="Views\Home\Mechanism.cshtml" />
     <Content Include="Views\Home\Responsibility_Authority.cshtml" />
     <Content Include="Views\Home\Terms_Conditions.cshtml" />
+    <Content Include="Views\Home\Who.cshtml" />
+    <Content Include="Views\Home\Organisationstructure.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
