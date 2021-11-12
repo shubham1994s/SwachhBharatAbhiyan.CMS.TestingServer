@@ -1,0 +1,40 @@
+﻿@model SwachBharat.CMS.Bll.ViewModels.ChildModel.Model.FeedBackVM
+
+@{
+    Layout = "";
+}
+
+
+<link rel="shortcut icon" href="~/Content/images/img/sba.png" />
+@Styles.Render("~/Content/AddEditCSS")
+
+@Scripts.Render("~/Scripts/AddEditScript")
+@Scripts.Render("~/bundles/modernizr")
+
+
+
+    <div class="container">
+        <div class="row">
+
+
+
+            <div class="col-sm-12">
+                <h1 class="add-edit-h1 title_change"> @TempData["Feedmsg"]</h1>
+            </div>
+           
+
+        </div>
+
+
+
+
+        <div class="row">
+            <center><span class="text-danger" id="err_generate"></span></center>
+            <div class="form-group1">
+                <a href="/Home/MenuFeedBack" class="btn"> <span class="glyphicon glyphicon-backward"></span>Back</a>
+            </div>
+        </div>
+    </div>
+
+
+

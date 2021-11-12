@@ -1356,6 +1356,7 @@
     <Content Include="Views\Home\Terms_Conditions.cshtml" />
     <Content Include="Views\Home\Who.cshtml" />
     <Content Include="Views\Home\Organisationstructure.cshtml" />
+    <Content Include="Views\Home\MenuFeedBackSuccess.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

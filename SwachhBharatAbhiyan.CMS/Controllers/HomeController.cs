@@ -239,6 +239,16 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+        public ActionResult MenuFeedBackSuccess()
+        {
+            if (SessionHandler.Current.AppId != 0)
+            {
+            
+                return View();
+            }
+            else
+                return Redirect("/Account/Login");
+        }
         [HttpPost]
         public ActionResult AddFeedBack(FeedBackVM feed)
         {
@@ -265,8 +275,9 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 smtp.Send(mail);
 
                 
-                childRepository.SaveFeedback(feed);              
-                return Redirect("MenuFeedBack");
+                childRepository.SaveFeedback(feed);
+                TempData["Feedmsg"] = "Feedback Message Send Successfully.";
+                return Redirect("MenuFeedBackSuccess");
             }
             else
                 return Redirect("/Account/Login");
