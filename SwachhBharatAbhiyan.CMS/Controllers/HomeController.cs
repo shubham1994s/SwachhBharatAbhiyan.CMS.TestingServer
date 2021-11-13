@@ -118,7 +118,10 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             return View();
         }
 
-
+        public ActionResult Sitemap()
+        {
+            return View();
+        }
 
 
 

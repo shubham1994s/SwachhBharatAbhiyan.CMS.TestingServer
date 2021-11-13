@@ -1357,6 +1357,7 @@
     <Content Include="Views\Home\Who.cshtml" />
     <Content Include="Views\Home\Organisationstructure.cshtml" />
     <Content Include="Views\Home\MenuFeedBackSuccess.cshtml" />
+    <Content Include="Views\Home\Sitemap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
