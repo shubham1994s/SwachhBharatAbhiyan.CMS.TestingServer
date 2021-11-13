@@ -264,9 +264,9 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 feed.FeedBack = TempData["FeedBack"].ToString();
                 MailMessage mail = new MailMessage();
                 mail.To.Add(feed.Email);
-                mail.From = new MailAddress("appynity@gmail.com");
+                mail.From = new MailAddress("appynity@gmail.com" , "Garbage Collection Van Department");
                 mail.Subject = "feedback form  submitted";
-                string Body = "feedback form submitted SucessFully!";
+                string Body = "Hello  " + feed.Name + "<br/>Thanks For Sending Us Your Feedback! We really appreciate it <br/>since we're always looking for ways to make our sessions even better. <br/><br/><br/> Thanks,<br/>Garbage Collection Van Department";
                 mail.Body = Body;
                 mail.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
