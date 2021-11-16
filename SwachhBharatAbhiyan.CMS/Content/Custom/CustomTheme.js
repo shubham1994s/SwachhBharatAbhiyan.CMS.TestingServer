@@ -4,7 +4,7 @@
 function darkTheme() {
 
     var Bnavbar = {
-        backgroundColor: "#000"
+        backgroundColor: "#121212"
     }
   
     var Bnavnavbar = {
@@ -16,7 +16,7 @@ function darkTheme() {
     }
    
     var Bbreadcrumb = {
-        backgroundColor: "#000"
+        backgroundColor: "#121212"
     }
    
     var Bbcumh = {
@@ -32,15 +32,15 @@ function darkTheme() {
     };
    
     var Bpageheader = {
-        backgroundColor: "#000"
+        backgroundColor: "#121212"
     };
     var blacknavbar = {
-        backgroundColor: "black",
+        backgroundColor: "#121212",
         color: "#fff"
     };
 
     var blackcard = {
-        backgroundColor: "black"
+        backgroundColor: "#121212"
     };
     var defaultcard = {
         backgroundColor: "#FFF"
@@ -53,7 +53,7 @@ function darkTheme() {
         color: "#fff"
     };
     var BlackColor = {
-        color: "#000"
+        color: "#121212"
     };
   
     var SvgBC = {
@@ -61,7 +61,7 @@ function darkTheme() {
     };
    
     var Btable = {
-        backgroundColor: "#000",
+        backgroundColor: "#121212",
         color: "#fff"
     };
   
@@ -157,7 +157,7 @@ function lightTheme() {
         backgroundColor: "#f3fdf8"
     };
     var DTextDash = {
-        color: "#000"
+        color: "#121212"
     };
    
     var Dpageheader = {
@@ -175,7 +175,7 @@ function lightTheme() {
     };
    
     var BlackColor = {
-        color: "#000"
+        color: "#121212"
     };
     var SvgDC = {
         fill: "#686a76"
@@ -183,7 +183,7 @@ function lightTheme() {
    
     var Dtable = {
         backgroundColor: "#FFF",
-        color: "#000"
+        color: "#121212"
     };
   
     var Dwa = {
@@ -208,7 +208,7 @@ function lightTheme() {
     }
    
     var DPageHeading = {
-        color: "#000"
+        color: "#121212"
     }
   
     var Diframe = {

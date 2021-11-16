@@ -19,6 +19,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
     {
         IChildRepository childRepository;
         IMainRepository mainRepository;
+        private object db;
+
         public HomeController()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -309,6 +311,36 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
             else
                 return Redirect("/Account/Login");
         }
+
+
+        public ActionResult SearchAct()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult SearchAct(FormCollection form)
+        {
+            ViewBag.SearchKey = form["nameToFind"];
+
+
+            return View();
+        }
+
+
+        //public ActionResult SearchAct(string nameToFind)
+        //{
+        //    // Current projects
+        //    var projects = db.Projects;
+        //    // Filter down if necessary
+        //    if (!String.IsNullOrEmpty(nameToFind))
+        //    {
+        //        projects = projects.Where(p => p.projectName.Contains(nameToFind) || p.projectName.Contains(nameToFind));
+        //    }
+        //    // Pass your list out to your view
+        //    return View(projects.ToList());
+        //}
 
     }
 

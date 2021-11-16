@@ -1358,6 +1358,7 @@
     <Content Include="Views\Home\Organisationstructure.cshtml" />
     <Content Include="Views\Home\MenuFeedBackSuccess.cshtml" />
     <Content Include="Views\Home\Sitemap.cshtml" />
+    <Content Include="Views\Home\SearchAct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

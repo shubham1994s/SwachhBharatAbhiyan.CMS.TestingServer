@@ -123,7 +123,7 @@
             border-radius:50%;
         }
         #darkTheme {
-            background-color: #000 !important;
+            background-color: #000 ;
             color: #fff !important;
             border-radius: 50%;
         }
@@ -135,7 +135,31 @@
         nav.side-navbar a[aria-expanded="true"] {
             background: #b5b5b5;
         }
-     
+
+        button:focus {
+            outline: none;
+            background: #ffdd00; /* gold */
+        }
+
+            button:focus:not(:focus-visible) {
+                background: white; /* undo gold */
+            }
+        *:focus:not(.focus-visible) {
+            outline: none;
+            /* background: #ffdd00 !important;*/ /* gold */
+            border: 1px solid #ffdd00 !important;
+        }
+
+        /* Optional: Customize .focus-visible */
+        .focus-visible {
+            outline: lightgreen solid 2px;
+        }
+        #increasetext, #resettext, #decreasetext {
+            background: transparent;
+            border: 1px solid white;
+            color: black;
+            border-radius: 50%;
+        }
     </style>
 
    
@@ -149,7 +173,7 @@
         <nav class="navbar navbar-expand-lg navbar-light" style="background: #1e3770">
             @*<a class="navbar-brand" href="#">Navbar</a>*@
 
-            <img src="~/Images/ashok-stambh.png" class="navbar-brand hover" alt="सत्यमेव जयते" title="Government Of India Emblem" style=" margin-left: 35px;" style="width: 35px; height: 60px; margin-left: 35px; display: block; background-color: #1e3770;"/>
+            <a href="/home/index/"><img src="~/Images/ashok-stambh.png" class="navbar-brand hover" alt="सत्यमेव जयते" title="Government Of India Emblem" style=" margin-left: 35px;" style="width: 35px; height: 60px; margin-left: 35px; display: block; background-color: #1e3770;" /></a>
 
             @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -163,19 +187,19 @@
                    
 
                     <li class="nav-item mx-2 hover" title="Increase font size">
-                        <button id="increasetext" onclick="inc()" style="background: transparent; border: 1px solid white; color: black;">
-                            <span style="color:white">A+</span>
+                        <button id="increasetext" onclick="inc()" >
+                            <span style="color:white">A<sup>+</sup></span>
                         </button>
                     </li>
 
                     <li class="nav-item mx-2 hover" title="Resize font size">
-                        <button id="resettext" onclick="reset()" style="background: transparent; border: 1px solid white; color: black;">
+                        <button id="resettext" onclick="reset()" >
                             <span style="color:white">A</span>
                         </button>
                     </li>
                     <li class="nav-item mx-2 mr-5 hover" title="Decrease font size">
-                        <button id="decreasetext" onclick="dec()" style="background: transparent; border: 1px solid white; color: black;">
-                            <span style="color:white">A-</span>
+                        <button id="decreasetext" onclick="dec()">
+                            <span style="color:white">A<sup>-</sup></span>
                         </button>
                     </li>
                     @*<li class="nav-item mx-2 mr-5 hover">
@@ -220,9 +244,24 @@
                         <label for="search" class="hidden">Search</label>
 
                         @*<input name="query" id="query" type="text" size="30" maxlength="30">
-                        <input name="searchit" type="button" value="Search" onClick="highlightSearch()">*@
+        <input name="searchit" type="button" value="Search" onClick="highlightSearch()">*@
+
                         <input type="text" id="search" onkeyup="doSearchonchage(document.getElementById('search').value, 'transparent')">
-                        <input type="button" id="button" onclick="doSearch(document.getElementById('search').value, 'yellow')" value="search">
+        <input type="button" id="button" onclick="doSearch(document.getElementById('search').value, 'yellow')" value="search">
+
+                        @*@using (Html.BeginForm("SearchAct", "Home", FormMethod.Post))
+                        {
+
+                            <div>
+                                Search:
+                                <input type="text" id="nameToFind" name="nameToFind">
+
+                                <input type="submit" id="submitId" value="submit" />
+
+                            </div>
+
+                        }*@
+
                         <!--<button role="button" id="button" onclick="doSearch(document.getElementById('search').value, 'yellow')">search</button>-->
                         @*<input type="button" id="button" onclick="searchtext(document.getElementById('search').value)" value="search">*@
                     </div>
@@ -760,7 +799,7 @@
         function doSearchonchage(text, backgroundColor) {
             timesClicked++;
             if (text == "") {
-                location.reload();
+                //location.reload();
             }
 
         }

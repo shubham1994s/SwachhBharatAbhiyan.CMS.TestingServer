@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "SearchAct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchAct</h2>
+
+@{
+    if (ViewBag.SearchKey != null)
+    {
+        <span>
+            Search Key: @ViewBag.SearchKey
+        </span>
+    }
+}
