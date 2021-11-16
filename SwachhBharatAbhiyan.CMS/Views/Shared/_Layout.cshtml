@@ -166,7 +166,7 @@
 </head>
 
 
-<body>
+<body id="text">
     <div class="page">
         <!-- Main Navbar-->
         @*<header class="fa-header">*@
@@ -181,19 +181,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto py-1" style="color: white;">
                     <li class="hover mx-2">
-                        <a href="/home/index/#main"  title="Skip to main content">Skip to main content</a><br />
+                        <a href="/home/index/#main" title="Skip to main content">Skip to main content</a><br />
                         <a href="/Home/ScreenReader" title="Screen Reader Access"> Screen Reader Access </a>
                     </li>
-                   
+
 
                     <li class="nav-item mx-2 hover" title="Increase font size">
-                        <button id="increasetext" onclick="inc()" >
+                        <button id="increasetext" onclick="inc()">
                             <span style="color:white">A<sup>+</sup></span>
                         </button>
                     </li>
 
                     <li class="nav-item mx-2 hover" title="Resize font size">
-                        <button id="resettext" onclick="reset()" >
+                        <button id="resettext" onclick="reset()">
                             <span style="color:white">A</span>
                         </button>
                     </li>
@@ -203,15 +203,15 @@
                         </button>
                     </li>
                     @*<li class="nav-item mx-2 mr-5 hover">
-                        <div class="switch">
-                            <input id="switcher" class="switcher" type="checkbox" onchange="changeit()">
-                            <label for="switcher" class="hidden">Switch</label>
-                        </div>
-                    </li>*@
-                <li class="nav-item mx-2 mr-5">
-                    <input id="lightTheme" onclick="lightTheme()" type="button" value="A" data-toggle="tooltip" data-placement="bottom" title="Light Theme">
-                    <input id="darkTheme" onclick="darkTheme()" type="button" value="A" data-toggle="tooltip" data-placement="bottom" title="Dark Theme">
-                </li>
+                            <div class="switch">
+                                <input id="switcher" class="switcher" type="checkbox" onchange="changeit()">
+                                <label for="switcher" class="hidden">Switch</label>
+                            </div>
+                        </li>*@
+                    <li class="nav-item mx-2 mr-5">
+                        <input id="lightTheme" onclick="lightTheme()" type="button" value="A" data-toggle="tooltip" data-placement="bottom" title="Light Theme">
+                        <input id="darkTheme" onclick="darkTheme()" type="button" value="A" data-toggle="tooltip" data-placement="bottom" title="Dark Theme">
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -241,32 +241,27 @@
 
                         <!-- Toggle Button--><span id="toggle-btn" class="menu-btn active"><span></span><span></span><span></span></span>
                         @*<input name="text-12" id="text-12" value="" type="text" class="textSearchvalue_h" /> <a href="#" class="searchButtonClickText_h"><label for="text-12">Search</label></a>*@
-                        <label for="search" class="hidden">Search</label>
+
 
                         @*<input name="query" id="query" type="text" size="30" maxlength="30">
-        <input name="searchit" type="button" value="Search" onClick="highlightSearch()">*@
+            <input name="searchit" type="button" value="Search" onClick="highlightSearch()">*@
 
-                        <input type="text" id="search" onkeyup="doSearchonchage(document.getElementById('search').value, 'transparent')">
-        <input type="button" id="button" onclick="doSearch(document.getElementById('search').value, 'yellow')" value="search">
+                        @*<input type="text" id="search" onkeyup="doSearchonchage(document.getElementById('search').value, 'transparent')">
+            <input type="button" id="button" onclick="doSearch(document.getElementById('search').value, 'yellow')" value="search">*@
+                        @*<input type="text" placeholder="Type something..." id="myInput">
+            <button type="button" onclick="getInputValue();">Get Value</button>*@
 
-                        @*@using (Html.BeginForm("SearchAct", "Home", FormMethod.Post))
-                        {
 
-                            <div>
-                                Search:
-                                <input type="text" id="nameToFind" name="nameToFind">
-
-                                <input type="submit" id="submitId" value="submit" />
-
-                            </div>
-
-                        }*@
 
                         <!--<button role="button" id="button" onclick="doSearch(document.getElementById('search').value, 'yellow')">search</button>-->
                         @*<input type="button" id="button" onclick="searchtext(document.getElementById('search').value)" value="search">*@
                     </div>
 
-
+                    <form method="get" action="@Url.Action("SearchAct", "Home")">
+                        <label for="search">Search</label>
+                        <input type="text" name="search" id="search" />
+                        <button type="submit"> search</button>
+                    </form>
                     <!-- Navbar Menu -->
                     <!-- Logout    -->
                     @*<li class="nav-item"><a href="/Account/login" class="nav-link logout">Logout<i class="fa fa-sign-out"></i></a></li>*@
@@ -341,8 +336,8 @@
                         </a>
                         <ul id="exampledropdownDropdown1" class="collapse list-unstyled ">
                             @*<li><a href="/GarbageCollection/MenuHouseGarbageIndex">घर संकलन</a></li>
-                <li><a href="/GarbageCollection/MenuPointGarbageIndex">कचरा पॉईंट संकलन </a></li>
-                <li><a href="/GarbageCollection/MenuDumpYardIndex">डंप यार्ड तपशील</a></li>*@
+                                <li><a href="/GarbageCollection/MenuPointGarbageIndex">कचरा पॉईंट संकलन </a></li>
+                                <li><a href="/GarbageCollection/MenuDumpYardIndex">डंप यार्ड तपशील</a></li>*@
 
                             <li><a href="/GarbageCollection/HouseholdCollection" class="hover" title="Household Collection">Household Collection</a></li>
                             <li><a href="/GarbageCollection/GarbagePointCollection" class="hover" title="Garbage Point Collection">Garbage Point Collection</a></li>
@@ -358,7 +353,7 @@
                         </a>
                         <ul id="exampledropdownDropdown5" class="collapse list-unstyled ">
                             @*<li><a href="/Employee/MenuEmployeeSummaryIndex"> कर्मचारी कार्य सारांश</a></li>
-                <li><a href="/GarbageCollection/MenuIdealtime"> कर्मचारी निष्क्रिय वेळ </a></li>*@
+                                <li><a href="/GarbageCollection/MenuIdealtime"> कर्मचारी निष्क्रिय वेळ </a></li>*@
 
                             <li><a href="/WorkSummary/EmployeeWorkSummary" class="hover" title="Employee Work Summary">Employee Work Summary </a></li>
                             <li><a href="/WorkSummary/EmployeeIdleTime" class="hover" title="Employee Idle Time">Employee Idle Time </a></li>
@@ -380,23 +375,23 @@
                         </ul>
                     </li>
                     @*<li class="" id="league20_menu">
-            <a href="/League/MenuIndex">
-                <i class="svg_league"> </i>
-                SS League 2020
-            </a>
-        </li>
-        <li class="" id="league20_menu">
-            <a href="/League/Feedbacklogin" target="new">
-                <i class="svg_league"> </i>
-                Validation by Citizen
-            </a>
-        </li>*@
+                            <a href="/League/MenuIndex">
+                                <i class="svg_league"> </i>
+                                SS League 2020
+                            </a>
+                        </li>
+                        <li class="" id="league20_menu">
+                            <a href="/League/Feedbacklogin" target="new">
+                                <i class="svg_league"> </i>
+                                Validation by Citizen
+                            </a>
+                        </li>*@
                     @*<li class="ctpt_reg">
-            <a href="/Sauchalay/SauchalayMenuIndex">
-                <i class="ctpt"> </i>
-                CT / PT
-            </a>
-        </li>*@
+                            <a href="/Sauchalay/SauchalayMenuIndex">
+                                <i class="ctpt"> </i>
+                                CT / PT
+                            </a>
+                        </li>*@
 
                     <li class="ctpt_reg">
                         <a href="#exampledropdownDropdownCTPT" aria-expanded="false" data-toggle="collapse" class="hover" title=" CT / PT">
@@ -417,7 +412,7 @@
                         </a>
                         <ul id="exampledropdownDropdown3" class="collapse list-unstyled ">
                             @*<li><a href="/Location/MenuIndex">स्थान तपशील</a></li>
-                <li><a href="/Location/MenuMapIndex">नकाशावरील स्थान</a></li>*@
+                                <li><a href="/Location/MenuMapIndex">नकाशावरील स्थान</a></li>*@
                             @*<li><a href="/Location/MenuHouseMapIndex">नकाशावरील घर स्थान</a></li>*@
 
                             <li><a href="/Location(OnMap)/LocationDetails" class="hover" title="Location Details">Location Details</a></li>
@@ -433,9 +428,9 @@
                         </a>
                         <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                             @*<li><a href="/HouseMaster/MenuIndex">घर नोंदणी</a></li>
-                <li><a href="/GarbagePoint/MenuIndex">कचरा पॉइंट नोंदणी</a></li>
-                <li><a href="/DumpYard/MenuIndex">डंप यार्ड नोंदणी</a></li>
-                <li><a href="/Employee/MenuIndex"> कर्मचारी नोंदणी</a></li>*@
+                                <li><a href="/GarbagePoint/MenuIndex">कचरा पॉइंट नोंदणी</a></li>
+                                <li><a href="/DumpYard/MenuIndex">डंप यार्ड नोंदणी</a></li>
+                                <li><a href="/Employee/MenuIndex"> कर्मचारी नोंदणी</a></li>*@
 
                             <li><a href="/RegistrationForms/HouseRegistration" class="hover" title="House Registration">House Registration </a></li>
                             <li><a href="/RegistrationForms/GarbagePointRegistration" class="hover" title="Garbage Point Registration">Garbage Point Registration </a></li>
@@ -452,17 +447,17 @@
                         </a>
                         <ul id="exampledropdownDropdown4" class="collapse list-unstyled ">
                             @*<li><a href="/HouseMaster/ReportIndex">घर संकलन रिपोर्ट (कचरा पॅटर्न नुसार) </a></li>
-                <li><a href="/Report/SingleEmployeeCollection"> घनकचरा संकलन (कर्मचारीनिहाय)</a></li>
-                <li><a href="/Report/GarbageCollectionPercentage"> घनकचरा संकलन (टक्केवारीनुसार)</a></li>
-                <li><a href="/Report/EmployeeCollectionCount"> कर्मचारीनिहाय कचरा संकलन </a></li>
-                <li><a href="/Report/EmployeeCollectionSummary"> घनकचरा संकलन (तारीखानुसार)</a></li>
-                <li><a href="/Report/AreawiseGarbageCollection"> घनकचरा संकलन (वार्डनिहाय)</a></li>
-                <li><a href="/Report/CitywiseGarbageReport">शहरानुसार घनकचरा रिपोर्ट</a></li>
-                <li><a href="/Report/AreawiseGarbageTypeCollection">क्षेत्रानुसार घनकचरा प्रकार रिपोर्ट</a></li>
-                <li><a href="/Report/Dashboard1">घनकचरा डैशबोर्ड</a></li>
-                <li><a href="/Report/DumpYardSummary">डंप यार्ड तपशील</a></li>
-                <li><a href="/Report/Housewise">घरनिहाय तपशील</a></li>
-                <li><a href="/Report/Daywise">दिवासनुसार तपशील</a></li>*@
+                                <li><a href="/Report/SingleEmployeeCollection"> घनकचरा संकलन (कर्मचारीनिहाय)</a></li>
+                                <li><a href="/Report/GarbageCollectionPercentage"> घनकचरा संकलन (टक्केवारीनुसार)</a></li>
+                                <li><a href="/Report/EmployeeCollectionCount"> कर्मचारीनिहाय कचरा संकलन </a></li>
+                                <li><a href="/Report/EmployeeCollectionSummary"> घनकचरा संकलन (तारीखानुसार)</a></li>
+                                <li><a href="/Report/AreawiseGarbageCollection"> घनकचरा संकलन (वार्डनिहाय)</a></li>
+                                <li><a href="/Report/CitywiseGarbageReport">शहरानुसार घनकचरा रिपोर्ट</a></li>
+                                <li><a href="/Report/AreawiseGarbageTypeCollection">क्षेत्रानुसार घनकचरा प्रकार रिपोर्ट</a></li>
+                                <li><a href="/Report/Dashboard1">घनकचरा डैशबोर्ड</a></li>
+                                <li><a href="/Report/DumpYardSummary">डंप यार्ड तपशील</a></li>
+                                <li><a href="/Report/Housewise">घरनिहाय तपशील</a></li>
+                                <li><a href="/Report/Daywise">दिवासनुसार तपशील</a></li>*@
 
                             <li><a href="/Report/HouseholdCollectionReport(Pattern-wise)" class="hover" title="Household Collection Report (Pattern-wise)">Household Collection Report (Pattern-wise)</a></li>
                             <li><a href="/Report/GarbageCollection(Employee-wise)" class="hover" title="Garbage Collection (Employee-wise)">Garbage Collection (Employee-wise)</a></li>
@@ -486,16 +481,16 @@
                         </a>
                         <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
                             @*<li><a href="/MainMaster/MenuStateIndex">राज्य तपशील</a></li>
-                <li><a href="/MainMaster/MenuDistrictIndex">जिल्हा तपशील</a></li>
-                <li><a href="/MainMaster/MenuTalukaIndex">तालुका तपशील</a></li>
-                <li><a href="/MainMaster/MenuZoneIndex">झोन तपशील</a></li>
-                <li><a href="/MainMaster/MenuWardIndex">वार्ड तपशील</a></li>
-                <li><a href="/MainMaster/MenuAreaIndex">क्षेत्र तपशील</a></li>
-                <li><a href="/MainMaster/MenuVehicleIndex">वाहनाचे प्रकार तपशील</a></li>*@
+                                <li><a href="/MainMaster/MenuDistrictIndex">जिल्हा तपशील</a></li>
+                                <li><a href="/MainMaster/MenuTalukaIndex">तालुका तपशील</a></li>
+                                <li><a href="/MainMaster/MenuZoneIndex">झोन तपशील</a></li>
+                                <li><a href="/MainMaster/MenuWardIndex">वार्ड तपशील</a></li>
+                                <li><a href="/MainMaster/MenuAreaIndex">क्षेत्र तपशील</a></li>
+                                <li><a href="/MainMaster/MenuVehicleIndex">वाहनाचे प्रकार तपशील</a></li>*@
 
                             @*<li><a href="/MainMaster/MenuStateIndex">State Details</a></li>
-                <li><a href="/MainMaster/MenuDistrictIndex">District Details</a></li>
-                <li><a href="/MainMaster/MenuTalukaIndex">Taluka Details</a></li>*@
+                                <li><a href="/MainMaster/MenuDistrictIndex">District Details</a></li>
+                                <li><a href="/MainMaster/MenuTalukaIndex">Taluka Details</a></li>*@
                             <li><a href="/MasterForms/ZoneDetails" class="hover" title=" Zone Details"> Zone Details</a></li>
                             <li><a href="/MasterForms/Ward/PrabhagDetails" class="hover" title=" Ward / Prabhag Details">Ward / Prabhag Details</a></li>
                             <li><a href="/MasterForms/AreaDetails" class="hover" title="Area Details"> Area Details</a></li>
@@ -514,10 +509,10 @@
                             <li><a href="/Report/OnePointThree2020" class="hover" title="1.3">1.3</a></li>
 
                             @*<li><a href="/Report/Onepoint4Index?ReportName=1.4">1.4</a></li>
-                <li><a href="/Report/Onepoint5Index?ReportName=1.5">1.5</a></li>
-                <li><a href="/Report/Onepoint6Index?ReportName=1.6">1.6</a></li>
-                <li><a href="/Report/Onepoint7Index?ReportName=1.7">1.7</a></li>
-                <li><a href="/Report/Onepoint8Index?ReportName=1.8">1.8</a></li>*@
+                                <li><a href="/Report/Onepoint5Index?ReportName=1.5">1.5</a></li>
+                                <li><a href="/Report/Onepoint6Index?ReportName=1.6">1.6</a></li>
+                                <li><a href="/Report/Onepoint7Index?ReportName=1.7">1.7</a></li>
+                                <li><a href="/Report/Onepoint8Index?ReportName=1.8">1.8</a></li>*@
                             <li id="citizen_app"><a href="/SS20-20/CitizenAp/SSLeague2020" class="hover" title="Citizen App">Citizen App</a></li>
                             <li><a id="yocc_fb" onclick="myconfirmyocc()" class="hover" title="YOCC-Feedback">YOCC-Feedback</a></li>
                             <li><a id="yocc_dnd" onclick="myconfirmyocc()" class="hover" title="YOCC-DND">YOCC-DND</a></li>
@@ -546,29 +541,29 @@
                         </ul>
                     </li>
                     @*<li class="" id="waste_mgmt">
-                <a href="#exampledropdownDropdown11" aria-expanded="false" data-toggle="collapse">
-                    <i class="i_waste"> </i>
-                    Waste Management
-                </a>
-                <ul id="exampledropdownDropdown11" class="collapse list-unstyled ">
-                    <li><a href="/WasteManagement/MenuAddWasteDetails">Add Waste Details</a></li>
-                    <li><a href="/WasteManagement/MenuWasteIndex">Waste Details</a></li>
+                                <a href="#exampledropdownDropdown11" aria-expanded="false" data-toggle="collapse">
+                                    <i class="i_waste"> </i>
+                                    Waste Management
+                                </a>
+                                <ul id="exampledropdownDropdown11" class="collapse list-unstyled ">
+                                    <li><a href="/WasteManagement/MenuAddWasteDetails">Add Waste Details</a></li>
+                                    <li><a href="/WasteManagement/MenuWasteIndex">Waste Details</a></li>
 
-            </ul>
+                            </ul>
 
-        </li>*@
+                        </li>*@
 
 
                     @*<li class="" id="live_menu">
-            <a href="/Log/MenuIndex">
-                <i class="svg_swacch"> </i>
-                <span class="satana_feedback">Live Tracking</span>
-            </a>
-        </li>*@
+                            <a href="/Log/MenuIndex">
+                                <i class="svg_swacch"> </i>
+                                <span class="satana_feedback">Live Tracking</span>
+                            </a>
+                        </li>*@
 
                 </ul>
                 @*<span class="heading">Extras</span>*@
-              
+
             </nav>
             <div class="content-inner" id="searchtext">
 
@@ -576,7 +571,7 @@
 
                 <footer class="main-footer" style="padding:0px">
                     <div style="background:#fff">
-                        <a  style="color: #fff; padding: 5px; margin-left:3%;color:blue;text-align:right;position:relative;right:-70%" onclick="myconfirm()" target="_top" data-entity-type="file" data-entity-uuid="94cd47ac-a5f6-4912-a138-8916064c222f"><img src="~/Images/banner8.jpg" style="height:45px;" class="hover" alt="Indian Goverment" title="Indian Goverment"/></a>
+                        <a style="color: #fff; padding: 5px; margin-left:3%;color:blue;text-align:right;position:relative;right:-70%" onclick="myconfirm()" target="_top" data-entity-type="file" data-entity-uuid="94cd47ac-a5f6-4912-a138-8916064c222f"><img src="~/Images/banner8.jpg" style="height:45px;" class="hover" alt="Indian Goverment" title="Indian Goverment" /></a>
                     </div>
                     <div style="background: #575b66;font-size:12px" class="py-2">
                         <a href="/Home/WebsitePolicies" class="mx-2">Website Policies</a>|
@@ -599,7 +594,7 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <a  style="color: #fff; padding: 5px; margin-left:3%;color:blue;text-align:right;position:relative;right:-70%" target="blank"><img src="~/Images/vcss.gif" height="45px" onclick="myconfirmng()" alt="link" title="w3ccss" /></a>
+                                <a style="color: #fff; padding: 5px; margin-left:3%;color:blue;text-align:right;position:relative;right:-70%" target="blank"><img src="~/Images/vcss.gif" height="45px" onclick="myconfirmng()" alt="link" title="w3ccss" /></a>
                             </div>
                             <div style="position absolute;right 0%;margin-left: 35%;margin-top: -1%;">
                                 <a href="">Last reviewed and updated on 14 Sep, 2021 </a>
@@ -617,7 +612,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-   
+
+    <script>
+        function getInputValue() {
+            // Selecting the input element and get its value
+            var inputVal = document.getElementById("myInput").value;
+
+            if (inputVal != undefined && inputVal != null) {
+                window.location = '/Home/SearchAct?key=' + inputVal;
+
+              
+            }
+        }
+    </script>
     <script>
         $('#exampleInputEmail1').focus();
 
@@ -716,15 +723,13 @@
         // //   confirm("This link shall take you to a page/website outside this website. For any query regarding contents of linked page/website,Please Contact webmaster of the concerned website.ही लिंक तुम्हाला या वेबसाइटबाहेरील पेज/वेबसाइटवर घेऊन जाईल. लिंक केलेल्या पेज/वेबसाइटच्या मजकुराच्या कोणत्याही प्रश्नासाठी, कृपया संबंधित वेबसाइटच्या वेबमास्टरशी संपर्क साधा");
         //    var r = confirm("This link shall take you to a page/website outside this website. For any query regarding contents of linked page/website,Please Contact webmaster of the concerned website.ही लिंक तुम्हाला या वेबसाइटबाहेरील पेज/वेबसाइटवर घेऊन जाईल. लिंक केलेल्या पेज/वेबसाइटच्या मजकुराच्या कोणत्याही प्रश्नासाठी, कृपया संबंधित वेबसाइटच्या वेबमास्टरशी संपर्क साधा.");
         //    if (r == true) {
-              
+
         //    } else {
         //        location.reload();
         //    }
         //}
 
-        function myconfirmng()
-
-        {
+        function myconfirmng() {
             debugger;
             //   confirm("This link shall take you to a page/website outside this website. For any query regarding contents of linked page/website,Please Contact webmaster of the concerned website.ही लिंक तुम्हाला या वेबसाइटबाहेरील पेज/वेबसाइटवर घेऊन जाईल. लिंक केलेल्या पेज/वेबसाइटच्या मजकुराच्या कोणत्याही प्रश्नासाठी, कृपया संबंधित वेबसाइटच्या वेबमास्टरशी संपर्क साधा");
             var r = window.confirm("You are redirect to the non government website! तुम्ही गैर-सरकारी वेबसाइटवर पुनर्निर्देशित आहात| ");
@@ -747,7 +752,7 @@
                     '_blank'
                 );
             } else { // if they clicked "cancel"
-               
+
             }
         }
 
@@ -776,24 +781,24 @@
             document.getElementById("searchtext").innerHTML = newe;
 
         }
-        
+
         function doSearch(text, backgroundColor) {
-          
-                if (window.find && window.getSelection) {
+
+            if (window.find && window.getSelection) {
+                debugger;
+                document.designMode = "on";
+                var sel = window.getSelection();
+                sel.collapse(document.body, 0);
+                //var enew = e.replace(/(<span>|<\/span>)/igm, "");
+                // document.getElementById("searchtext").innerHTML = enew;
+                while (window.find(text)) {
                     debugger;
-                    document.designMode = "on";
-                    var sel = window.getSelection();
-                    sel.collapse(document.body, 0);
-                    //var enew = e.replace(/(<span>|<\/span>)/igm, "");
-                   // document.getElementById("searchtext").innerHTML = enew;
-                    while (window.find(text)) {
-                        debugger;
-                        document.execCommand("HiliteColor", false, backgroundColor);
-                        sel.collapseToEnd();
-                    }
-                   
-                    document.designMode = "off";
+                    document.execCommand("HiliteColor", false, backgroundColor);
+                    sel.collapseToEnd();
                 }
+
+                document.designMode = "off";
+            }
         }
         var timesClicked = 0;
         function doSearchonchage(text, backgroundColor) {
@@ -803,8 +808,8 @@
             }
 
         }
-           
-        
+
+
 
         //function searchtext(text) {
         //    debugger;

@@ -4,13 +4,143 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .hide {
+        display: none;
+    }
+
+    .notfound {
+        display: none;
+    }
+</style>
 <h2>SearchAct</h2>
 
-@{
-    if (ViewBag.SearchKey != null)
-    {
-        <span>
-            Search Key: @ViewBag.SearchKey
-        </span>
+<span id="name" style="display:none;"></span>
+
+<input type="hidden" id="name" class="autocomplete">
+
+<ul class="links autocomplete-content ">
+
+    <li class="search">
+        Dashboard
+
+    </li>
+
+    <li class="search">
+        <a href="/Attendence/WorkersAttendanceDetails" class="hover" title="Workers Attendance Details">
+            <i> </i>
+            Workers Attendance Details
+        </a>
+    </li>
+
+
+    <li class="search"><a href="/GarbageCollection/HouseholdCollection" class="hover" title="Household Collection">Household Collection</a></li>
+    <li class="search"><a href="/GarbageCollection/GarbagePointCollection" class="hover" title="Garbage Point Collection">Garbage Point Collection</a></li>
+    <li class="search"><a href="/GarbageCollection/DumpYardTrips" class="hover" title="Dump Yard Trips"> Dump Yard Trips </a></li>
+
+
+
+
+    <li class="search"><a href="/WorkSummary/EmployeeWorkSummary" class="hover" title="Employee Work Summary">Employee Work Summary </a></li>
+    <li class="search"><a href="/WorkSummary/EmployeeIdleTime" class="hover" title="Employee Idle Time">Employee Idle Time </a></li>
+
+
+    <li class="search">
+        <a href="/Complaint/CleanlinessComplaints" class="hover" title="Cleanliness Complaints">
+            <i> </i>
+            <span class="satana_feedback">Cleanliness Complaints</span>
+        </a>
+    </li>
+
+    <li class="search"><a href="/CT/PT/CTPTDetails" class="hover" title="CTPT Details"> CTPT Details</a></li>
+
+
+    <li class="search"><a href="/Location(OnMap)/LocationDetails" class="hover" title="Location Details">Location Details</a></li>
+    <li class="search"><a href="/Location(OnMap)/OnMapLocation" class="hover" title="On Map Location">On Map Location</a></li>
+    <li class="search"><a href="/Location(OnMap)/HouseonMap" target="new" class="hover" title=" House on Map">House on Map</a></li>
+
+
+    <li class="search"><a href="/RegistrationForms/HouseRegistration" class="hover" title="House Registration">House Registration </a></li>
+    <li class="search"><a href="/RegistrationForms/GarbagePointRegistration" class="hover" title="Garbage Point Registration">Garbage Point Registration </a></li>
+    <li class="search"><a href="/RegistrationForms/DumpYardRegistration" class="hover" title="Dump Yard Registration ">Dump Yard Registration </a></li>
+    <li class="search"><a href="/RegistrationForms/EmployeeRegistration" class="hover" title="Employee Registration">Employee Registration  </a></li>
+    <li class="search"><a href="/RegistrationForms/CT/PTRegistration" class="hover" title="CT / PT Registration ">CT / PT Registration  </a></li>
+
+
+
+    <li class="search"><a href="/Report/HouseholdCollectionReport(Pattern-wise)" class="hover" title="Household Collection Report (Pattern-wise)">Household Collection Report (Pattern-wise)</a></li>
+    <li class="search"><a href="/Report/GarbageCollection(Employee-wise)" class="hover" title="Garbage Collection (Employee-wise)">Garbage Collection (Employee-wise)</a></li>
+    <li class="search"><a href="/Report/GarbageCollection(Percentage-Wise)" class="hover" title="Garbage Collection (Percentage-Wise)"> Garbage Collection (Percentage-Wise)</a></li>
+    <li class="search"><a href="/Report/EmployeeWiseCollection(Chart-Pattern)" class="hover" title="Employee Wise Collection (Chart-Pattern) "> Employee Wise Collection (Chart-Pattern) </a></li>
+    <li class="search"><a href="/Report/GarbageCollection(Date-wise)" class="hover" title="Garbage Collection (Date-wise) "> Garbage Collection (Date-wise) </a></li>
+    <li class="search"><a href="/Report/GarbageCollection(Ward-Wise)" class="hover" title="Garbage Collection (Ward-Wise)"> Garbage Collection (Ward-Wise)</a></li>
+    <li class="search"><a href="/Report/GarbageCollection(EntireCity)" class="hover" title="Garbage Collection (Entire City)">Garbage Collection (Entire City)</a></li>
+    <li class="search"><a href="/Report/GarbagePattern(Area-wise)" class="hover" title="Garbage Pattern (Area-wise)<">Garbage Pattern (Area-wise)</a></li>
+    <li class="search"><a href="/Report/GarbageCollectionDashboard" class="hover" title="Garbage Collection Dashboard">Garbage Collection Dashboard</a></li>
+    <li class="search"><a href="/Report/DumpyardDetails" class="hover" title="Dumpyard Details">Dumpyard Details</a></li>
+    <li class="search"><a href="/Report/GarbageCollectionSummary(House-wise)" class="hover" title="Garbage Collection Summary (House-wise)">Garbage Collection Summary (House-wise)</a></li>
+    <li class="search"><a href="/Report/Day-wiseCollectionSummary" class="hover" title="Day-wise Collection Summary">Day-wise Collection Summary </a></li>
+    <li class="search"><a href="/Report/EmployeeCollectionAverage" class="hover" title="Employee Collection Average">Employee Collection Average</a></li>
+
+
+
+    <li class="search"><a href="/MasterForms/ZoneDetails" class="hover" title=" Zone Details"> Zone Details</a></li>
+    <li class="search"><a href="/MasterForms/Ward/PrabhagDetails" class="hover" title=" Ward / Prabhag Details">Ward / Prabhag Details</a></li>
+    <li class="search"><a href="/MasterForms/AreaDetails" class="hover" title="Area Details"> Area Details</a></li>
+    <li class="search"><a href="/MasterForms/VehicleTypeDetails" class="hover" title="Vehicle Type Details">Vehicle Type Details</a></li>
+
+
+    <li class="search"><a href="/Report/OnePointOne2020" class="hover" title="1.1">1.1</a></li>
+    <li class="search"><a href="/Report/OnePointTwo2020" class="hover" title="1.2">1.2</a></li>
+    <li class="search"><a href="/Report/OnePointThree2020" class="hover" title="1.3">1.3</a></li>
+
+
+    <li class="search"><a href="/SS20-20/CitizenAp/SSLeague2020" class="hover" title="Citizen App">Citizen App</a></li>
+    <li class="search"><a id="yocc_fb" onclick="myconfirmyocc()" class="hover" title="YOCC-Feedback">YOCC-Feedback</a></li>
+    <li class="search"><a id="yocc_dnd" onclick="myconfirmyocc()" class="hover" title="YOCC-DND">YOCC-DND</a></li>
+
+
+    <li class="search"><a href="/Infotainment/CleanlinessGame" class="hover" title="User Game Details"> CleanlinessGame</a></li>
+
+
+    <li class="search"><a href="/Home/Organisationstructure" class="hover" title="About Us"> Organisation Structure</a></li>
+    <li class="search"><a href="/Home/who" class="hover" title="Who's Who"> Who's Who</a></li>
+
+
+
+
+</ul>
+<p class="test notfound">Result Not Found</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+
+
+
+    debugger;
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var code = urlParams.get('search');
+    document.getElementById("name").value = code;
+    var $input = $('#name');
+
+    var $val = $input.val().trim(),
+        $select = $('.autocomplete-content');
+    // Check if the input isn't empty
+    if ($val != '') {
+        $select.children('li').addClass('hide')
+        $select.children('li').filter(function () {
+            console.log($(this).text().indexOf($val))
+            return $(this).text().indexOf($val) !== -1;
+        }).removeClass('hide');
+        if ($(this).text().indexOf($val) < 0) {
+            $(".test").removeClass("notfound");
+        }
+    } else {
+        $select.children().addClass('hide');
+      
     }
-}
+   
+</script>
+
+

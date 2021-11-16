@@ -21,6 +21,8 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
         IMainRepository mainRepository;
         private object db;
 
+      
+
         public HomeController()
         {
             if (SessionHandler.Current.AppId != 0)
@@ -319,28 +321,29 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
         }
 
 
-        [HttpPost]
-        public ActionResult SearchAct(FormCollection form)
+        //[HttpPost]
+        //public ActionResult SearchAct(FormCollection form)
+        //{
+        //    ViewBag.SearchKey = form["nameToFind"];
+
+
+        //    return View();
+        //}
+
+
+
+
+        [HttpGet]
+        public ActionResult SearchAct(string search)
         {
-            ViewBag.SearchKey = form["nameToFind"];
-
-
+            //object result = null;
+            //do whatever you need with the parameter, 
+            //like using it as parameter in Linq to Entities or Linq to Sql, etc. 
+            //Suppose your search result will be put in variable "result".
+           // ViewData.Model = result;
+            ViewBag.SearchKey = search;  // the ?allowed=true in the URL
             return View();
         }
-
-
-        //public ActionResult SearchAct(string nameToFind)
-        //{
-        //    // Current projects
-        //    var projects = db.Projects;
-        //    // Filter down if necessary
-        //    if (!String.IsNullOrEmpty(nameToFind))
-        //    {
-        //        projects = projects.Where(p => p.projectName.Contains(nameToFind) || p.projectName.Contains(nameToFind));
-        //    }
-        //    // Pass your list out to your view
-        //    return View(projects.ToList());
-        //}
 
     }
 
