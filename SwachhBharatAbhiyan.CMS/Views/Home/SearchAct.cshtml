@@ -12,8 +12,19 @@
     .notfound {
         display: none;
     }
+    ul{
+        list-style-type:none;
+    }
+    .search {
+        padding:10px 20px;
+        border-bottom: 2px solid #000;
+    }
+    .search-title {
+        background: #f19329;
+        padding: 10px;
+    }
 </style>
-<h2>SearchAct</h2>
+<h2 class="search-title">Search Result For <span id="searchfor"></span></h2>
 
 <span id="name" style="display:none;"></span>
 
@@ -21,10 +32,7 @@
 
 <ul class="links autocomplete-content ">
 
-    <li class="search">
-        Dashboard
-
-    </li>
+  
 
     <li class="search">
         <a href="/Attendence/WorkersAttendanceDetails" class="hover" title="Workers Attendance Details">
@@ -76,7 +84,7 @@
     <li class="search"><a href="/Report/GarbageCollection(Ward-Wise)" class="hover" title="Garbage Collection (Ward-Wise)"> Garbage Collection (Ward-Wise)</a></li>
     <li class="search"><a href="/Report/GarbageCollection(EntireCity)" class="hover" title="Garbage Collection (Entire City)">Garbage Collection (Entire City)</a></li>
     <li class="search"><a href="/Report/GarbagePattern(Area-wise)" class="hover" title="Garbage Pattern (Area-wise)<">Garbage Pattern (Area-wise)</a></li>
-    <li class="search"><a href="/Report/GarbageCollectionDashboard" class="hover" title="Garbage Collection Dashboard">Garbage Collection Dashboard</a></li>
+    <li class="search"><p>Sample Text</p><br/><a href="/Report/GarbageCollectionDashboard" class="hover" title="Garbage Collection Dashboard">Garbage Collection Dashboard</a></li>
     <li class="search"><a href="/Report/DumpyardDetails" class="hover" title="Dumpyard Details">Dumpyard Details</a></li>
     <li class="search"><a href="/Report/GarbageCollectionSummary(House-wise)" class="hover" title="Garbage Collection Summary (House-wise)">Garbage Collection Summary (House-wise)</a></li>
     <li class="search"><a href="/Report/Day-wiseCollectionSummary" class="hover" title="Day-wise Collection Summary">Day-wise Collection Summary </a></li>
@@ -122,18 +130,19 @@
     var urlParams = new URLSearchParams(queryString);
     var code = urlParams.get('search');
     document.getElementById("name").value = code;
+    document.getElementById("searchfor").innerHTML = code;
     var $input = $('#name');
-
-    var $val = $input.val().trim(),
+    //var $input = input.toLowerCase();
+    var $val = $input.val().toLowerCase(),
         $select = $('.autocomplete-content');
     // Check if the input isn't empty
     if ($val != '') {
         $select.children('li').addClass('hide')
         $select.children('li').filter(function () {
-            console.log($(this).text().indexOf($val))
-            return $(this).text().indexOf($val) !== -1;
+            console.log($(this).text().toLowerCase().indexOf($val))
+            return $(this).text().toLowerCase().indexOf($val) !== -1;
         }).removeClass('hide');
-        if ($(this).text().indexOf($val) < 0) {
+        if ($(this).text().indexOf($val) > 0) {
             $(".test").removeClass("notfound");
         }
     } else {
