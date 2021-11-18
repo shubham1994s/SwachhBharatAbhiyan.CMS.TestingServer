@@ -127,6 +127,7 @@
     <Compile Include="MainModel\AppDistrictVM.cs" />
     <Compile Include="MainModel\AppStateVM.cs" />
     <Compile Include="MainModel\AppTalukaVM.cs" />
+    <Compile Include="MainModel\SearchResults.cs" />
     <Compile Include="MainModel\VMApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SS2020Reports\1Point4VM.cs" />

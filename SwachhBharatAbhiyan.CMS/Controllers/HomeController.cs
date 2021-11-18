@@ -4,13 +4,17 @@ using SwachBharat.CMS.Bll.Repository.GridRepository;
 using SwachBharat.CMS.Bll.Repository.MainRepository;
 using SwachBharat.CMS.Bll.ViewModels.ChildModel.Model;
 using SwachBharat.CMS.Bll.ViewModels.Grid;
+using SwachBharat.CMS.Bll.ViewModels.MainModel;
 using SwachBharat.CMS.Dal.DataContexts;
 using SwachhBharatAbhiyan.CMS.Models.SessionHelper;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Web;
+using System.Web.Compilation;
+using System.Web.Hosting;
 using System.Web.Mvc;
 
 namespace SwachhBharatAbhiyan.CMS.Controllers
@@ -314,9 +318,10 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 return Redirect("/Account/Login");
         }
 
-
+        
         public ActionResult SearchAct()
         {
+           
             return View();
         }
 
@@ -336,11 +341,28 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
         [HttpGet]
         public ActionResult SearchAct(string search)
         {
+
+            // var dir = Directory.GetFiles(string.Format("{0}/Views", HostingEnvironment.ApplicationPhysicalPath), "*.cshtml", SearchOption.AllDirectories);
+
+            //foreach (var file in dir)
+            //{
+            //    var relativePath = file.Replace(HostingEnvironment.ApplicationPhysicalPath, String.Empty);
+
+            //    Type type = BuildManager.GetCompiledType(relativePath);
+
+            //    var modelProperty = type.GetProperties().FirstOrDefault(p => p.Name == "Model");
+
+            //    if (modelProperty != null )
+            //    {
+            //        // You got the correct type
+            //    }
+            //}
             //object result = null;
             //do whatever you need with the parameter, 
             //like using it as parameter in Linq to Entities or Linq to Sql, etc. 
             //Suppose your search result will be put in variable "result".
-           // ViewData.Model = result;
+            // ViewData.Model = result;
+         //    SearchResults results = searchService.Find(search);
             ViewBag.SearchKey = search;  // the ?allowed=true in the URL
             return View();
         }
