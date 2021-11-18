@@ -11,9 +11,13 @@
 
     .notfound {
         display: none;
+        
     }
-    ul{
-        list-style-type:none;
+    .test {
+        text-align: center;
+    }
+    ul {
+        list-style-type: none;
     }
     .search {
         padding:10px 20px;
@@ -23,6 +27,13 @@
         background: #f19329;
         padding: 10px;
     }
+    .searchan>b>font {
+        color: #7E3C01 !important;
+    }
+        .searchan:hover {
+            background: none;
+            color: #7E3C01;
+        }
 </style>
 <h2 class="search-title">Search Result For <span id="searchfor"></span></h2>
 
@@ -30,89 +41,104 @@
 
 <input type="hidden" id="name" class="autocomplete">
 
-<ul class="links autocomplete-content ">
+<ul id="ul-list" class="links autocomplete-content ">
 
-  
+
 
     <li class="search">
-        <a href="/Attendence/WorkersAttendanceDetails" class="hover" title="Workers Attendance Details">
+        <a href="/Attendence/WorkersAttendanceDetails" class="hover searchan" title="Workers Attendance Details">
             <i> </i>
             Workers Attendance Details
         </a>
+        <div id="desc"></div>
     </li>
 
 
-    <li class="search"><a href="/GarbageCollection/HouseholdCollection" class="hover" title="Household Collection">Household Collection</a></li>
-    <li class="search"><a href="/GarbageCollection/GarbagePointCollection" class="hover" title="Garbage Point Collection">Garbage Point Collection</a></li>
-    <li class="search"><a href="/GarbageCollection/DumpYardTrips" class="hover" title="Dump Yard Trips"> Dump Yard Trips </a></li>
+    <li class="search"><a href="/GarbageCollection/HouseholdCollection" class="hover searchan" title="Household Collection">Household Collection</a><div id="desc"></div></li>
+    <li class="search"><a href="/GarbageCollection/GarbagePointCollection" class="hover searchan" title="Garbage Point Collection">Garbage Point Collection</a><div id="desc"></div></li>
+    <li class="search"><a href="/GarbageCollection/DumpYardTrips" class="hover searchan" title="Dump Yard Trips"> Dump Yard Trips </a><div id="desc"></div></li>
 
-
-
-
-    <li class="search"><a href="/WorkSummary/EmployeeWorkSummary" class="hover" title="Employee Work Summary">Employee Work Summary </a></li>
-    <li class="search"><a href="/WorkSummary/EmployeeIdleTime" class="hover" title="Employee Idle Time">Employee Idle Time </a></li>
+    <li class="search"><a href="/WorkSummary/EmployeeWorkSummary" class="hover searchan" title="Employee Work Summary">Employee Work Summary </a><div id="desc"></div></li>
+    <li class="search"><a href="/WorkSummary/EmployeeIdleTime" class="hover searchan" title="Employee Idle Time">Employee Idle Time </a><div id="desc"></div></li>
 
 
     <li class="search">
-        <a href="/Complaint/CleanlinessComplaints" class="hover" title="Cleanliness Complaints">
+        <a href="/Complaint/CleanlinessComplaints" class="hover searchan" title="Cleanliness Complaints">
             <i> </i>
             <span class="satana_feedback">Cleanliness Complaints</span>
         </a>
+        <div id="desc"></div>
     </li>
 
-    <li class="search"><a href="/CT/PT/CTPTDetails" class="hover" title="CTPT Details"> CTPT Details</a></li>
+    <li class="search"><a href="/CT/PT/CTPTDetails" class="hover searchan" title="CTPT Details"> CTPT Details</a><div id="desc"></div></li>
 
 
-    <li class="search"><a href="/Location(OnMap)/LocationDetails" class="hover" title="Location Details">Location Details</a></li>
-    <li class="search"><a href="/Location(OnMap)/OnMapLocation" class="hover" title="On Map Location">On Map Location</a></li>
-    <li class="search"><a href="/Location(OnMap)/HouseonMap" target="new" class="hover" title=" House on Map">House on Map</a></li>
+    <li class="search"><a href="/Location(OnMap)/LocationDetails" class="hover searchan" title="Location Details">Location Details</a><div id="desc"></div></li>
+    <li class="search"><a href="/Location(OnMap)/OnMapLocation" class="hover searchan" title="On Map Location">On Map Location</a><div id="desc"></div></li>
+    <li class="search"><a href="/Location(OnMap)/HouseonMap" target="new" class="hover searchan" title=" House on Map">House on Map</a><div id="desc"></div></li>
 
 
-    <li class="search"><a href="/RegistrationForms/HouseRegistration" class="hover" title="House Registration">House Registration </a></li>
-    <li class="search"><a href="/RegistrationForms/GarbagePointRegistration" class="hover" title="Garbage Point Registration">Garbage Point Registration </a></li>
-    <li class="search"><a href="/RegistrationForms/DumpYardRegistration" class="hover" title="Dump Yard Registration ">Dump Yard Registration </a></li>
-    <li class="search"><a href="/RegistrationForms/EmployeeRegistration" class="hover" title="Employee Registration">Employee Registration  </a></li>
-    <li class="search"><a href="/RegistrationForms/CT/PTRegistration" class="hover" title="CT / PT Registration ">CT / PT Registration  </a></li>
-
-
-
-    <li class="search"><a href="/Report/HouseholdCollectionReport(Pattern-wise)" class="hover" title="Household Collection Report (Pattern-wise)">Household Collection Report (Pattern-wise)</a></li>
-    <li class="search"><a href="/Report/GarbageCollection(Employee-wise)" class="hover" title="Garbage Collection (Employee-wise)">Garbage Collection (Employee-wise)</a></li>
-    <li class="search"><a href="/Report/GarbageCollection(Percentage-Wise)" class="hover" title="Garbage Collection (Percentage-Wise)"> Garbage Collection (Percentage-Wise)</a></li>
-    <li class="search"><a href="/Report/EmployeeWiseCollection(Chart-Pattern)" class="hover" title="Employee Wise Collection (Chart-Pattern) "> Employee Wise Collection (Chart-Pattern) </a></li>
-    <li class="search"><a href="/Report/GarbageCollection(Date-wise)" class="hover" title="Garbage Collection (Date-wise) "> Garbage Collection (Date-wise) </a></li>
-    <li class="search"><a href="/Report/GarbageCollection(Ward-Wise)" class="hover" title="Garbage Collection (Ward-Wise)"> Garbage Collection (Ward-Wise)</a></li>
-    <li class="search"><a href="/Report/GarbageCollection(EntireCity)" class="hover" title="Garbage Collection (Entire City)">Garbage Collection (Entire City)</a></li>
-    <li class="search"><a href="/Report/GarbagePattern(Area-wise)" class="hover" title="Garbage Pattern (Area-wise)<">Garbage Pattern (Area-wise)</a></li>
-    <li class="search"><p>Sample Text</p><br/><a href="/Report/GarbageCollectionDashboard" class="hover" title="Garbage Collection Dashboard">Garbage Collection Dashboard</a></li>
-    <li class="search"><a href="/Report/DumpyardDetails" class="hover" title="Dumpyard Details">Dumpyard Details</a></li>
-    <li class="search"><a href="/Report/GarbageCollectionSummary(House-wise)" class="hover" title="Garbage Collection Summary (House-wise)">Garbage Collection Summary (House-wise)</a></li>
-    <li class="search"><a href="/Report/Day-wiseCollectionSummary" class="hover" title="Day-wise Collection Summary">Day-wise Collection Summary </a></li>
-    <li class="search"><a href="/Report/EmployeeCollectionAverage" class="hover" title="Employee Collection Average">Employee Collection Average</a></li>
+    <li class="search"><a href="/RegistrationForms/HouseRegistration" class="hover searchan" title="House Registration">House Registration </a><div id="desc"></div></li>
+    <li class="search"><a href="/RegistrationForms/GarbagePointRegistration" class="hover searchan" title="Garbage Point Registration">Garbage Point Registration </a><div id="desc"></div></li>
+    <li class="search"><a href="/RegistrationForms/DumpYardRegistration" class="hover searchan" title="Dump Yard Registration ">Dump Yard Registration </a><div id="desc"></div></li>
+    <li class="search"><a href="/RegistrationForms/EmployeeRegistration" class="hover searchan" title="Employee Registration">Employee Registration  </a><div id="desc"></div></li>
+    <li class="search"><a href="/RegistrationForms/CT/PTRegistration" class="hover searchan" title="CT / PT Registration ">CT / PT Registration  </a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/HouseholdCollectionReport(Pattern-wise)" class="hover searchan" title="Household Collection Report (Pattern-wise)">Household Collection Report (Pattern-wise)</a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/GarbageCollection(Employee-wise)" class="hover searchan" title="Garbage Collection (Employee-wise)">Garbage Collection (Employee-wise)</a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/GarbageCollection(Percentage-Wise)" class="hover searchan" title="Garbage Collection (Percentage-Wise)"> Garbage Collection (Percentage-Wise)</a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/EmployeeWiseCollection(Chart-Pattern)" class="hover searchan" title="Employee Wise Collection (Chart-Pattern) "> Employee Wise Collection (Chart-Pattern) </a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/GarbageCollection(Date-wise)" class="hover searchan" title="Garbage Collection (Date-wise) "> Garbage Collection (Date-wise) </a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/GarbageCollection(Ward-Wise)" class="hover searchan" title="Garbage Collection (Ward-Wise)"> Garbage Collection (Ward-Wise)</a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/GarbageCollection(EntireCity)" class="hover searchan" title="Garbage Collection (Entire City)">Garbage Collection (Entire City)</a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/GarbagePattern(Area-wise)" class="hover searchan" title="Garbage Pattern (Area-wise)<">Garbage Pattern (Area-wise)</a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/GarbageCollectionDashboard" class="hover searchan" title="Garbage Collection Dashboard">Garbage Collection Dashboard</a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/DumpyardDetails" class="hover searchan" title="Dumpyard Details">Dumpyard Details</a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/GarbageCollectionSummary(House-wise)" class="hover searchan" title="Garbage Collection Summary (House-wise)">Garbage Collection Summary (House-wise)</a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/Day-wiseCollectionSummary" class="hover searchan" title="Day-wise Collection Summary">Day-wise Collection Summary </a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/EmployeeCollectionAverage" class="hover searchan" title="Employee Collection Average">Employee Collection Average</a><div id="desc"></div></li>
 
 
 
-    <li class="search"><a href="/MasterForms/ZoneDetails" class="hover" title=" Zone Details"> Zone Details</a></li>
-    <li class="search"><a href="/MasterForms/Ward/PrabhagDetails" class="hover" title=" Ward / Prabhag Details">Ward / Prabhag Details</a></li>
-    <li class="search"><a href="/MasterForms/AreaDetails" class="hover" title="Area Details"> Area Details</a></li>
-    <li class="search"><a href="/MasterForms/VehicleTypeDetails" class="hover" title="Vehicle Type Details">Vehicle Type Details</a></li>
+    <li class="search"><a href="/MasterForms/ZoneDetails" class="hover searchan" title=" Zone Details"> Zone Details</a><div id="desc"></div></li>
+    <li class="search"><a href="/MasterForms/Ward/PrabhagDetails" class="hover searchan" title=" Ward / Prabhag Details">Ward / Prabhag Details</a><div id="desc"></div></li>
+    <li class="search"><a href="/MasterForms/AreaDetails" class="hover searchan" title="Area Details"> Area Details</a><div id="desc"></div></li>
+    <li class="search"><a href="/MasterForms/VehicleTypeDetails" class="hover searchan" title="Vehicle Type Details">Vehicle Type Details</a><div id="desc"></div></li>
 
 
-    <li class="search"><a href="/Report/OnePointOne2020" class="hover" title="1.1">1.1</a></li>
-    <li class="search"><a href="/Report/OnePointTwo2020" class="hover" title="1.2">1.2</a></li>
-    <li class="search"><a href="/Report/OnePointThree2020" class="hover" title="1.3">1.3</a></li>
+    <li class="search"><a href="/Report/OnePointOne2020" class="hover searchan" title="1.1">1.1</a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/OnePointTwo2020" class="hover searchan" title="1.2">1.2</a><div id="desc"></div></li>
+    <li class="search"><a href="/Report/OnePointThree2020" class="hover searchan" title="1.3">1.3</a><div id="desc"></div></li>
 
 
-    <li class="search"><a href="/SS20-20/CitizenAp/SSLeague2020" class="hover" title="Citizen App">Citizen App</a></li>
-    <li class="search"><a id="yocc_fb" onclick="myconfirmyocc()" class="hover" title="YOCC-Feedback">YOCC-Feedback</a></li>
-    <li class="search"><a id="yocc_dnd" onclick="myconfirmyocc()" class="hover" title="YOCC-DND">YOCC-DND</a></li>
+    <li class="search"><a href="/SS20-20/CitizenAp/SSLeague2020" class="hover searchan" title="Citizen App">Citizen App</a><div id="desc"></div></li>
+    <li class="search"><a id="yocc_fb" onclick="myconfirmyocc()" class="hover searchan" title="YOCC-Feedback">YOCC-Feedback</a><div id="desc"></div></li>
+    <li class="search"><a id="yocc_dnd" onclick="myconfirmyocc()" class="hover searchan" title="YOCC-DND">YOCC-DND</a><div id="desc"></div></li>
 
 
-    <li class="search"><a href="/Infotainment/CleanlinessGame" class="hover" title="User Game Details"> CleanlinessGame</a></li>
+    <li class="search"><a href="/Infotainment/CleanlinessGame" class="hover searchan" title="User Game Details"> CleanlinessGame</a><div id="desc"></div></li>
 
 
-    <li class="search"><a href="/Home/Organisationstructure" class="hover" title="About Us"> Organisation Structure</a></li>
-    <li class="search"><a href="/Home/who" class="hover" title="Who's Who"> Who's Who</a></li>
+    <li class="search"><a href="/Home/Organisationstructure" class="hover searchan" title="About Us"> Organisation Structure</a><div id="desc"></div></li>
+    <li class="search"><a href="/Home/who" class="hover searchan" title="Who's Who"> Who's Who</a><div id="desc"></div></li>
+
+    <li class="search">
+        <a href="/Home/WebsitePolicies" class="hover searchan" title="Website Policies">Website Policies</a><div id="desc">
+    <p>Hyper linking Policy Links to external websites/portals</p><p>The Website of BIG V TELECOM PRIVATE LIMITED presents a single department where most content is contributed by a single set of sources.</p>
+    <p>Website Monitoring Policy</p><p>COPYRIGHT POLICY</p><p>Privacy policy</p>
+</div>
+    </li>
+    <li class="search"><a href="/Home/Notice_Disclosures" class="hover searchan" title="Notice and Disclosures">Notice and Disclosures</a><div id="desc"><p>The information contained on the BIG V TELECOM PRIVATE LIMITED website is subject to change without prior advance notice.</p></div></li>
+    <li class="search"><a href="/Home/ContactUs" class="hover searchan" title="Contact Us">Contact Us</a><div id="desc"><p>please contact the BIG V TELECOM PRIVATE LIMITED </p></div></li>
+    <li class="search"><a href="/Home/About" class="hover searchan" title="About Us">About Us</a><div id="desc"></div><p>The ABOUT US section in our website consists of all relevant information about BIG V TELECOM PRIVATE LIMITED such as the history of the emergence of BIG V TELECOM PRIVATE LIMITED, details of the Acts, details of committee members etc</p></li>
+    <li class="search"><a href="/Home/Help" class="hover searchan" title="Help">Help</a><div id="desc"><p>Accessibility Help</p></div></li>
+    <li class="search"><a href="/Home/Organisationstructure" class="hover searchan" title="Organisation Structure">Organisation Structure</a><div id="desc"><p>The contents in About Policies and GR’s section are updated when there is any alteration in the organizational structure or information. Last update date shall be shown in the footer of the website.</p></div></li>
+    <li class="search"><a href="/Home/who" class="hover searchan" title="Who's Who">Who's Who</a><div id="desc"><p>Currently content are not available</p></div></li>
+    <li class="search"><a href="/Home/Validation_TestingProcess" class="hover searchan" title="Validation & Testing Process">Validation & Testing Process</a><div id="desc"><p>Process: BIG V TELECOM PRIVATE LIMITED – BIG V TELECOM PRIVATE LIMITED website is monitored for broken links manually as a when the changes are made in Website.</p></div></li>
+    <li class="search"><a href="/Home/Mechanism" class="hover searchan" title="Mechanism">Mechanism</a><div id="desc"><p>Mechanism for collection of Feedback</p><p>Virus Scan Mechanism</p></div></li>
+    <li class="search"><a href="/Home/Responsibility_Authority" class="hover searchan" title="Responsibility and Authority">Responsibility and Authority </a><div id="desc"><p> it is responsibility of the Web Information Manager to either reply to all of them himself/herself or designate someone to regularly check and respond to the feedback/query mails.</p></div></li>
+    <li class="search"><a href="/Home/Terms_Conditions" class="hover searchan" title="Terms & Conditions">Terms & Conditions</a><div id="desc"><p>These terms of use describe your rights and responsibilities as a user of BIG V TELECOM PRIVATE LIMITED. To have a BIG V TELECOM PRIVATE LIMITED website account, you must accept these terms of use.</p></div></li>
+    <li class="search"><a href="/Home/FeedBack" class="hover searchan" title="FeedBack">FeedBack</a><div id="desc"><p>Feedback Form</p></div></li>
+    <li class="search"><a href="/Home/Sitemap" class="hover searchan" title="Sitemap">Sitemap</a><div id="desc"><p>Sitemap Navigation</p></div></li>
 
 
 
@@ -142,9 +168,30 @@
             console.log($(this).text().toLowerCase().indexOf($val))
             return $(this).text().toLowerCase().indexOf($val) !== -1;
         }).removeClass('hide');
-        if ($(this).text().indexOf($val) > 0) {
-            $(".test").removeClass("notfound");
+      
+
+        var text = document.getElementById("name").value;
+
+        if (window.find && window.getSelection) {
+            debugger;
+            document.designMode = "on";
+            var sel = window.getSelection();
+            sel.collapse(document.getElementById("desc"), 0);
+            //var enew = e.replace(/(<span>|<\/span>)/igm, "");
+            // document.getElementById("searchtext").innerHTML = enew;
+            while (window.find(text)) {
+                debugger;
+                document.execCommand("bold");
+                document.execCommand('foreColor', true, '#000');
+                sel.collapseToEnd();
+            }
+
+            document.designMode = "off";
+            //$(".test").removeClass("notfound");
         }
+
+
+
     } else {
         $select.children().addClass('hide');
       
