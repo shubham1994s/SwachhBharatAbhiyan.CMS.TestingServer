@@ -4,6 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+<style>
+    .searchan {
+        color: #803C00 !important;
+    }
+</style>
 <div class="container ml-3 py-4 pb-5 mb-5" style="overflow:scroll;height:100vh">
     @*<h2 class="mb-3"><a href="/Home/Index">Home</a> > Terms & Conditions</h2>*@
     <nav aria-label="breadcrumb">
@@ -18,107 +24,107 @@
         <div class="sitemap-menu">
             <h2>Main Navigatiob</h2>
             <ul>
-                <li><a href="/Home/Index">Dashboard</a></li>
+                <li><a href="/Home/Index" class="searchan">Dashboard</a></li>
                 <li>
                    Attendance
                     <ul>
-                        <li><a href="/Attendence/WorkersAttendanceDetails">Worker Attendance Details</a></li>
+                        <li><a href="/Attendence/WorkersAttendanceDetails" class="searchan">Worker Attendance Details</a></li>
                     </ul>
                 </li>
                 <li>
                     Garbage Collection
                     <ul>
-                        <li><a href="/GarbageCollection/HouseholdCollection">Household Collection</a></li>
-                        <li><a href="/GarbageCollection/GarbagePointCollection">Garbage Point Collection</a></li>
-                        <li><a href="/GarbageCollection/DumpYardTrips"> Dump Yard Trips </a></li>
+                        <li><a href="/GarbageCollection/HouseholdCollection" class="searchan">Household Collection</a></li>
+                        <li><a href="/GarbageCollection/GarbagePointCollection" class="searchan">Garbage Point Collection</a></li>
+                        <li><a href="/GarbageCollection/DumpYardTrips" class="searchan"> Dump Yard Trips </a></li>
                     </ul>
                 </li>
                 <li>
                     Work Summary
                     <ul>
-                        <li><a href="/WorkSummary/EmployeeWorkSummary" >Employee Work Summary </a></li>
-                        <li><a href="/WorkSummary/EmployeeIdleTime" >Employee Idle Time </a></li>
+                        <li><a href="/WorkSummary/EmployeeWorkSummary" class="searchan">Employee Work Summary </a></li>
+                        <li><a href="/WorkSummary/EmployeeIdleTime" class="searchan">Employee Idle Time </a></li>
                     </ul>
                 </li>
                 <li>
                     Complaint
                     <ul>
-                        <li><a href="/Complaint/CleanlinessComplaints" >Cleanliness Complaints</a></li>
+                        <li><a href="/Complaint/CleanlinessComplaints" class="searchan">Cleanliness Complaints</a></li>
                     </ul>
                 </li>
                 <li>
                     CT / PT
                     <ul>
-                        <li><a href="/CT/PT/CTPTDetails"> CTPT Details</a></li>
+                        <li><a href="/CT/PT/CTPTDetails" class="searchan"> CTPT Details</a></li>
                     </ul>
                 </li>
                 <li>
                     Location (On Map)
                     <ul>
-                        <li><a href="/Location(OnMap)/LocationDetails" >Location Details</a></li>
-                        <li><a href="/Location(OnMap)/OnMapLocation" >On Map Location</a></li>
-                        <li><a href="/Location(OnMap)/HouseonMap" >House on Map</a></li>
+                        <li><a href="/Location(OnMap)/LocationDetails" class="searchan">Location Details</a></li>
+                        <li><a href="/Location(OnMap)/OnMapLocation" class="searchan">On Map Location</a></li>
+                        <li><a href="/Location(OnMap)/HouseonMap" class="searchan">House on Map</a></li>
                     </ul>
                 </li>
                 <li>
                     Registration Forms
                     <ul>
-                        <li><a href="/RegistrationForms/HouseRegistration">House Registration </a></li>
-                        <li><a href="/RegistrationForms/GarbagePointRegistration">Garbage Point Registration </a></li>
-                        <li><a href="/RegistrationForms/DumpYardRegistration">Dump Yard Registration </a></li>
-                        <li><a href="/RegistrationForms/EmployeeRegistration">Employee Registration  </a></li>
-                        <li><a href="/RegistrationForms/CT/PTRegistration" >CT / PT Registration  </a></li>
+                        <li><a href="/RegistrationForms/HouseRegistration" class="searchan">House Registration </a></li>
+                        <li><a href="/RegistrationForms/GarbagePointRegistration" class="searchan">Garbage Point Registration </a></li>
+                        <li><a href="/RegistrationForms/DumpYardRegistration" class="searchan">Dump Yard Registration </a></li>
+                        <li><a href="/RegistrationForms/EmployeeRegistration" class="searchan">Employee Registration  </a></li>
+                        <li><a href="/RegistrationForms/CT/PTRegistration" class="searchan">CT / PT Registration  </a></li>
                     </ul>
                 </li>
                 <li>
                     Reports
                     <ul>
-                        <li><a href="/Report/HouseholdCollectionReport(Pattern-wise)">Household Collection Report (Pattern-wise)</a></li>
-                        <li><a href="/Report/GarbageCollection(Employee-wise)">Garbage Collection (Employee-wise)</a></li>
-                        <li><a href="/Report/GarbageCollection(Percentage-Wise)"> Garbage Collection (Percentage-Wise)</a></li>
-                        <li><a href="/Report/EmployeeWiseCollection(Chart-Pattern)"> Employee Wise Collection (Chart-Pattern) </a></li>
-                        <li><a href="/Report/GarbageCollection(Date-wise)"> Garbage Collection (Date-wise) </a></li>
-                        <li><a href="/Report/GarbageCollection(Ward-Wise)"> Garbage Collection (Ward-Wise)</a></li>
-                        <li><a href="/Report/GarbageCollection(EntireCity)">Garbage Collection (Entire City)</a></li>
-                        <li><a href="/Report/GarbagePattern(Area-wise)">Garbage Pattern (Area-wise)</a></li>
-                        <li><a href="/Report/GarbageCollectionDashboard">Garbage Collection Dashboard</a></li>
-                        <li><a href="/Report/DumpyardDetails">Dumpyard Details</a></li>
-                        <li><a href="/Report/GarbageCollectionSummary(House-wise)">Garbage Collection Summary (House-wise)</a></li>
-                        <li><a href="/Report/Day-wiseCollectionSummary">Day-wise Collection Summary </a></li>
-                        <li><a href="/Report/EmployeeCollectionAverage">Employee Collection Average</a></li>
+                        <li><a href="/Report/HouseholdCollectionReport(Pattern-wise)" class="searchan">Household Collection Report (Pattern-wise)</a></li>
+                        <li><a href="/Report/GarbageCollection(Employee-wise)" class="searchan">Garbage Collection (Employee-wise)</a></li>
+                        <li><a href="/Report/GarbageCollection(Percentage-Wise)" class="searchan"> Garbage Collection (Percentage-Wise)</a></li>
+                        <li><a href="/Report/EmployeeWiseCollection(Chart-Pattern)" class="searchan"> Employee Wise Collection (Chart-Pattern) </a></li>
+                        <li><a href="/Report/GarbageCollection(Date-wise)" class="searchan"> Garbage Collection (Date-wise) </a></li>
+                        <li><a href="/Report/GarbageCollection(Ward-Wise)" class="searchan"> Garbage Collection (Ward-Wise)</a></li>
+                        <li><a href="/Report/GarbageCollection(EntireCity)" class="searchan">Garbage Collection (Entire City)</a></li>
+                        <li><a href="/Report/GarbagePattern(Area-wise)" class="searchan">Garbage Pattern (Area-wise)</a></li>
+                        <li><a href="/Report/GarbageCollectionDashboard" class="searchan">Garbage Collection Dashboard</a></li>
+                        <li><a href="/Report/DumpyardDetails"  class="searchan">Dumpyard Details</a></li>
+                        <li><a href="/Report/GarbageCollectionSummary(House-wise)" class="searchan">Garbage Collection Summary (House-wise)</a></li>
+                        <li><a href="/Report/Day-wiseCollectionSummary" class="searchan">Day-wise Collection Summary </a></li>
+                        <li><a href="/Report/EmployeeCollectionAverage" class="searchan">Employee Collection Average</a></li>
                     </ul>
                 </li>
                 <li>
                     Master Forms
                     <ul>
-                        <li><a href="/MasterForms/ZoneDetails"> Zone Details</a></li>
-                        <li><a href="/MasterForms/Ward/PrabhagDetails">Ward / Prabhag Details</a></li>
-                        <li><a href="/MasterForms/AreaDetails"> Area Details</a></li>
-                        <li><a href="/MasterForms/VehicleTypeDetails">Vehicle Type Details</a></li>
+                        <li><a href="/MasterForms/ZoneDetails" class="searchan"> Zone Details</a></li>
+                        <li><a href="/MasterForms/Ward/PrabhagDetails" class="searchan">Ward / Prabhag Details</a></li>
+                        <li><a href="/MasterForms/AreaDetails" class="searchan"> Area Details</a></li>
+                        <li><a href="/MasterForms/VehicleTypeDetails" class="searchan">Vehicle Type Details</a></li>
                     </ul>
                 </li>
                 <li>
                     SS 20-20
                     <ul>
-                        <li><a href="/Report/OnePointOne2020">1.1</a></li>
-                        <li><a href="/Report/OnePointTwo2020">1.2</a></li>
-                        <li><a href="/Report/OnePointThree2020">1.3</a></li>
-                        <li><a href="/SS20-20/CitizenAp/SSLeague2020">Citizen App</a></li>
-                        <li><a onclick="myconfirmyocc()" style="color: #fe9436;">YOCC-Feedback</a></li>
-                        <li><a onclick="myconfirmyocc()" style="color: #fe9436;">YOCC-DND</a></li>
+                        <li><a href="/Report/OnePointOne2020" class="searchan">1.1</a></li>
+                        <li><a href="/Report/OnePointTwo2020" class="searchan">1.2</a></li>
+                        <li><a href="/Report/OnePointThree2020" class="searchan">1.3</a></li>
+                        <li><a href="/SS20-20/CitizenAp/SSLeague2020" class="searchan">Citizen App</a></li>
+                        <li><a onclick="myconfirmyocc()"  class="searchan">YOCC-Feedback</a></li>
+                        <li><a onclick="myconfirmyocc()"  class="searchan">YOCC-DND</a></li>
                     </ul>
                 </li>
                 <li>
                     Infotainment
                     <ul>
-                        <li><a href="/Infotainment/CleanlinessGame" class="hover"> CleanlinessGame</a></li>
+                        <li><a href="/Infotainment/CleanlinessGame"  class="searchan"> CleanlinessGame</a></li>
                     </ul>
                 </li>
                 <li>
                     About us
                     <ul>
-                        <li><a href="/Home/Organisationstructure" class="hover"> Organisation Structure</a></li>
-                        <li><a href="/Home/who" class="hover" > Who's Who</a></li>
+                        <li><a href="/Home/Organisationstructure"  class="searchan"> Organisation Structure</a></li>
+                        <li><a href="/Home/who"  class="searchan" > Who's Who</a></li>
                     </ul>
                 </li>
             </ul>
@@ -128,17 +134,17 @@
             <h2>Footer Menu</h2>
             <ul>
              
-                <li><a href="/Home/WebsitePolicies">Website Policies</a></li>
-                <li><a href="/Home/Notice_Disclosures">Notice and Disclosures</a></li>
-                <li><a href="/Home/ContactUs">Contact Us</a></li>
-                <li><a href="/Home/About">About Us</a></li>
-                <li><a href="/Home/Help">Help</a></li>
-                <li><a href="/Home/Validation_TestingProcess">Validation & Testing Process</a></li>
-                <li><a href="/Home/Mechanism">Mechanism</a></li>
-                <li><a href="/Home/Responsibility_Authority">Responsibility and Authority </a></li>
-                <li><a href="/Home/Terms_Conditions">Terms & Conditions</a></li>
-                <li><a href="/Home/FeedBack">FeedBack</a></li>
-                <li><a href="/Home/Sitemap">Sitemap</a></li>
+                <li><a href="/Home/WebsitePolicies" class="searchan">Website Policies</a></li>
+                <li><a href="/Home/Notice_Disclosures" class="searchan">Notice and Disclosures</a></li>
+                <li><a href="/Home/ContactUs" class="searchan">Contact Us</a></li>
+                <li><a href="/Home/About" class="searchan">About Us</a></li>
+                <li><a href="/Home/Help" class="searchan">Help</a></li>
+                <li><a href="/Home/Validation_TestingProcess" class="searchan">Validation & Testing Process</a></li>
+                <li><a href="/Home/Mechanism" class="searchan">Mechanism</a></li>
+                <li><a href="/Home/Responsibility_Authority" class="searchan">Responsibility and Authority </a></li>
+                <li><a href="/Home/Terms_Conditions" class="searchan">Terms & Conditions</a></li>
+                <li><a href="/Home/FeedBack" class="searchan">FeedBack</a></li>
+                <li><a href="/Home/Sitemap" class="searchan">Sitemap</a></li>
             </ul>
         </div>
     </div>

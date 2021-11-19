@@ -161,9 +161,9 @@
                             </i>
                         </div>
                     </div>
-                    <div class="text text-center mt-3"><a href="/Attendence/WorkersAttendanceDetails"><h4 style="font-weight: 400!important;"> Workers Attendance </h4></a></div>
+                    <div class="text text-center mt-3"><a href="/Attendence/WorkersAttendanceDetails" style="color:#000 !important;"><h4 style="font-weight: 400!important;"> Workers Attendance </h4></a></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">उपस्थिती</h4></div>*@
-                <div class="text text-center mt-2"><a href="/Attendence/WorkersAttendanceDetails"><h1 class="wa" style="font-weight: 400 !important; color: #833E02">@Model.TodayAttandence / @Model.TotalAttandence</h1></a></div>
+                <div class="text text-center mt-2"><a href="/Attendence/WorkersAttendanceDetails" style="color:#000 !important;"><h1 class="wa" style="font-weight: 400 !important; color: #833E02">@Model.TodayAttandence / @Model.TotalAttandence</h1></a></div>
                 </div>
             </div>
             <div class="col col-xs-12" onclick="location.href = '/GarbageCollection/HouseholdCollection';" style="cursor:pointer">
@@ -175,9 +175,9 @@
                             </i>
                         </div>
                     </div>
-                    <div class="text text-center mt-3"><a href="/GarbageCollection/HouseholdCollection"><h4 style="font-weight: 400!important;"> Household Collection</h4></a></div>
+                    <div class="text text-center mt-3"><a href="/GarbageCollection/HouseholdCollection" style="color:#000 !important;"><h4 style="font-weight: 400!important;"> Household Collection</h4></a></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">घर संकलन</h4></div>*@
-                    <div class="text text-center mt-2"><a href="/GarbageCollection/HouseholdCollection"><h1 class="HC" style="font-weight: 400 !important; color: #B30000">@Model.HouseCollection</h1></a></div>
+                    <div class="text text-center mt-2"><a href="/GarbageCollection/HouseholdCollection" style="color:#000 !important;"><h1 class="HC" style="font-weight: 400 !important; color: #B30000">@Model.HouseCollection</h1></a></div>
                 </div>
             </div>
             <div class="col" onclick="location.href = '/GarbageCollection/GarbagePointCollection';" style="cursor:pointer">
@@ -190,7 +190,7 @@
                             </i>
                         </div>
                     </div>
-                    <div class="text text-center mt-3"><a href="/GarbageCollection/GarbagePointCollection"><h4 style="font-weight: 400!important;">GV Point Collection</h4></a></div>
+                    <div class="text text-center mt-3"><a href="/GarbageCollection/GarbagePointCollection"  style="color:#000 !important;"><h4 style="font-weight: 400!important;">GV Point Collection</h4></a></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">पॉईंट संकलन</h4></div>*@
 
                     <div class="text text-center mt-2"><a href="/GarbageCollection/GarbagePointCollection"><h1 class="GVPC" style="font-weight: 400 !important; color: #0E5D36">@Model.PointCollection</h1></a></div>
@@ -206,7 +206,7 @@
                             </i>
                         </div>
                     </div>
-                    <div class="text text-center mt-3"><a href="/GarbageCollection/DumpYardTrips"><h4 style="font-weight: 400!important;"> Dump Yard Trips</h4></a></div>
+                    <div class="text text-center mt-3"><a href="/GarbageCollection/DumpYardTrips" style="color:#000 !important;"><h4 style="font-weight: 400!important;"> Dump Yard Trips</h4></a></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">डंप यार्ड</h4></div>*@
                     <div class="text text-center mt-2"><a href="/GarbageCollection/DumpYardTrips"><h1 class="DYC" style="font-weight: 400 !important; color: #175B69">@Model.DumpYardCount</h1></a></div>
                 </div>
@@ -221,7 +221,7 @@
                             </i>
                         </div>
                     </div>
-                    <div class="text text-center mt-3"><a href="/Complaint/CleanlinessComplaints"><h4 class="satana_feedback" style="font-weight: 400!important;">Cleanliness Complaint</h4></a></div>
+                    <div class="text text-center mt-3"><a href="/Complaint/CleanlinessComplaints" style="color:#000 !important;"><h4 class="satana_feedback" style="font-weight: 400!important;">Cleanliness Complaint</h4></a></div>
                     @*<div class="text text-center mt-3"><h4 style="font-weight: 400!important;">स्वच्छ  तक्रार</h4></div>*@
                     <div class="text text-center mt-2"><a href="/Complaint/CleanlinessComplaints"><h1 class="CC" style="font-weight: 400 !important; color: #804A00">@Model.TotalComplaint</h1></a></div>
                 </div>
@@ -310,7 +310,7 @@
             <div class="col-lg-12 tab-content">
                 <div id="housetotal" class="bar-chart-example card tab-pane active">
                     <div class="card-header d-flex align-items-center">
-                        <a href=""> <h3 class="h4">Household Collection Target</h3></a>
+                        <a href="" style="color:#000 !important;"> <h3 class="h4">Household Collection Target</h3></a>
                     </div>
                     <div class="card-body">
                         <div style="position:relative ;height: 250px; width: 100%;">
@@ -363,8 +363,8 @@
                     <div class="card-header d-flex align-items-center">
                         @*<h3 class="h4" style="width:50%">वर्गीकरणाचे प्रकार</h3><span style="font-size:14px;font-weight:700;width:50%;text-align:right">एकुण घर संकलन
         : @Model.TotalHouseCount</span>*@
-                        <a href=""><h3> Segregation Types</h3></a><span style="font-size:14px;font-weight:700;width:65%;text-align:right;margin-left:-5%">
-    <a href="">
+                        <a href="" style="color:#000 !important;"><h3> Segregation Types</h3></a><span style="font-size:14px;font-weight:700;width:65%;text-align:right;margin-left:-5%">
+    <a href="" style="color:#000 !important;">
         Total Household Collection
         : @Model.TotalHouseCount</a>
 </span>
@@ -388,7 +388,7 @@
                 <div class="bar-chart-example card">
                     <div class="card-header d-flex align-items-center">
                         @*<h3 class="h4" style="width:50%">डंप यार्ड तपशील</h3><span style="font-size:14px;font-weight:700;width:50%;text-align:right">एकुण वजन: @Model.TotalGcWeightCount Ton</span>*@
-                        <a href=""> <h3>Dump yard Details</h3></a> <span style="font-size: 14px; font-weight: 700; text-align: right; margin-left: 30%;"><a href="">Total weight: @Model.GcWeightCount Ton</a></span>
+                        <a href="" style="color:#000 !important;"> <h3>Dump yard Details</h3></a> <span style="font-size: 14px; font-weight: 700; text-align: right; margin-left: 30%;"><a href="" style="color:#000 !important;">Total weight: @Model.GcWeightCount Ton</a></span>
                     </div>
                     <div class="card-body">
                         <div style="position:relative ;height: 200px; width: 100%;">
